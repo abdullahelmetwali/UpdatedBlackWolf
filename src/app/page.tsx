@@ -18,6 +18,8 @@ export default async function Home() {
             height={800}
             alt="Poster"
             className="w-full h-full brightness-[0.3]"
+            priority
+            unoptimized
           />
         </div>
         <div>
@@ -27,6 +29,8 @@ export default async function Home() {
             height={800}
             alt="Poster"
             className="w-full h-full brightness-[0.3]"
+            priority
+            unoptimized
           />
         </div>
         <motion.div
@@ -55,15 +59,28 @@ export default async function Home() {
           }
         </div>
       </div>
-      <main className="grid grid-cols-2 tab:grid-cols-1">
-        <section className="flex justify-start gap-3 overflow-x-auto scroll-smooth snap-x">
-          {
-            ulimate.map((pro: Product, index: number) => (
-              <div key={index}>
-                <ProductBox product={pro} />
-              </div>
-            ))
-          }
+      <main className="grid grid-cols-2 tab:flex tab:flex-col-reverse">
+        <section className="p-3 h-full">
+          <div>
+            <h1 className="text-2xl tracking-widest text-center">Ultimate Designs</h1>
+          </div>
+          <div className="flex my-8 mr-4 gap-4 overflow-x-auto snap-x scroll-smooth justify-start hide-scrollbar h-full">
+            {
+              ulimate.map((pro: Product, index: number) => (
+                <div key={index} className="relative h-full">
+                  <ProductBox product={pro} easyAdd={true} />
+                </div>
+              ))
+            }
+          </div>
+        </section>
+        <section>
+          <video
+            autoPlay
+            style={{ filter: 'brightness(.7) grayscale(1) contrast(.9)' }}
+            poster="/vids/poster.png">
+            <source src="/vids/PosterVideo.mp4" />
+          </video>
         </section>
       </main>
     </>

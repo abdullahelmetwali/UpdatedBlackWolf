@@ -1,6 +1,7 @@
-import { CSSProperties } from "react";
+import { CSSProperties, Dispatch, SetStateAction } from "react";
 
 export interface Product {
+    id: number,
     section: string,
     img: string,
     title: string,
@@ -22,4 +23,11 @@ export interface ImgLoadingProps {
     alt: string,
     title: string,
     style: CSSProperties | undefined
+}
+
+export interface CartContextTypes {
+    toggle: () => void,
+    state: boolean,
+    productId: number | null,
+    setProductId: Dispatch<SetStateAction<number | null>>
 }

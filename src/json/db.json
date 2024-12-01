@@ -138,2063 +138,1560 @@
     "products": [
         {
             "section": "UltimateDesigns",
-            "img": "/public/imgs/DwayneDevilShirt.jpg",
+            "img": "./imgs/DwayneDevilShirt.jpg",
             "title": "Demon Devil Edition",
             "price": 145,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "desc": "Featuring a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "type": "Fall",
-                "style": "Casual",
-                "colors": [
-                    "Black",
-                    "Syan",
-                    "Blue"
-                ],
-                "sizes": [
-                    "S",
-                    "M",
-                    "L",
-                    "XL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "desc": "Featuring a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "type": "Fall",
+            "style": "Casual",
+            "colors": [
+                "Black",
+                "Syan",
+                "Blue"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ]
         },
         {
             "section": "UltimateDesigns",
-            "img": "./Imgs/FadedCultureT-shirt.jfif",
+            "img": "./imgs/FadedCultureT-shirt.jfif",
             "title": "Faded Culture Edition",
             "price": 180,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Summer",
-                "desc": "Featuring a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "style": "Streetwear",
-                "colors": [
-                    "Black",
-                    "Green",
-                    "Pink"
-                ],
-                "sizes": [
-                    "XS",
-                    "M",
-                    "L",
-                    "XL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "desc": "Featuring a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "style": "Streetwear",
+            "colors": [
+                "Black",
+                "Green",
+                "Pink"
+            ],
+            "sizes": [
+                "XS",
+                "M",
+                "L",
+                "XL"
+            ]
         },
         {
             "section": "UltimateDesigns",
-            "img": "./Imgs/FrankieSummerT-Shirt.jpg",
+            "img": "./imgs/FrankieSummerT-Shirt.jpg",
             "title": "Frankie Faded Edition",
             "price": 180,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 30,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Streetwear",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Yellow"
-                ],
-                "sizes": [
-                    "XS",
-                    "M",
-                    "L",
-                    "XL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Streetwear",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Yellow"
+            ],
+            "sizes": [
+                "XS",
+                "M",
+                "L",
+                "XL"
+            ]
         },
         {
             "section": "UltimateDesigns",
-            "img": "./Imgs/SupremeJacket.jfif",
+            "img": "./imgs/SupremeJacket.jfif",
             "title": "Supreme Faded Jacket",
             "price": 270,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 20,
-            "theDetails": {
-                "type": "Winter",
-                "style": "Streetwear",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "Yellow",
-                    "Orange"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Winter",
+            "style": "Streetwear",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "Yellow",
+                "Orange"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
         },
         {
             "section": "UltimateDesigns",
-            "img": "./Imgs/FrankieSummerT-Shirt2.jpg",
+            "img": "./imgs/FrankieSummerT-Shirt2.jpg",
             "title": "Frankie Colored Edition",
             "price": 135,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "Green",
-                    "White"
-                ],
-                "sizes": [
-                    "S",
-                    "M",
-                    "XL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "Green",
+                "White"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "XL",
+                "XXXL"
+            ]
         },
         {
             "section": "UltimateDesigns",
-            "img": "./Imgs/TrueBasic.jpg",
+            "img": "./imgs/TrueBasic.jpg",
             "title": "True Basic Limited Edition",
             "price": 80,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Yellow"
-                ],
-                "sizes": [
-                    "S",
-                    "M",
-                    "L",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Yellow"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XXL"
+            ]
         },
         {
             "section": "newarrivals",
-            "img": "./Imgs/1995Classic.jpg",
+            "img": "./imgs/1995Classic.jpg",
             "title": "1995 Classic W Edition",
             "price": 155,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Fall",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey"
-                ],
-                "sizes": [
-                    "S",
-                    "M",
-                    "L",
-                    "XL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Fall",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ]
+            
         },
         {
             "section": "newarrivals",
-            "img": "./Imgs/5Stars.jpg",
+            "img": "./imgs/5Stars.jpg",
             "title": "5 Stars KingReel",
             "price": 240,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 20,
-            "theDetails": {
-                "type": "streetwear",
-                "style": "Streetwear",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Yellow"
-                ],
-                "sizes": [
-                    "XS",
-                    "M",
-                    "XXL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "streetwear",
+            "style": "Streetwear",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Yellow"
+            ],
+            "sizes": [
+                "XS",
+                "M",
+                "XXL",
+                "XXXL"
+            ]
+            
         },
         {
             "section": "newarrivals",
-            "img": "./Imgs/HundHoodie.jpg",
+            "img": "./imgs/HundHoodie.jpg",
             "title": "4 Hund Limited Edition",
             "price": 200,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Winter",
-                "style": "Hoodie",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "S",
-                    "M",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Winter",
+            "style": "Hoodie",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "newarrivals",
-            "img": "./Imgs/MidNightT-Shirt.jpg",
+            "img": "./imgs/MidNightT-Shirt.jpg",
             "title": "MidNight Summer Edition",
             "price": 232,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 30,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Syan"
-                ],
-                "sizes": [
-                    "S",
-                    "M",
-                    "L",
-                    "XL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Syan"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ]
+            
         },
         {
             "section": "newarrivals",
-            "img": "./Imgs/CStar.jpg",
+            "img": "./imgs/CStar.jpg",
             "title": "C Star Faded Edition",
             "price": 219,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 18,
-            "theDetails": {
-                "type": "Fall",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "Yellow",
-                    "Orange"
-                ],
-                "sizes": [
-                    "XS",
-                    "M",
-                    "L",
-                    "XL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Fall",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "Yellow",
+                "Orange"
+            ],
+            "sizes": [
+                "XS",
+                "M",
+                "L",
+                "XL"
+            ]
+            
         },
         {
             "section": "topselling",
-            "img": "./Imgs/SSENSE.jpg",
+            "img": "./imgs/SSENSE.jpg",
             "title": "Dripped Winter Edition ",
             "price": 232,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 30,
-            "theDetails": {
-                "type": "Winter",
-                "style": "Streetwear",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Pink"
-                ],
-                "sizes": [
-                    "XS",
-                    "M",
-                    "L",
-                    "XL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Winter",
+            "style": "Streetwear",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Pink"
+            ],
+            "sizes": [
+                "XS",
+                "M",
+                "L",
+                "XL"
+            ]
+            
         },
         {
             "section": "topselling",
-            "img": "./Imgs/4444.jpg",
+            "img": "./imgs/4444.jpg",
             "title": "4Forty 4Four",
             "price": 270,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 30,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "Syan",
-                    "Blue"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "Syan",
+                "Blue"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "limitedEdition",
-            "img": "./Imgs/BlackIsBeauty.jpg",
+            "img": "./imgs/BlackIsBeauty.jpg",
             "title": "Black Is Beauty",
             "price": 280,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 8,
-            "theDetails": {
-                "type": "streetwear",
-                "style": "Streetwear",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Syan"
-                ],
-                "sizes": [
-                    "S",
-                    "L",
-                    "XXL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "streetwear",
+            "style": "Streetwear",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Syan"
+            ],
+            "sizes": [
+                "S",
+                "L",
+                "XXL",
+                "XXXL"
+            ]
+            
         },
         {
             "section": "limitedEdition",
-            "img": "./Imgs/BoyCrazy.jpg",
+            "img": "./imgs/BoyCrazy.jpg",
             "title": "Boy Crazy Limited Edition",
             "price": 382,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Syan",
-                    "Pink"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Syan",
+                "Pink"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "topselling",
-            "img": "./Imgs/Hunter.jpg",
+            "img": "./imgs/Hunter.jpg",
             "title": "Cityscape Hunter",
             "price": 282,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 21,
-            "theDetails": {
-                "type": "streetwear",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "Orange",
-                    "Yellow"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "L",
-                    "XL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "streetwear",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "Orange",
+                "Yellow"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "L",
+                "XL"
+            ]
+            
         },
         {
             "section": "limitedEdition",
-            "img": "./Imgs/StrongFerrari.jpg",
+            "img": "./imgs/StrongFerrari.jpg",
             "title": "Strong Ferrari Man",
             "price": 332,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Syan",
-                    "Pink"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Syan",
+                "Pink"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "limitedEdition",
-            "img": "./Imgs/Pleasures.jpg",
+            "img": "./imgs/Pleasures.jpg",
             "title": "Street Speaks Pleasures",
             "price": 300,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "topselling",
-            "img": "./Imgs/WheaterSupreme.jpg",
+            "img": "./imgs/WheaterSupreme.jpg",
             "title": "Wheaties Supreme",
             "price": 292,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 6,
-            "theDetails": {
-                "type": "streetwear",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey",
-                    "Pink"
-                ],
-                "sizes": [
-                    "M",
-                    "XL",
-                    "XXL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "streetwear",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey",
+                "Pink"
+            ],
+            "sizes": [
+                "M",
+                "XL",
+                "XXL",
+                "XXXL"
+            ]
+            
         },
         {
             "section": "topselling",
-            "img": "./Imgs/ChangeTheWorld.jpg",
+            "img": "./imgs/ChangeTheWorld.jpg",
             "title": "Change The World",
             "price": 285,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "Orange",
-                    "Pink"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "Orange",
+                "Pink"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "limitedEdition",
-            "img": "./Imgs/MargLeaves.jpg",
+            "img": "./imgs/MargLeaves.jpg",
             "title": "Leaves Black Edition",
             "price": 352,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "streetwear",
-                "style": "Streetwear",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey",
-                    "Pink"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "streetwear",
+            "style": "Streetwear",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey",
+                "Pink"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "mostpopular",
-            "img": "./Imgs/PalaceLondon.jpg",
+            "img": "./imgs/PalaceLondon.jpg",
             "title": "Palace London Edition",
             "price": 228,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Winter",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "Orange",
-                    "Green"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Winter",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "Orange",
+                "Green"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "mostpopular",
-            "img": "./Imgs/PalaceOld.jpg",
+            "img": "./imgs/PalaceOld.jpg",
             "title": "Palace Old School",
             "price": 422,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Winter",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Winter",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "mostpopular",
-            "img": "./Imgs/USA.jpg",
+            "img": "./imgs/USA.jpg",
             "title": "USA Edition",
             "price": 292,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 13,
-            "theDetails": {
-                "type": "streetwear",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "Grey",
-                    "Pink"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "streetwear",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "Grey",
+                "Pink"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "mostpopular",
-            "img": "./Imgs/SupremeNike2.jpg",
+            "img": "./imgs/SupremeNike2.jpg",
             "title": "Supreme & Nike Second Edition",
             "price": 511,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Winter",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White"
-                ],
-                "sizes": [
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Winter",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White"
+            ],
+            "sizes": [
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "mostpopular",
-            "img": "./Imgs/SupremeNike.jpg",
+            "img": "./imgs/SupremeNike.jpg",
             "title": "Supreme & Nike Edition",
             "price": 287,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 5,
-            "theDetails": {
-                "type": "Fall",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey",
-                    "Pink"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Fall",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey",
+                "Pink"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "mostpopular",
-            "img": "./Imgs/SmileGang.jpg",
+            "img": "./imgs/SmileGang.jpg",
             "title": "Smiled Gang Edition",
             "price": 100,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 8,
-            "theDetails": {
-                "type": "streetwear",
-                "style": "Streetwear",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey",
-                    "Pink"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "streetwear",
+            "style": "Streetwear",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey",
+                "Pink"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "limitedEdition",
-            "img": "./Imgs/WHYAT.jpg",
+            "img": "./imgs/WHYAT.jpg",
             "title": "Basic WHYAT Edition",
             "price": 400,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "mostpopular",
-            "img": "./Imgs/WhiteJacket.jfif",
+            "img": "./imgs/WhiteJacket.jfif",
             "title": "AVI-REX Jacket",
             "price": 387,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 4,
-            "theDetails": {
-                "type": "Winter",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Winter",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "limitedEdition",
-            "img": "./Imgs/WHYAT.jpg",
+            "img": "./imgs/WHYAT.jpg",
             "title": "Basic WHYAT Edition",
             "price": 400,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "limitedEdition",
-            "img": "./Imgs/Summer2.jpg",
+            "img": "./imgs/Summer2.jpg",
             "title": "Rates Summer Edition",
             "price": 190,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 4,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Pink"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Pink"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Summer.jpg",
+            "img": "./imgs/Summer.jpg",
             "title": "Stop Lose Smile",
             "price": 210,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Summer3.jpg",
+            "img": "./imgs/Summer3.jpg",
             "title": "Human Made Edition",
             "price": 176,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 10,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Summer4.jpg",
+            "img": "./imgs/Summer4.jpg",
             "title": "Super UNION Edition",
             "price": 274,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Summer5.jpg",
+            "img": "./imgs/Summer5.jpg",
             "title": "Beach Shirt Colored",
             "price": 290,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Yellow",
-                    "White",
-                    "Orange"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Yellow",
+                "White",
+                "Orange"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Summer6.jpg",
+            "img": "./imgs/Summer6.jpg",
             "title": "Beach Shirt Syan",
             "price": 210,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "Syan",
-                    "Grey"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "Syan",
+                "Grey"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Summer7.jpg",
+            "img": "./imgs/Summer7.jpg",
             "title": "Beach Shirt Pink",
             "price": 240,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "Syan",
-                    "Pink"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "Syan",
+                "Pink"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Summer8.jpg",
+            "img": "./imgs/Summer8.jpg",
             "title": "C STAR Summer Edition",
             "price": 187,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 7,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "Syan",
-                    "Grey"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "Syan",
+                "Grey"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Summer9.jpg",
+            "img": "./imgs/Summer9.jpg",
             "title": "Basic HANDED Edition",
             "price": 200,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "Syan",
-                    "Grey"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "Syan",
+                "Grey"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/ShirtClassic.jpg",
+            "img": "./imgs/ShirtClassic.jpg",
             "title": "Classic Gang ",
             "price": 400,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "streetwear",
-                "style": "Classic",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "streetwear",
+            "style": "Classic",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/ShirtClassic2.jpg",
+            "img": "./imgs/ShirtClassic2.jpg",
             "title": "Dropped Classic Edition",
             "price": 392,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 3,
-            "theDetails": {
-                "type": "streetwear",
-                "style": "Classic",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "streetwear",
+            "style": "Classic",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/StreetWear.jpg",
+            "img": "./imgs/StreetWear.jpg",
             "title": "31 Streetwear Edition",
             "price": 222,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 15,
-            "theDetails": {
-                "type": "streetwear",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Red"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "streetwear",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Red"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/StreetWear2.jpg",
+            "img": "./imgs/StreetWear2.jpg",
             "title": "Black - White Stagger",
             "price": 492,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "streetwear",
-                "style": "Streetwear",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "streetwear",
+            "style": "Streetwear",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/StreetWear3.jpg",
+            "img": "./imgs/StreetWear3.jpg",
             "title": "Rules The World Edition",
             "price": 192,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "streetwear",
-                "style": "Streetwear",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "streetwear",
+            "style": "Streetwear",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/StreetWear4.jpg",
+            "img": "./imgs/StreetWear4.jpg",
             "title": "Mercedes Blured Edition",
             "price": 220,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 3,
-            "theDetails": {
-                "type": "streetwear",
-                "style": "Streetwear",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "streetwear",
+            "style": "Streetwear",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/StreetWear5.jpg",
+            "img": "./imgs/StreetWear5.jpg",
             "title": "Basic Drama",
             "price": 92,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 11,
-            "theDetails": {
-                "type": "streetwear",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "streetwear",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/StreetWear6.jpg",
+            "img": "./imgs/StreetWear6.jpg",
             "title": "Supreme Reded Stagger",
             "price": 492,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "streetwear",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "streetwear",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/StreetWear7.jpg",
+            "img": "./imgs/StreetWear7.jpg",
             "title": "Grow Gavie OverSized",
             "price": 112,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 1,
-            "theDetails": {
-                "type": "streetwear",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey"
-                ],
-                "sizes": [
-                    "L",
-                    "XL",
-                    "XXL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "streetwear",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey"
+            ],
+            "sizes": [
+                "L",
+                "XL",
+                "XXL",
+                "XXXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Fall.jpg",
+            "img": "./imgs/Fall.jpg",
             "title": "Clean Dripped Stagger",
             "price": 354,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Fall",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "L",
-                    "XL",
-                    "XXL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Fall",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "L",
+                "XL",
+                "XXL",
+                "XXXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Fall2.jpg",
+            "img": "./imgs/Fall2.jpg",
             "title": "White Line Stagger",
             "price": 398,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Fall",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "L",
-                    "XL",
-                    "XXL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Fall",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "L",
+                "XL",
+                "XXL",
+                "XXXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Fall3.jpg",
+            "img": "./imgs/Fall3.jpg",
             "title": "Metro Grave Hoodie",
             "price": 217,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Fall",
-                "style": "Hoodie",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "L",
-                    "XL",
-                    "XXL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Fall",
+            "style": "Hoodie",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "L",
+                "XL",
+                "XXL",
+                "XXXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Fall4.jpg",
+            "img": "./imgs/Fall4.jpg",
             "title": "Clean RED Line Stagger",
             "price": 400,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Fall",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "L",
-                    "XL",
-                    "XXL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Fall",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "L",
+                "XL",
+                "XXL",
+                "XXXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Fall5.jpg",
+            "img": "./imgs/Fall5.jpg",
             "title": "MotorBike Stagger",
             "price": 500,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Fall",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Fall",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XL",
+                "XXXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Fall6.jpg",
+            "img": "./imgs/Fall6.jpg",
             "title": "SemiClassic T-Shirt",
             "price": 320,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Fall",
-                "style": "Classic",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "M",
-                    "L",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Fall",
+            "style": "Classic",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "M",
+                "L",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Fall7.jpg",
+            "img": "./imgs/Fall7.jpg",
             "title": "Black Faded Edition ",
             "price": 400,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Fall",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "L",
-                    "XL",
-                    "XXL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Fall",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "L",
+                "XL",
+                "XXL",
+                "XXXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Fall8.jpg",
+            "img": "./imgs/Fall8.jpg",
             "title": "Black Faded Stagger",
             "price": 400,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Fall",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "L",
-                    "XL",
-                    "XXL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Fall",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "L",
+                "XL",
+                "XXL",
+                "XXXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Interpol.jpg",
+            "img": "./imgs/Interpol.jpg",
             "title": "Interpol Gang Edition",
             "price": 200,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Streetwear",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "L",
-                    "XL",
-                    "XXL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Streetwear",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "L",
+                "XL",
+                "XXL",
+                "XXXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Kappa.jpg",
+            "img": "./imgs/Kappa.jpg",
             "title": "Kappa Black Line Edition",
             "price": 389,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Winter",
-                "style": "Streetwear",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey"
-                ],
-                "sizes": [
-                    "L",
-                    "XL",
-                    "XXL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Winter",
+            "style": "Streetwear",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey"
+            ],
+            "sizes": [
+                "L",
+                "XL",
+                "XXL",
+                "XXXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Puffer Jacket - Winter.jpg",
+            "img": "./imgs/Puffer Jacket - Winter.jpg",
             "title": "Puffer Jacked Faded Edition",
             "price": 400,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Winter",
-                "style": "Streetwear",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "L",
-                    "XL",
-                    "XXL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Winter",
+            "style": "Streetwear",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "L",
+                "XL",
+                "XXL",
+                "XXXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/ProEra.jpg",
+            "img": "./imgs/ProEra.jpg",
             "title": "Pro-Era",
             "price": 410,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Winter",
-                "style": "Streetwear",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "L",
-                    "XL",
-                    "XXL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Winter",
+            "style": "Streetwear",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "L",
+                "XL",
+                "XXL",
+                "XXXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/RaceJacket.jpg",
+            "img": "./imgs/RaceJacket.jpg",
             "title": "SemiClassic Red Line",
             "price": 230,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 11,
-            "theDetails": {
-                "type": "Winter",
-                "style": "Classic",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "L",
-                    "XL",
-                    "XXL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Winter",
+            "style": "Classic",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "L",
+                "XL",
+                "XXL",
+                "XXXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/RulesTheWorld-Summer.jpg",
+            "img": "./imgs/RulesTheWorld-Summer.jpg",
             "title": "Rule The World ",
             "price": 180,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Streetwear",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "L",
-                    "XL",
-                    "XXL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Streetwear",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "L",
+                "XL",
+                "XXL",
+                "XXXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/T-shirt - Fall.jpg",
+            "img": "./imgs/T-shirt - Fall.jpg",
             "title": "Mountains Faded Edition",
             "price": 130,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 3,
-            "theDetails": {
-                "type": "Fall",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "L",
-                    "XL",
-                    "XXL",
-                    "XXXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Fall",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "L",
+                "XL",
+                "XXL",
+                "XXXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/T-shirt -Summer.jpg",
+            "img": "./imgs/T-shirt -Summer.jpg",
             "title": "Astronaut Edition",
             "price": 230,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Summer",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "SM",
-                    "M",
-                    "L",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Summer",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "SM",
+                "M",
+                "L",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Winter.jpg",
+            "img": "./imgs/Winter.jpg",
             "title": "Red Caped Jacket",
             "price": 330,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Winter",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "SM",
-                    "M",
-                    "L",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Winter",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "SM",
+                "M",
+                "L",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Winter2.jpg",
+            "img": "./imgs/Winter2.jpg",
             "title": "City Strike Edition",
             "price": 330,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 19,
-            "theDetails": {
-                "type": "Winter",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "SM",
-                    "M",
-                    "L",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Winter",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "SM",
+                "M",
+                "L",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Winter3.jpg",
+            "img": "./imgs/Winter3.jpg",
             "title": "SemiCasual C Star",
             "price": 330,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Winter",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "SM",
-                    "M",
-                    "L",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Winter",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "SM",
+                "M",
+                "L",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Winter4.jpg",
+            "img": "./imgs/Winter4.jpg",
             "title": "Red Handed Edition",
             "price": 400,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Winter",
-                "style": "Party",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "SM",
-                    "M",
-                    "L",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Winter",
+            "style": "Party",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "SM",
+                "M",
+                "L",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Winter5.jpg",
+            "img": "./imgs/Winter5.jpg",
             "title": "White - Black Faded",
             "price": 290,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 2,
-            "theDetails": {
-                "type": "Winter",
-                "style": "Casual",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "SM",
-                    "M",
-                    "L",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Winter",
+            "style": "Casual",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "SM",
+                "M",
+                "L",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/Winter6.jpg",
+            "img": "./imgs/Winter6.jpg",
             "title": "Classic Forest Jacket",
             "price": 330,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Winter",
-                "style": "Classic",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Green"
-                ],
-                "sizes": [
-                    "SM",
-                    "M",
-                    "L",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Winter",
+            "style": "Classic",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Green"
+            ],
+            "sizes": [
+                "SM",
+                "M",
+                "L",
+                "XXL"
+            ]
+            
         },
         {
             "section": "",
-            "img": "./Imgs/WinterCoatGrey.jpg",
+            "img": "./imgs/WinterCoatGrey.jpg",
             "title": "British Classic Coat",
             "price": 500,
-            "selectedColor": "",
-            "selectedSize": "",
-            "saledPrice": "",
-            "theCounter": "",
             "salePercentage": 0,
-            "theDetails": {
-                "type": "Winter",
-                "style": "Classic",
-                "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-                "colors": [
-                    "Black",
-                    "White",
-                    "Grey"
-                ],
-                "sizes": [
-                    "SM",
-                    "M",
-                    "L",
-                    "XXL"
-                ]
-            },
-            "isSeen": true,
-            "showColor": false
+            "type": "Winter",
+            "style": "Classic",
+            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
+            "colors": [
+                "Black",
+                "White",
+                "Grey"
+            ],
+            "sizes": [
+                "SM",
+                "M",
+                "L",
+                "XXL"
+            ]
+            
         }
     ],
     "promoCodes": [

@@ -7,7 +7,8 @@ const ImgLoading: React.FC<ImgLoadingProps> = ({ src, alt, width, height, title,
     const [isLoading, setIsLoading] = useState<boolean>(true);
     return (
         <>
-            {isLoading && <div className="loader w-full h-[15rem]"></div>}
+            {isLoading && <div className="loader w-[15rem] h-full"></div>}
+
             <Image
                 src={src}
                 width={width}
@@ -15,9 +16,9 @@ const ImgLoading: React.FC<ImgLoadingProps> = ({ src, alt, width, height, title,
                 alt={alt}
                 title={title}
                 onLoad={() => setIsLoading(false)}
-                priority
                 unoptimized
-                className={`${isLoading ? 'hidden' : 'block'} rounded-xl`}
+                priority
+                className={`${isLoading ? 'hidden' : 'block'} w-full h-full`}
                 style={style}
             />
         </>
