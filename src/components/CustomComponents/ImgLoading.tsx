@@ -7,7 +7,7 @@ const ImgLoading: React.FC<ImgLoadingProps> = ({ src, alt, width, height, title,
     const [isLoading, setIsLoading] = useState<boolean>(true);
     return (
         <>
-            {isLoading && <div className="loader w-[15rem] h-full"></div>}
+            {isLoading && <div className="loader w-[20rem] h-full"></div>}
 
             <Image
                 src={src}

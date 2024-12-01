@@ -1,5 +1,4 @@
 import { CSSProperties, Dispatch, SetStateAction } from "react";
-
 export interface Product {
     id: number,
     section: string,
@@ -16,6 +15,7 @@ export interface Product {
     colors: string[],
     sizes: string[]
 }
+
 export interface ImgLoadingProps {
     src: string,
     width: number,
@@ -25,9 +25,28 @@ export interface ImgLoadingProps {
     style: CSSProperties | undefined
 }
 
+export interface EasyAddState {
+    cartBox: boolean,
+    nextContent: string | "",
+    selectedColor: string | "",
+    selectedSize: string | "",
+}
+
+export interface MessageState {
+    show: boolean,
+    title: string | '',
+    price: number,
+    color: string | '',
+    size: string | '',
+}
+
 export interface CartContextTypes {
-    toggle: () => void,
-    state: boolean,
-    productId: number | null,
-    setProductId: Dispatch<SetStateAction<number | null>>
+    message: MessageState,
+    setMessage: React.Dispatch<SetStateAction<MessageState>>
+}
+
+export interface ProductBoxCartProps {
+    easyAddState: EasyAddState,
+    setEasyAddState: React.Dispatch<SetStateAction<EasyAddState>>,
+    product: Product
 }

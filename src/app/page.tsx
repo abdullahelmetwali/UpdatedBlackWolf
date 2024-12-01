@@ -66,9 +66,9 @@ export default async function Home() {
           </div>
           <div className="flex my-8 mr-4 gap-4 overflow-x-auto snap-x scroll-smooth justify-start hide-scrollbar h-full">
             {
-              ulimate.map((pro: Product, index: number) => (
-                <div key={index} className="relative h-full">
-                  <ProductBox product={pro} easyAdd={true} />
+              ulimate.map((pro: Product) => (
+                <div key={pro.id} className="relative h-full">
+                  <ProductBox product={pro} easyAdd={true} key={pro.id} />
                 </div>
               ))
             }

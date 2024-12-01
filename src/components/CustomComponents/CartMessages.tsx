@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+// notifications={[message.title, message.price, message.color, message.size]}
 const CartMessages: React.FC<{ notifications: string[] | string }> = ({ notifications }) => {
     return (
         <div className="w-full flex items-center justify-between fixed z-50 p-3">
@@ -14,13 +14,19 @@ const CartMessages: React.FC<{ notifications: string[] | string }> = ({ notifica
             </div>
             <div>
                 <p>{notifications[0]}</p>
+                <p>{notifications[1]}</p>
                 {
-                    notifications[1] !== '' || notifications[1] !== undefined &&
+                    typeof notifications === 'object' &&
                     <>
                         <p>{notifications[1]}</p>
                         <p>ADDED TO CART</p>
                     </>
                 }
+            </div>
+            <div>
+                <button>
+                    VIEW CART
+                </button>
             </div>
         </div>
     )
