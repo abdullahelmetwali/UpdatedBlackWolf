@@ -4,10 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { Product } from "@/interfaces/Types";
 import ProductBox from "@/components/ProductComponents/ProductBox";
+import TheLatest from "@/components/HomeComponents/TheLatest";
 
 export default async function Home() {
   const { products } = await GetProducts();
-  const ulimate: Product[] = products.filter((pro: Product) => pro.section === 'UltimateDesigns');
+  const ulimate: Product[] = products.filter((pro: Product) => pro.section === 'ultimate-designs');
   return (
     <>
       <main className="grid grid-cols-2 relative tab:grid-cols-1">
@@ -62,9 +63,9 @@ export default async function Home() {
       <main className="grid grid-cols-2 tab:flex tab:flex-col-reverse">
         <section className="p-3 h-full">
           <div>
-            <h1 className="text-2xl tracking-widest text-center">Ultimate Designs</h1>
+            <p className="text-2xl tracking-widest text-center">Ultimate Designs</p>
           </div>
-          <div className="flex my-8 mr-4 gap-4 overflow-x-auto snap-x scroll-smooth justify-start hide-scrollbar h-full">
+          <div className="scrollbox my-8 gap-4 h-full">
             {
               ulimate.map((pro: Product) => (
                 <div key={pro.id} className="relative h-full">
@@ -83,6 +84,7 @@ export default async function Home() {
           </video>
         </section>
       </main>
+      <TheLatest products={products} />
     </>
   );
 }

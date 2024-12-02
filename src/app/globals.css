@@ -66,7 +66,14 @@ img {
     background-position: -200% 0;
   }
 }
-.hide-scrollbar::-webkit-scrollbar {
+.scrollbox{
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity ;
+}
+.scrollbox::-webkit-scrollbar {
   display: none;
 }
 .productBoxItems {

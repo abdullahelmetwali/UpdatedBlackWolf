@@ -3,9 +3,9 @@ import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
 
 const CartMessages:
-    React.FC<{ notifications: string[] | string, setMessage: Dispatch<SetStateAction<MessageState>> }> = ({ notifications, setMessage }) => {
+    React.FC<{ notifications: string[] | string, setMessage: Dispatch<SetStateAction<MessageState>>, show: boolean }> = ({ notifications, setMessage, show }) => {
         return (
-            <div className="w-full flex items-center justify-between fixed z-50 p-3 bg-black">
+            <div className={`w-full fixed flex items-center justify-between p-3 bg-black ${show ? ' top-0 z-50 opacity-100' : '-top-full z-0 opacity-0'} transition-all duration-300 ease-in-out`}>
                 <button onClick={() => setMessage(prev => ({ ...prev, show: false }))}>
                     <Image
                         src={`/icons/close.svg`}

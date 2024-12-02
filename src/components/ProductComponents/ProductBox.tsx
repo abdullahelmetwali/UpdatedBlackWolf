@@ -6,11 +6,9 @@ import { CartState } from "@/store/CartProvider";
 import ImgLoading from "../CustomComponents/ImgLoading";
 
 const ProductBox: React.FC<{ product: Product, easyAdd: boolean }> = ({ product, easyAdd }) => {
-    const { setMessage, msgTimer } = useContext(CartState)
+    const { setMessage, AddToCart } = useContext(CartState)
     const [easyAddState, setEasyAddState] = useState<EasyAddState>({
         cartBox: true,
-        selectedSize: '',
-        selectedColor: '',
         nextContent: ''
     })
 
@@ -59,7 +57,6 @@ const ProductBox: React.FC<{ product: Product, easyAdd: boolean }> = ({ product,
                                             setEasyAddState((prev: EasyAddState) => ({
                                                 ...prev,
                                                 nextContent: 'colors',
-                                                selectedSize: size
                                             }));
                                             setMessage((prev: MessageState) => ({
                                                 ...prev,
@@ -84,14 +81,8 @@ const ProductBox: React.FC<{ product: Product, easyAdd: boolean }> = ({ product,
                                         setEasyAddState((prev: EasyAddState) => ({
                                             ...prev,
                                             cartBox: true,
-                                            colors: false,
-                                            selectedColor: color,
                                         }));
-                                        setMessage((prev: MessageState) => ({
-                                            ...prev,
-                                            color: color
-                                        }));
-                                        msgTimer();
+                                        AddToCart(product, color);
                                     }
                                     }
                                 >

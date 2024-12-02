@@ -137,7 +137,7 @@
     },
     "products": [
         {
-            "section": "UltimateDesigns",
+            "section": "ultimate-designs",
             "img": "./imgs/DwayneDevilShirt.jpg",
             "title": "Demon Devil Edition",
             "price": 145,
@@ -158,7 +158,7 @@
             ]
         },
         {
-            "section": "UltimateDesigns",
+            "section": "ultimate-designs",
             "img": "./imgs/FadedCultureT-shirt.jfif",
             "title": "Faded Culture Edition",
             "price": 180,
@@ -179,7 +179,7 @@
             ]
         },
         {
-            "section": "UltimateDesigns",
+            "section": "ultimate-designs",
             "img": "./imgs/FrankieSummerT-Shirt.jpg",
             "title": "Frankie Faded Edition",
             "price": 180,
@@ -200,7 +200,7 @@
             ]
         },
         {
-            "section": "UltimateDesigns",
+            "section": "ultimate-designs",
             "img": "./imgs/SupremeJacket.jfif",
             "title": "Supreme Faded Jacket",
             "price": 270,
@@ -221,7 +221,7 @@
             ]
         },
         {
-            "section": "UltimateDesigns",
+            "section": "ultimate-designs",
             "img": "./imgs/FrankieSummerT-Shirt2.jpg",
             "title": "Frankie Colored Edition",
             "price": 135,
@@ -242,7 +242,7 @@
             ]
         },
         {
-            "section": "UltimateDesigns",
+            "section": "ultimate-designs",
             "img": "./imgs/TrueBasic.jpg",
             "title": "True Basic Limited Edition",
             "price": 80,
@@ -263,7 +263,7 @@
             ]
         },
         {
-            "section": "newarrivals",
+            "section": "new-arrivals",
             "img": "./imgs/1995Classic.jpg",
             "title": "1995 Classic W Edition",
             "price": 155,
@@ -285,7 +285,7 @@
             
         },
         {
-            "section": "newarrivals",
+            "section": "new-arrivals",
             "img": "./imgs/5Stars.jpg",
             "title": "5 Stars KingReel",
             "price": 240,
@@ -307,7 +307,7 @@
             
         },
         {
-            "section": "newarrivals",
+            "section": "new-arrivals",
             "img": "./imgs/HundHoodie.jpg",
             "title": "4 Hund Limited Edition",
             "price": 200,
@@ -329,7 +329,7 @@
             
         },
         {
-            "section": "newarrivals",
+            "section": "new-arrivals",
             "img": "./imgs/MidNightT-Shirt.jpg",
             "title": "MidNight Summer Edition",
             "price": 232,
@@ -351,7 +351,7 @@
             
         },
         {
-            "section": "newarrivals",
+            "section": "new-arrivals",
             "img": "./imgs/CStar.jpg",
             "title": "C Star Faded Edition",
             "price": 219,
@@ -373,7 +373,7 @@
             
         },
         {
-            "section": "topselling",
+            "section": "top-selling",
             "img": "./imgs/SSENSE.jpg",
             "title": "Dripped Winter Edition ",
             "price": 232,
@@ -395,7 +395,7 @@
             
         },
         {
-            "section": "topselling",
+            "section": "top-selling",
             "img": "./imgs/4444.jpg",
             "title": "4Forty 4Four",
             "price": 270,
@@ -417,7 +417,7 @@
             
         },
         {
-            "section": "limitedEdition",
+            "section": "limited-edition",
             "img": "./imgs/BlackIsBeauty.jpg",
             "title": "Black Is Beauty",
             "price": 280,
@@ -439,7 +439,7 @@
             
         },
         {
-            "section": "limitedEdition",
+            "section": "limited-edition",
             "img": "./imgs/BoyCrazy.jpg",
             "title": "Boy Crazy Limited Edition",
             "price": 382,
@@ -462,7 +462,7 @@
             
         },
         {
-            "section": "topselling",
+            "section": "top-selling",
             "img": "./imgs/Hunter.jpg",
             "title": "Cityscape Hunter",
             "price": 282,
@@ -484,7 +484,7 @@
             
         },
         {
-            "section": "limitedEdition",
+            "section": "limited-edition",
             "img": "./imgs/StrongFerrari.jpg",
             "title": "Strong Ferrari Man",
             "price": 332,
@@ -507,7 +507,7 @@
             
         },
         {
-            "section": "limitedEdition",
+            "section": "limited-edition",
             "img": "./imgs/Pleasures.jpg",
             "title": "Street Speaks Pleasures",
             "price": 300,
@@ -529,7 +529,7 @@
             
         },
         {
-            "section": "topselling",
+            "section": "top-selling",
             "img": "./imgs/WheaterSupreme.jpg",
             "title": "Wheaties Supreme",
             "price": 292,
@@ -552,7 +552,7 @@
             
         },
         {
-            "section": "topselling",
+            "section": "top-selling",
             "img": "./imgs/ChangeTheWorld.jpg",
             "title": "Change The World",
             "price": 285,
@@ -574,7 +574,7 @@
             
         },
         {
-            "section": "limitedEdition",
+            "section": "limited-edition",
             "img": "./imgs/MargLeaves.jpg",
             "title": "Leaves Black Edition",
             "price": 352,
@@ -597,7 +597,7 @@
             
         },
         {
-            "section": "mostpopular",
+            "section": "most-popular",
             "img": "./imgs/PalaceLondon.jpg",
             "title": "Palace London Edition",
             "price": 228,
@@ -619,7 +619,7 @@
             
         },
         {
-            "section": "mostpopular",
+            "section": "most-popular",
             "img": "./imgs/PalaceOld.jpg",
             "title": "Palace Old School",
             "price": 422,
@@ -641,7 +641,7 @@
             
         },
         {
-            "section": "mostpopular",
+            "section": "most-popular",
             "img": "./imgs/USA.jpg",
             "title": "USA Edition",
             "price": 292,
@@ -663,7 +663,7 @@
             
         },
         {
-            "section": "mostpopular",
+            "section": "most-popular",
             "img": "./imgs/SupremeNike2.jpg",
             "title": "Supreme & Nike Second Edition",
             "price": 511,
@@ -683,7 +683,7 @@
             
         },
         {
-            "section": "mostpopular",
+            "section": "most-popular",
             "img": "./imgs/SupremeNike.jpg",
             "title": "Supreme & Nike Edition",
             "price": 287,
@@ -706,7 +706,7 @@
             
         },
         {
-            "section": "mostpopular",
+            "section": "most-popular",
             "img": "./imgs/SmileGang.jpg",
             "title": "Smiled Gang Edition",
             "price": 100,
@@ -729,7 +729,7 @@
             
         },
         {
-            "section": "limitedEdition",
+            "section": "limited-edition",
             "img": "./imgs/WHYAT.jpg",
             "title": "Basic WHYAT Edition",
             "price": 400,
@@ -751,7 +751,7 @@
             
         },
         {
-            "section": "mostpopular",
+            "section": "most-popular",
             "img": "./imgs/WhiteJacket.jfif",
             "title": "AVI-REX Jacket",
             "price": 387,
@@ -773,7 +773,7 @@
             
         },
         {
-            "section": "limitedEdition",
+            "section": "limited-edition",
             "img": "./imgs/WHYAT.jpg",
             "title": "Basic WHYAT Edition",
             "price": 400,
@@ -795,7 +795,7 @@
             
         },
         {
-            "section": "limitedEdition",
+            "section": "limited-edition",
             "img": "./imgs/Summer2.jpg",
             "title": "Rates Summer Edition",
             "price": 190,

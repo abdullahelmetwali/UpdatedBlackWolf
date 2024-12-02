@@ -1,4 +1,4 @@
-import { CSSProperties, Dispatch, SetStateAction } from "react";
+import { CSSProperties, SetStateAction } from "react";
 export interface Product {
     id: number,
     section: string,
@@ -7,6 +7,7 @@ export interface Product {
     price: number,
     selectedColor: string | null,
     selectedSize: string | null,
+    quantity: number,
     saledPrice: string | null,
     salePercentage: number,
     desc: string,
@@ -22,14 +23,12 @@ export interface ImgLoadingProps {
     height: number,
     alt: string,
     title: string,
-    style: CSSProperties | undefined
+    style: CSSProperties | undefined,
 }
 
 export interface EasyAddState {
     cartBox: boolean,
     nextContent: string | "",
-    selectedColor: string | "",
-    selectedSize: string | "",
 }
 
 export interface MessageState {
@@ -43,7 +42,7 @@ export interface MessageState {
 export interface CartContextTypes {
     message: MessageState,
     setMessage: React.Dispatch<SetStateAction<MessageState>>,
-    msgTimer: () => void
+    AddToCart: (product: Product, color: string) => void
 }
 
 export interface ProductBoxCartProps {
