@@ -6,7 +6,7 @@ import { CartState } from "@/store/CartProvider";
 import ImgLoading from "../CustomComponents/ImgLoading";
 
 const ProductBox: React.FC<{ product: Product, easyAdd: boolean }> = ({ product, easyAdd }) => {
-    const { setMessage } = useContext(CartState)
+    const { setMessage, msgTimer } = useContext(CartState)
     const [easyAddState, setEasyAddState] = useState<EasyAddState>({
         cartBox: true,
         selectedSize: '',
@@ -48,7 +48,7 @@ const ProductBox: React.FC<{ product: Product, easyAdd: boolean }> = ({ product,
                                 className="cursor-pointer"
                             />
                         </button>
-                        <ul className={`absolute w-full right-0 bg-[#080808e8] flex items-center justify-center gap-6 ${easyAddState.nextContent === 'sizes' ? 'bottom-6 opacity-100 z-10' : 'bottom-5 opacity-0 z-0'} transition-all duration-200 ease-out`}
+                        <ul className={`productBoxItems ${easyAddState.nextContent === 'sizes' ? 'bottom-6 opacity-100 z-10' : 'bottom-5 opacity-0 z-0'}`}
                         >
                             {
                                 product?.sizes?.map((size: string, sizeIndex: number) => (
@@ -74,7 +74,7 @@ const ProductBox: React.FC<{ product: Product, easyAdd: boolean }> = ({ product,
                             }
                         </ul>
                         <ul
-                            className={`absolute w-full right-0 bg-[#080808e8] flex items-center justify-center gap-6 ${(easyAddState.nextContent === 'colors' && !easyAddState.cartBox) ? 'bottom-6 opacity-100 z-10' : 'bottom-5 opacity-0 z-0'} transition-all duration-200 ease-out`}
+                            className={`productBoxItems ${(easyAddState.nextContent === 'colors' && !easyAddState.cartBox) ? 'bottom-6 opacity-100 z-10' : 'bottom-5 opacity-0 z-0'}`}
                         >
                             {product?.colors?.map((color: string, clrIndex: number) => (
                                 <li
@@ -90,7 +90,8 @@ const ProductBox: React.FC<{ product: Product, easyAdd: boolean }> = ({ product,
                                         setMessage((prev: MessageState) => ({
                                             ...prev,
                                             color: color
-                                        }))
+                                        }));
+                                        msgTimer();
                                     }
                                     }
                                 >

@@ -69,3 +69,14 @@ img {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+.productBoxItems {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  background: #080808e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  transition: all 200ms ease-out;
+}

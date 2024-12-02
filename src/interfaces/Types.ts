@@ -42,7 +42,8 @@ export interface MessageState {
 
 export interface CartContextTypes {
     message: MessageState,
-    setMessage: React.Dispatch<SetStateAction<MessageState>>
+    setMessage: React.Dispatch<SetStateAction<MessageState>>,
+    msgTimer: () => void
 }
 
 export interface ProductBoxCartProps {

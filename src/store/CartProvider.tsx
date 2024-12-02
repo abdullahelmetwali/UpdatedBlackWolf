@@ -11,7 +11,8 @@ export const CartState = createContext<CartContextTypes>({
         size: '',
         color: '',
     },
-    setMessage: () => { }
+    setMessage: () => { },
+    msgTimer: () => { }
 });
 
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -23,12 +24,16 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         size: '',
     });
 
-    // SET INTERVAL FOR SHOWING THE PRODUCT MSG
-    const showMsg = () => {
+    const msgTimer = () => {
+        setMessage((prev) => ({ ...prev, show: true }));
+        // setTimeout(() => {
+        //     setMessage((prev) => ({ ...prev, show: false }));
+        // }, 3000)
+    };
 
-    }
     return (
-        <CartState.Provider value={{ message, setMessage }}>
+        <CartState.Provider value={{ message, setMessage, msgTimer }}>
+            {message.show && <CartMessages notifications={[message.title, message.price.toString(), message.color, message.size]} setMessage={setMessage} />}
             {children}
         </CartState.Provider>
     )
