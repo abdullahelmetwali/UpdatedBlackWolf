@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link href={`/category`}>
+                            <Link href={`/category/all`}>
                                 CATEGORY
                             </Link>
                         </li>

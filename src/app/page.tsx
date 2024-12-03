@@ -9,6 +9,32 @@ import TheLatest from "@/components/HomeComponents/TheLatest";
 export default async function Home() {
   const { products } = await GetProducts();
   const ulimate: Product[] = products.filter((pro: Product) => pro.section === 'ultimate-designs');
+  const showroomObj = [
+    {
+      id: 0,
+      img: '/imgs/AfricaShirt.jpg',
+      title: 'CITY BEAT THREADS',
+      desc: 'Sync your style with the pulsating heartbeat of the city, where fashion becomes a symphony of self-expression'
+    },
+    {
+      id: 1,
+      img: '/imgs/AfricaSpeakerT-Shirt.jpg',
+      title: 'BRICK & MORTAR COUTURE',
+      desc: 'In the architecture of fashion, every garment is a masterpiece, meticulously crafted from the building blocks of style.'
+    },
+    {
+      id: 2,
+      img: '/imgs/AfricaTwoT-Shirt.jpg',
+      title: 'ASPHALT AESTHETICS',
+      desc: 'Merge the sleek sophistication of high fashion with the gritty allure of the streets, as asphalt aesthetics.'
+    },
+    {
+      id: 3,
+      img: '/imgs/FUBU.jpg',
+      title: 'UPTOWN REAL FUNK',
+      desc: "Arm yourself with the savvy sophistication of urban style as you navigate the labyrinthine maze of fashions concrete jungle."
+    },
+  ]
   return (
     <>
       <main className="grid grid-cols-2 relative tab:grid-cols-1">
@@ -65,7 +91,7 @@ export default async function Home() {
           <div>
             <p className="text-2xl tracking-widest text-center">Ultimate Designs</p>
           </div>
-          <div className="scrollbox my-8 gap-4 h-full">
+          <div className="scrollbox justify-start my-8 gap-4 h-full">
             {
               ulimate.map((pro: Product) => (
                 <div key={pro.id} className="relative h-full">
@@ -85,6 +111,51 @@ export default async function Home() {
         </section>
       </main>
       <TheLatest products={products} />
+      <section className="grid grid-cols-2 items-center py-14 px-3 tab:grid-cols-1">
+        <div className="text-center">
+          <p className="text-3xl tracking-widest">OUR SHOWROOM</p>
+          <div className="my-5">
+            <p>413 James Street, Bulerigh Heads, Gold Coast, BossesLand Australia</p>
+            <p>Mon - Fri, 10am - 9pm</p>
+            <p>Weekends, 11am - 4pm</p>
+          </div>
+        </div>
+        <div>
+          <Image
+            src={`/imgs/ourshowroom4.jpg`}
+            width={650}
+            height={650}
+            alt="Our Showroom"
+            title="Our Showroom"
+          />
+        </div>
+      </section>
+      <section className="scrollbox py-8 px-3 gap-3 justify-center">
+        {
+          showroomObj.map(box => (
+            <div key={box.id}>
+              <div className="h-[35rem] tab:h-[25rem] w-full tab:w-[65vw]">
+                <Image
+                  src={box.img}
+                  alt={box.title}
+                  width={360}
+                  height={600}
+                  title={box.title}
+                  className="w-full h-full object-cover"
+                  style={{
+                    filter: 'brightness(.7) grayscale(1) contrast(.9)',
+                  }}
+                />
+              </div>
+              <div className="text-center">
+                <p className="text-xl my-3 font-semibold">{box.title}</p>
+                <p>{box.desc}</p>
+              </div>
+            </div>
+          ))
+        }
+
+      </section>
     </>
   );
 }

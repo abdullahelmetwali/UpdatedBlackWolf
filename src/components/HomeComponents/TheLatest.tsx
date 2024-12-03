@@ -18,7 +18,7 @@ const TheLatest: React.FC<{ products: Product[] }> = ({ products }) => {
                     latest.map((last: string, index: number) => (
                         <p
                             key={index}
-                            className={`tracking-wider w-full cursor-pointer rounded-3xl px-4 py-2 hover:opacity-100 text-nowrap whitespace-nowrap text-center ${section === last.replace(' ', '-').toLowerCase() ? 'bg-[#3636366b] opacity-100' : 'opacity-60'}`}
+                            className={`tracking-wider w-full filteredTitle ${section === last.replace(' ', '-').toLowerCase() ? 'bg-[#3636366b] opacity-100' : 'opacity-60'}`}
                             onClick={() => setSection(last.replace(' ', '-').toLowerCase())}
                         >
                             {last}
@@ -26,7 +26,7 @@ const TheLatest: React.FC<{ products: Product[] }> = ({ products }) => {
                     ))
                 }
             </div>
-            <section className="scrollbox my-3 gap-4 h-full px-1">
+            <section className="scrollbox justify-start my-3 gap-4 h-full px-1">
                 {
                     filteredProducts.map((pro: Product) => (
                         <div key={pro.id} className="relative h-full">

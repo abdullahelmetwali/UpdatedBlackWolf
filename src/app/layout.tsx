@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/AppComponents/Navbar";
 import { CartProvider } from "@/store/CartProvider";
+import Footer from "@/components/AppComponents/Footer";
 
 export const metadata: Metadata = {
   title: "BLACK WOLF",
@@ -21,6 +22,7 @@ export default function RootLayout({
         <CartProvider>
           <Navbar />
           {children}
+          <Footer />
         </CartProvider>
       </body>
     </html>
