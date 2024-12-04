@@ -5,7 +5,7 @@ import React, { useContext, useState } from "react";
 import { CartState } from "@/store/CartProvider";
 import ImgLoading from "../CustomComponents/ImgLoading";
 
-const ProductBox: React.FC<{ product: Product, easyAdd: boolean }> = ({ product, easyAdd }) => {
+const ProductBox: React.FC<{ product: Product, easyAdd: boolean, boxClass: string | undefined }> = ({ product, easyAdd, boxClass }) => {
     const { setMessage, AddToCart } = useContext(CartState)
     const [easyAddState, setEasyAddState] = useState<EasyAddState>({
         cartBox: true,
@@ -14,7 +14,7 @@ const ProductBox: React.FC<{ product: Product, easyAdd: boolean }> = ({ product,
 
     return (
         <>
-            <div className="w-[20rem] h-[40rem] relative">
+            <div className={`${boxClass ? boxClass : 'w-[20rem] h-[40rem]'} relative`}>
                 <ImgLoading
                     src={product.img}
                     width={1000}

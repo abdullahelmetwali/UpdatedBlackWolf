@@ -17,6 +17,6 @@ export async function GET(req: NextRequest) {
         if (type === 'all') return NextResponse.json(parsedJson?.products);
         return NextResponse.json(filteredProducts)
     } catch (error) {
-        return NextResponse.json({ message: 'Sorry try again!' })
+        throw new Error('Sorry, try again!')
     }
 }

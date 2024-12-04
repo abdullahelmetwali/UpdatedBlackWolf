@@ -1,5 +1,3 @@
-import GetProducts from "@/hooks/GetProducts";
-import * as motion from "motion/react-client";
 import Image from "next/image";
 import Link from "next/link";
 import { Product } from "@/interfaces/Types";
@@ -7,7 +5,14 @@ import ProductBox from "@/components/ProductComponents/ProductBox";
 import TheLatest from "@/components/HomeComponents/TheLatest";
 
 export default async function Home() {
-  const { products } = await GetProducts();
+  const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER}api/`, {
+    method: 'GET',
+  })
+  const data = await response.json();
+  const products: Product[] = data?.products?.map((pro: Product, index: number) => ({ ...pro, id: index }))
+  if (!response.ok) {
+    throw new Error('Please , Make sure of your Network!')
+  };
   const ulimate: Product[] = products.filter((pro: Product) => pro.section === 'ultimate-designs');
   const showroomObj = [
     {
@@ -60,10 +65,7 @@ export default async function Home() {
             unoptimized
           />
         </div>
-        <motion.div
-          className="text-center absolute top-1/2 left-1/2" style={{ transform: 'translate(-50%, -50%)' }}
-          animate={{ opacity: 1 }}
-        >
+        <div className="text-center absolute top-1/2 left-1/2">
           <h2 className="text-base">ABOVE THE CLOUDS</h2>
           <h1 className="text-2xl my-3 tracking-wider">WEAR LIKE A BOSS</h1>
           <Link href={`/category`} className="px-12 bg-white text-black py-1">
@@ -71,7 +73,7 @@ export default async function Home() {
               SHOP NOW
             </button>
           </Link>
-        </motion.div>
+        </div>
       </main>
       <div
         className=" overflow-hidden my-2">
@@ -95,7 +97,7 @@ export default async function Home() {
             {
               ulimate.map((pro: Product) => (
                 <div key={pro.id} className="relative h-full">
-                  <ProductBox product={pro} easyAdd={true} key={pro.id} />
+                  <ProductBox product={pro} easyAdd={true} key={pro.id} boxClass={undefined} />
                 </div>
               ))
             }

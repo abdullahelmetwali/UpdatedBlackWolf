@@ -138,7 +138,7 @@
     "products": [
         {
             "section": "ultimate-designs",
-            "img": "./imgs/DwayneDevilShirt.jpg",
+            "img": "/imgs/DwayneDevilShirt.jpg",
             "title": "Demon Devil Edition",
             "price": 145,
             "salePercentage": 0,
@@ -159,7 +159,7 @@
         },
         {
             "section": "ultimate-designs",
-            "img": "./imgs/FadedCultureT-shirt.jfif",
+            "img": "/imgs/FadedCultureT-shirt.jfif",
             "title": "Faded Culture Edition",
             "price": 180,
             "salePercentage": 0,
@@ -180,7 +180,7 @@
         },
         {
             "section": "ultimate-designs",
-            "img": "./imgs/FrankieSummerT-Shirt.jpg",
+            "img": "/imgs/FrankieSummerT-Shirt.jpg",
             "title": "Frankie Faded Edition",
             "price": 180,
             "salePercentage": 30,
@@ -201,7 +201,7 @@
         },
         {
             "section": "ultimate-designs",
-            "img": "./imgs/SupremeJacket.jfif",
+            "img": "/imgs/SupremeJacket.jfif",
             "title": "Supreme Faded Jacket",
             "price": 270,
             "salePercentage": 20,
@@ -222,7 +222,7 @@
         },
         {
             "section": "ultimate-designs",
-            "img": "./imgs/FrankieSummerT-Shirt2.jpg",
+            "img": "/imgs/FrankieSummerT-Shirt2.jpg",
             "title": "Frankie Colored Edition",
             "price": 135,
             "salePercentage": 0,
@@ -243,7 +243,7 @@
         },
         {
             "section": "ultimate-designs",
-            "img": "./imgs/TrueBasic.jpg",
+            "img": "/imgs/TrueBasic.jpg",
             "title": "True Basic Limited Edition",
             "price": 80,
             "salePercentage": 0,
@@ -264,7 +264,7 @@
         },
         {
             "section": "new-arrivals",
-            "img": "./imgs/1995Classic.jpg",
+            "img": "/imgs/1995Classic.jpg",
             "title": "1995 Classic W Edition",
             "price": 155,
             "salePercentage": 0,
@@ -286,7 +286,7 @@
         },
         {
             "section": "new-arrivals",
-            "img": "./imgs/5Stars.jpg",
+            "img": "/imgs/5Stars.jpg",
             "title": "5 Stars KingReel",
             "price": 240,
             "salePercentage": 20,
@@ -308,7 +308,7 @@
         },
         {
             "section": "new-arrivals",
-            "img": "./imgs/HundHoodie.jpg",
+            "img": "/imgs/HundHoodie.jpg",
             "title": "4 Hund Limited Edition",
             "price": 200,
             "salePercentage": 0,
@@ -330,7 +330,7 @@
         },
         {
             "section": "new-arrivals",
-            "img": "./imgs/MidNightT-Shirt.jpg",
+            "img": "/imgs/MidNightT-Shirt.jpg",
             "title": "MidNight Summer Edition",
             "price": 232,
             "salePercentage": 30,
@@ -352,7 +352,7 @@
         },
         {
             "section": "new-arrivals",
-            "img": "./imgs/CStar.jpg",
+            "img": "/imgs/CStar.jpg",
             "title": "C Star Faded Edition",
             "price": 219,
             "salePercentage": 18,
@@ -374,7 +374,7 @@
         },
         {
             "section": "top-selling",
-            "img": "./imgs/SSENSE.jpg",
+            "img": "/imgs/SSENSE.jpg",
             "title": "Dripped Winter Edition ",
             "price": 232,
             "salePercentage": 30,
@@ -396,7 +396,7 @@
         },
         {
             "section": "top-selling",
-            "img": "./imgs/4444.jpg",
+            "img": "/imgs/4444.jpg",
             "title": "4Forty 4Four",
             "price": 270,
             "salePercentage": 30,
@@ -418,7 +418,7 @@
         },
         {
             "section": "limited-edition",
-            "img": "./imgs/BlackIsBeauty.jpg",
+            "img": "/imgs/BlackIsBeauty.jpg",
             "title": "Black Is Beauty",
             "price": 280,
             "salePercentage": 8,
@@ -440,7 +440,7 @@
         },
         {
             "section": "limited-edition",
-            "img": "./imgs/BoyCrazy.jpg",
+            "img": "/imgs/BoyCrazy.jpg",
             "title": "Boy Crazy Limited Edition",
             "price": 382,
             "salePercentage": 0,
@@ -463,7 +463,7 @@
         },
         {
             "section": "top-selling",
-            "img": "./imgs/Hunter.jpg",
+            "img": "/imgs/Hunter.jpg",
             "title": "Cityscape Hunter",
             "price": 282,
             "salePercentage": 21,
@@ -485,7 +485,7 @@
         },
         {
             "section": "limited-edition",
-            "img": "./imgs/StrongFerrari.jpg",
+            "img": "/imgs/StrongFerrari.jpg",
             "title": "Strong Ferrari Man",
             "price": 332,
             "salePercentage": 0,
@@ -508,7 +508,7 @@
         },
         {
             "section": "limited-edition",
-            "img": "./imgs/Pleasures.jpg",
+            "img": "/imgs/Pleasures.jpg",
             "title": "Street Speaks Pleasures",
             "price": 300,
             "salePercentage": 0,
@@ -530,7 +530,7 @@
         },
         {
             "section": "top-selling",
-            "img": "./imgs/WheaterSupreme.jpg",
+            "img": "/imgs/WheaterSupreme.jpg",
             "title": "Wheaties Supreme",
             "price": 292,
             "salePercentage": 6,
@@ -553,7 +553,7 @@
         },
         {
             "section": "top-selling",
-            "img": "./imgs/ChangeTheWorld.jpg",
+            "img": "/imgs/ChangeTheWorld.jpg",
             "title": "Change The World",
             "price": 285,
             "salePercentage": 0,
@@ -575,7 +575,7 @@
         },
         {
             "section": "limited-edition",
-            "img": "./imgs/MargLeaves.jpg",
+            "img": "/imgs/MargLeaves.jpg",
             "title": "Leaves Black Edition",
             "price": 352,
             "salePercentage": 0,
@@ -598,7 +598,7 @@
         },
         {
             "section": "most-popular",
-            "img": "./imgs/PalaceLondon.jpg",
+            "img": "/imgs/PalaceLondon.jpg",
             "title": "Palace London Edition",
             "price": 228,
             "salePercentage": 0,
@@ -620,7 +620,7 @@
         },
         {
             "section": "most-popular",
-            "img": "./imgs/PalaceOld.jpg",
+            "img": "/imgs/PalaceOld.jpg",
             "title": "Palace Old School",
             "price": 422,
             "salePercentage": 0,
@@ -642,7 +642,7 @@
         },
         {
             "section": "most-popular",
-            "img": "./imgs/USA.jpg",
+            "img": "/imgs/USA.jpg",
             "title": "USA Edition",
             "price": 292,
             "salePercentage": 13,
@@ -664,7 +664,7 @@
         },
         {
             "section": "most-popular",
-            "img": "./imgs/SupremeNike2.jpg",
+            "img": "/imgs/SupremeNike2.jpg",
             "title": "Supreme & Nike Second Edition",
             "price": 511,
             "salePercentage": 0,
@@ -684,7 +684,7 @@
         },
         {
             "section": "most-popular",
-            "img": "./imgs/SupremeNike.jpg",
+            "img": "/imgs/SupremeNike.jpg",
             "title": "Supreme & Nike Edition",
             "price": 287,
             "salePercentage": 5,
@@ -707,7 +707,7 @@
         },
         {
             "section": "most-popular",
-            "img": "./imgs/SmileGang.jpg",
+            "img": "/imgs/SmileGang.jpg",
             "title": "Smiled Gang Edition",
             "price": 100,
             "salePercentage": 8,
@@ -730,7 +730,7 @@
         },
         {
             "section": "limited-edition",
-            "img": "./imgs/WHYAT.jpg",
+            "img": "/imgs/WHYAT.jpg",
             "title": "Basic WHYAT Edition",
             "price": 400,
             "salePercentage": 0,
@@ -752,7 +752,7 @@
         },
         {
             "section": "most-popular",
-            "img": "./imgs/WhiteJacket.jfif",
+            "img": "/imgs/WhiteJacket.jfif",
             "title": "AVI-REX Jacket",
             "price": 387,
             "salePercentage": 4,
@@ -774,7 +774,7 @@
         },
         {
             "section": "limited-edition",
-            "img": "./imgs/WHYAT.jpg",
+            "img": "/imgs/WHYAT.jpg",
             "title": "Basic WHYAT Edition",
             "price": 400,
             "salePercentage": 0,
@@ -796,7 +796,7 @@
         },
         {
             "section": "limited-edition",
-            "img": "./imgs/Summer2.jpg",
+            "img": "/imgs/Summer2.jpg",
             "title": "Rates Summer Edition",
             "price": 190,
             "salePercentage": 4,
@@ -818,7 +818,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Summer.jpg",
+            "img": "/imgs/Summer.jpg",
             "title": "Stop Lose Smile",
             "price": 210,
             "salePercentage": 0,
@@ -840,7 +840,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Summer3.jpg",
+            "img": "/imgs/Summer3.jpg",
             "title": "Human Made Edition",
             "price": 176,
             "salePercentage": 10,
@@ -862,7 +862,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Summer4.jpg",
+            "img": "/imgs/Summer4.jpg",
             "title": "Super UNION Edition",
             "price": 274,
             "salePercentage": 0,
@@ -884,7 +884,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Summer5.jpg",
+            "img": "/imgs/Summer5.jpg",
             "title": "Beach Shirt Colored",
             "price": 290,
             "salePercentage": 0,
@@ -906,7 +906,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Summer6.jpg",
+            "img": "/imgs/Summer6.jpg",
             "title": "Beach Shirt Syan",
             "price": 210,
             "salePercentage": 0,
@@ -928,7 +928,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Summer7.jpg",
+            "img": "/imgs/Summer7.jpg",
             "title": "Beach Shirt Pink",
             "price": 240,
             "salePercentage": 0,
@@ -950,7 +950,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Summer8.jpg",
+            "img": "/imgs/Summer8.jpg",
             "title": "C STAR Summer Edition",
             "price": 187,
             "salePercentage": 7,
@@ -972,7 +972,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Summer9.jpg",
+            "img": "/imgs/Summer9.jpg",
             "title": "Basic HANDED Edition",
             "price": 200,
             "salePercentage": 0,
@@ -994,7 +994,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/ShirtClassic.jpg",
+            "img": "/imgs/ShirtClassic.jpg",
             "title": "Classic Gang ",
             "price": 400,
             "salePercentage": 0,
@@ -1015,7 +1015,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/ShirtClassic2.jpg",
+            "img": "/imgs/ShirtClassic2.jpg",
             "title": "Dropped Classic Edition",
             "price": 392,
             "salePercentage": 3,
@@ -1037,7 +1037,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/StreetWear.jpg",
+            "img": "/imgs/StreetWear.jpg",
             "title": "31 Streetwear Edition",
             "price": 222,
             "salePercentage": 15,
@@ -1059,7 +1059,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/StreetWear2.jpg",
+            "img": "/imgs/StreetWear2.jpg",
             "title": "Black - White Stagger",
             "price": 492,
             "salePercentage": 0,
@@ -1080,7 +1080,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/StreetWear3.jpg",
+            "img": "/imgs/StreetWear3.jpg",
             "title": "Rules The World Edition",
             "price": 192,
             "salePercentage": 0,
@@ -1102,7 +1102,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/StreetWear4.jpg",
+            "img": "/imgs/StreetWear4.jpg",
             "title": "Mercedes Blured Edition",
             "price": 220,
             "salePercentage": 3,
@@ -1124,7 +1124,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/StreetWear5.jpg",
+            "img": "/imgs/StreetWear5.jpg",
             "title": "Basic Drama",
             "price": 92,
             "salePercentage": 11,
@@ -1146,7 +1146,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/StreetWear6.jpg",
+            "img": "/imgs/StreetWear6.jpg",
             "title": "Supreme Reded Stagger",
             "price": 492,
             "salePercentage": 0,
@@ -1168,7 +1168,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/StreetWear7.jpg",
+            "img": "/imgs/StreetWear7.jpg",
             "title": "Grow Gavie OverSized",
             "price": 112,
             "salePercentage": 1,
@@ -1190,7 +1190,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Fall.jpg",
+            "img": "/imgs/Fall.jpg",
             "title": "Clean Dripped Stagger",
             "price": 354,
             "salePercentage": 0,
@@ -1212,7 +1212,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Fall2.jpg",
+            "img": "/imgs/Fall2.jpg",
             "title": "White Line Stagger",
             "price": 398,
             "salePercentage": 0,
@@ -1234,7 +1234,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Fall3.jpg",
+            "img": "/imgs/Fall3.jpg",
             "title": "Metro Grave Hoodie",
             "price": 217,
             "salePercentage": 0,
@@ -1256,7 +1256,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Fall4.jpg",
+            "img": "/imgs/Fall4.jpg",
             "title": "Clean RED Line Stagger",
             "price": 400,
             "salePercentage": 0,
@@ -1278,7 +1278,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Fall5.jpg",
+            "img": "/imgs/Fall5.jpg",
             "title": "MotorBike Stagger",
             "price": 500,
             "salePercentage": 0,
@@ -1300,7 +1300,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Fall6.jpg",
+            "img": "/imgs/Fall6.jpg",
             "title": "SemiClassic T-Shirt",
             "price": 320,
             "salePercentage": 0,
@@ -1321,7 +1321,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Fall7.jpg",
+            "img": "/imgs/Fall7.jpg",
             "title": "Black Faded Edition ",
             "price": 400,
             "salePercentage": 0,
@@ -1343,7 +1343,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Fall8.jpg",
+            "img": "/imgs/Fall8.jpg",
             "title": "Black Faded Stagger",
             "price": 400,
             "salePercentage": 0,
@@ -1365,7 +1365,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Interpol.jpg",
+            "img": "/imgs/Interpol.jpg",
             "title": "Interpol Gang Edition",
             "price": 200,
             "salePercentage": 0,
@@ -1387,7 +1387,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Kappa.jpg",
+            "img": "/imgs/Kappa.jpg",
             "title": "Kappa Black Line Edition",
             "price": 389,
             "salePercentage": 0,
@@ -1409,7 +1409,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Puffer Jacket - Winter.jpg",
+            "img": "/imgs/Puffer Jacket - Winter.jpg",
             "title": "Puffer Jacked Faded Edition",
             "price": 400,
             "salePercentage": 0,
@@ -1431,7 +1431,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/ProEra.jpg",
+            "img": "/imgs/ProEra.jpg",
             "title": "Pro-Era",
             "price": 410,
             "salePercentage": 0,
@@ -1453,7 +1453,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/RaceJacket.jpg",
+            "img": "/imgs/RaceJacket.jpg",
             "title": "SemiClassic Red Line",
             "price": 230,
             "salePercentage": 11,
@@ -1475,7 +1475,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/RulesTheWorld-Summer.jpg",
+            "img": "/imgs/RulesTheWorld-Summer.jpg",
             "title": "Rule The World ",
             "price": 180,
             "salePercentage": 0,
@@ -1497,7 +1497,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/T-shirt - Fall.jpg",
+            "img": "/imgs/T-shirt - Fall.jpg",
             "title": "Mountains Faded Edition",
             "price": 130,
             "salePercentage": 3,
@@ -1519,7 +1519,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/T-shirt -Summer.jpg",
+            "img": "/imgs/T-shirt -Summer.jpg",
             "title": "Astronaut Edition",
             "price": 230,
             "salePercentage": 0,
@@ -1541,7 +1541,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Winter.jpg",
+            "img": "/imgs/Winter.jpg",
             "title": "Red Caped Jacket",
             "price": 330,
             "salePercentage": 0,
@@ -1563,7 +1563,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Winter2.jpg",
+            "img": "/imgs/Winter2.jpg",
             "title": "City Strike Edition",
             "price": 330,
             "salePercentage": 19,
@@ -1585,7 +1585,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Winter3.jpg",
+            "img": "/imgs/Winter3.jpg",
             "title": "SemiCasual C Star",
             "price": 330,
             "salePercentage": 0,
@@ -1607,7 +1607,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Winter4.jpg",
+            "img": "/imgs/Winter4.jpg",
             "title": "Red Handed Edition",
             "price": 400,
             "salePercentage": 0,
@@ -1629,7 +1629,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Winter5.jpg",
+            "img": "/imgs/Winter5.jpg",
             "title": "White - Black Faded",
             "price": 290,
             "salePercentage": 2,
@@ -1651,7 +1651,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/Winter6.jpg",
+            "img": "/imgs/Winter6.jpg",
             "title": "Classic Forest Jacket",
             "price": 330,
             "salePercentage": 0,
@@ -1673,7 +1673,7 @@
         },
         {
             "section": "",
-            "img": "./imgs/WinterCoatGrey.jpg",
+            "img": "/imgs/WinterCoatGrey.jpg",
             "title": "British Classic Coat",
             "price": 500,
             "salePercentage": 0,

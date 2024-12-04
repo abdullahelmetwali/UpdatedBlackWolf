@@ -1,10 +1,11 @@
+"server only";
 import { Product } from "@/interfaces/Types";
 
-const GetFilteredProducts: ({ type }: { type: string }) => Promise<{ data: Product[] }>
-    = async ({ type }: { type: string }) => {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}api/category/${type}/`, { method: 'GET' });
-        if (!res.ok) throw new Error('Failed to fetch')
-        const data: Product[] = await res.json();
-        return { data }
+const GetFilteredProducts: ({ sec }: { sec: string }) => Promise<{ products: Product[] }>
+    = async ({ sec }: { sec: string }) => {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}api/category/${sec}/`, { method: 'GET' });
+        if (!res.ok) throw new Error('Sorry , try again!')
+        const products: Product[] = await res.json();
+        return { products }
     }
 export default GetFilteredProducts;
