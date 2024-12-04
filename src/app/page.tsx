@@ -1,20 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Product } from "@/interfaces/Types";
+import { Product, RoomObj } from "@/interfaces/Types";
 import ProductBox from "@/components/ProductComponents/ProductBox";
 import TheLatest from "@/components/HomeComponents/TheLatest";
+import GetProducts from "@/hooks/GetProducts";
 
 export default async function Home() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER}api/`, {
-    method: 'GET',
-  })
-  const data = await response.json();
-  const products: Product[] = data?.products?.map((pro: Product, index: number) => ({ ...pro, id: index }))
-  if (!response.ok) {
-    throw new Error('Please , Make sure of your Network!')
-  };
+  const { products } = await GetProducts();
   const ulimate: Product[] = products.filter((pro: Product) => pro.section === 'ultimate-designs');
-  const showroomObj = [
+  const showroomObj: RoomObj[] = [
     {
       id: 0,
       img: '/imgs/AfricaShirt.jpg',

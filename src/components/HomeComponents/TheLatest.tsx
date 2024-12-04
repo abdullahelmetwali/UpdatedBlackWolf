@@ -30,7 +30,7 @@ const TheLatest: React.FC<{ products: Product[] }> = ({ products }) => {
                 {
                     filteredProducts.map((pro: Product) => (
                         <div key={pro.id} className="relative h-full">
-                            <ProductBox product={pro} easyAdd={true} key={pro.id} />
+                            <ProductBox product={pro} easyAdd={true} key={pro.id} boxClass={undefined} />
                         </div>
                     ))
                 }

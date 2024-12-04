@@ -14,7 +14,7 @@ const ProductBox: React.FC<{ product: Product, easyAdd: boolean, boxClass: strin
 
     return (
         <>
-            <div className={`${boxClass ? boxClass : 'w-[20rem] h-[40rem]'} relative`}>
+            <div className={`${boxClass ? boxClass : 'w-[22rem] h-[40rem]'} relative`}>
                 <ImgLoading
                     src={product.img}
                     width={1000}

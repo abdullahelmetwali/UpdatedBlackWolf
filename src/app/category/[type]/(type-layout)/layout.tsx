@@ -1,9 +1,8 @@
-"server only";
 import Link from "next/link";
 import { ReactNode } from "react";
 
-export default async function CategoryLayout({ children, params }: { children: ReactNode, params: { type: string } }) {
-    const { type } = await params;
+export default async function CategoryLayout({ children, params }: { children: ReactNode, params: Promise<{ type: string }> }) {
+    const resovledParam = await params;
     const sections = ['all products', 'winter edition', 'summer edition', 'fall edition', 'streetwear edition'];
     return (
         <>
@@ -14,7 +13,7 @@ export default async function CategoryLayout({ children, params }: { children: R
                             <Link
                                 href={`/category/${section === 'all products' ? 'all' : section.replace(' edition', '')}`}
                                 key={secIndx}
-                                className={`filteredTitle ${(type === section.replace(' edition', '')) || (type === section.replace(' products', '')) ? 'bg-[#3636366b] opacity-100' : 'opacity-60'}`}>
+                                className={`filteredTitle ${(resovledParam.type === section.replace(' edition', '')) || (resovledParam.type === section.replace(' products', '')) ? 'bg-[#3636366b] opacity-100' : 'opacity-60'}`}>
                                 {section}
                             </Link>
                         ))

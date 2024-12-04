@@ -5,7 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  font-family: Rubik,sans-serif;
+  font-family: Rubik, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -67,11 +67,11 @@ img {
     background-position: -200% 0;
   }
 }
-.scrollbox{
+.scrollbox {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
-  scroll-snap-type: x proximity ;
+  scroll-snap-type: x proximity;
 }
 .scrollbox::-webkit-scrollbar {
   display: none;
@@ -88,15 +88,15 @@ img {
   transition: all 200ms ease-out;
 }
 
-.filteredTitle{
+.filteredTitle {
   cursor: pointer;
   text-transform: uppercase;
   border-radius: 1.5rem;
   padding: 0.5rem 1rem;
   text-align: center;
   text-wrap: nowrap;
-white-space: nowrap;
+  white-space: nowrap;
 }
-.filteredTitle:hover{
+.filteredTitle:hover {
   opacity: 1;
 }

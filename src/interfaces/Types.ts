@@ -50,3 +50,10 @@ export interface ProductBoxCartProps {
     setEasyAddState: React.Dispatch<SetStateAction<EasyAddState>>,
     product: Product
 }
+
+export interface RoomObj {
+    id: number,
+    img: string,
+    title: string,
+    desc: string
+}
