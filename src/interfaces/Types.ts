@@ -58,3 +58,8 @@ export interface RoomObj {
     title: string,
     desc: string
 }
+
+export interface Review {
+    customerName: string,
+    customerComment: string
+}

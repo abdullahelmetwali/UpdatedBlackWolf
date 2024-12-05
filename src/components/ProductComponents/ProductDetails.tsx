@@ -9,7 +9,6 @@ import React from "react";
 const ProductDetails: React.FC<{ product: Product }> =
     React.memo(({ product }: { product: Product }) => {
         const { choosedItems, setChoosedItems, AddToCart } = useContext(CartState);
-
         return (
             <main className="min-h-screen">
                 <main className="grid grid-cols-2 tab:flex tab:flex-col p-5 gap-8" style={{ gridTemplateRows: 'repeat(1, 42rem)' }}>
@@ -101,9 +100,6 @@ const ProductDetails: React.FC<{ product: Product }> =
                         </div>
                     </div>
                 </main>
-                <div>
-                    HELLO WOLRD
-                </div>
             </main>
         )
     });

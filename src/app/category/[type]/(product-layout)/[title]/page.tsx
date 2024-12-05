@@ -1,5 +1,6 @@
 import ImgLoading from "@/components/CustomComponents/ImgLoading";
 import ProductDetails from "@/components/ProductComponents/ProductDetails";
+import ReviewFAQ from "@/components/ProductComponents/ReviewFAQ";
 import SameProducts from "@/components/ProductComponents/SameProducts";
 import GetFilteredProducts from "@/hooks/GetFilteredProducts";
 import { Product } from "@/interfaces/Types";
@@ -26,6 +27,7 @@ const ProductPage = async ({ params }: { params: Promise<{ type: string, title: 
     return (
         <>
             <ProductDetails product={product} />
+            <ReviewFAQ />
             <SameProducts products={products} />
         </>
     )
