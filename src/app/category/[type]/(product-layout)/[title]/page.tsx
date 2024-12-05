@@ -1,9 +1,11 @@
-// import GetProduct from "@/hooks/GetProduct";
-
 import ImgLoading from "@/components/CustomComponents/ImgLoading";
+import ProductDetails from "@/components/ProductComponents/ProductDetails";
+import SameProducts from "@/components/ProductComponents/SameProducts";
+import GetFilteredProducts from "@/hooks/GetFilteredProducts";
 import { Product } from "@/interfaces/Types";
 
-const GetProduct: ({ title, type }: { title: string, type: string }) => Promise<{ product: Product }> =
+const GetProduct: ({ title, type }: { title: string, type: string }) =>
+    Promise<{ product: Product }> =
     async ({ title, type }: { title: string, type: string }) => {
         try {
             const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER}api/category/${type}/${title}/`, { method: 'GET' });
@@ -18,25 +20,14 @@ const GetProduct: ({ title, type }: { title: string, type: string }) => Promise<
 const ProductPage = async ({ params }: { params: Promise<{ type: string, title: string }> }) => {
     const type = (await params).type;
     const title = (await params).title;
-    const { product } = await GetProduct({ title: title, type: type })
+    const { product } = await GetProduct({ title: title, type: type });
+    const { products } = await GetFilteredProducts({ sec: product.type ? product.type : 'all' });
+    if (!product.type && type === 'all') return products.slice(0, 11)
     return (
-        <main className="grid grid-cols-2 tab:flex tab:flex-col p-5 gap-8">
-            <div className="w-full h-3/4 relative">
-                <ImgLoading
-                    src={product.img}
-                    width={800}
-                    height={800}
-                    style={{ objectFit: 'cover', filter: 'brightness(.7) grayscale(1) contrast(.9)' }}
-                    alt={product.title}
-                    title={product.title}
-                />
-            </div>
-            <div>
-                <p className="text-2xl tracking-wider font-black uppercase">
-                    {product.title}
-                </p>
-            </div>
-        </main>
+        <>
+            <ProductDetails product={product} />
+            <SameProducts products={products} />
+        </>
     )
 }
 export default ProductPage;

@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
-import { Product, MessageState, EasyAddState } from "@/interfaces/Types";
+import { Product, ChoosedItemState, EasyAddState } from "@/interfaces/Types";
 import React, { useContext, useState } from "react";
 import { CartState } from "@/store/CartProvider";
 import ImgLoading from "../CustomComponents/ImgLoading";
 
 const ProductBox: React.FC<{ product: Product, easyAdd: boolean, boxClass: string | undefined }> = ({ product, easyAdd, boxClass }) => {
-    const { setMessage, AddToCart } = useContext(CartState)
+    const { setChoosedItems, AddToCart } = useContext(CartState)
     const [easyAddState, setEasyAddState] = useState<EasyAddState>({
         cartBox: true,
         nextContent: ''
@@ -29,7 +29,7 @@ const ProductBox: React.FC<{ product: Product, easyAdd: boolean, boxClass: strin
                         <button className={`absolute right-3 w-fit rounded-md p-2 bg-[#080808e8] cursor-pointer ${easyAddState.cartBox ? 'bottom-5 opacity-100 z-10' : 'bottom-6 opacity-0 z-0'} transition-all duration-100 ease-out`}
                             onClick={() => {
                                 setEasyAddState((prev: EasyAddState) => ({ ...prev, nextContent: 'sizes', cartBox: false }));
-                                setMessage((prev: MessageState) => ({
+                                setChoosedItems((prev: ChoosedItemState) => ({
                                     ...prev,
                                     title: product.title,
                                     price: product.price
@@ -58,7 +58,7 @@ const ProductBox: React.FC<{ product: Product, easyAdd: boolean, boxClass: strin
                                                 ...prev,
                                                 nextContent: 'colors',
                                             }));
-                                            setMessage((prev: MessageState) => ({
+                                            setChoosedItems((prev: ChoosedItemState) => ({
                                                 ...prev,
                                                 size: size
                                             }))
