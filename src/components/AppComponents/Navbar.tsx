@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
                     </ul>
                     <ul className="flex gap-5 items-center">
                         <li>
-                            <Link href={`/account`}>
+                            <Link href={`/account/login`}>
                                 <Image
                                     src={'/icons/user.svg'}
                                     alt="Account"

@@ -18,8 +18,5 @@ export const FetchToCache = () => {
             theNewMap?.get(currentProduct.type)?.push(currentProduct);
             return theNewMap;
         }, new Map<string | undefined, Product[]>());
-
-    // cachedDT = groupTypes;
-    // cachedProducts = parsedJson?.products;
     return { groupTypes, parsedJson }
 }

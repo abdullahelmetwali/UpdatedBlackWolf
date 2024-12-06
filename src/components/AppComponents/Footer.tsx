@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
                         Sign up to be upto new news
                     </p>
                     <form action="#">
-                        <input type="email" placeholder="youremail@example.com" className="bg-transparent border border-white/25 rounded-md p-3 w-full my-2 font-extralight" />
+                        <input type="email" placeholder="youremail@example.com" className="box" />
                     </form>
                 </div>
             </div>

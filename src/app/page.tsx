@@ -59,10 +59,10 @@ export default async function Home() {
             unoptimized
           />
         </div>
-        <div className="text-center absolute top-1/2 left-1/2">
+        <div className="text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <h2 className="text-base">ABOVE THE CLOUDS</h2>
           <h1 className="text-2xl my-3 tracking-wider">WEAR LIKE A BOSS</h1>
-          <Link href={`/category`} className="px-12 bg-white text-black py-1">
+          <Link href={`/category/all`} className="px-12 bg-white text-black py-1">
             <button>
               SHOP NOW
             </button>

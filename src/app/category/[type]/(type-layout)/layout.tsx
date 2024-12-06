@@ -13,7 +13,7 @@ export default async function CategoryLayout({ children, params }: { children: R
                             <Link
                                 href={`/category/${section === 'all products' ? 'all' : section.replace(' edition', '')}`}
                                 key={secIndx}
-                                className={`filteredTitle ${(type === section.replace(' edition', '')) || (type === section.replace(' products', '')) ? 'bg-[#3636366b] opacity-100' : 'opacity-60'}`}>
+                                className={`imp-btn ${(type === section.replace(' edition', '')) || (type === section.replace(' products', '')) ? 'bg-[#3636366b] opacity-100' : 'opacity-60'}`}>
                                 {section}
                             </Link>
                         ))

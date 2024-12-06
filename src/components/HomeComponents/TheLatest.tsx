@@ -18,7 +18,7 @@ const TheLatest: React.FC<{ products: Product[] }> = ({ products }) => {
                     latest.map((last: string, index: number) => (
                         <p
                             key={index}
-                            className={`tracking-wider w-full filteredTitle ${section === last.replace(' ', '-').toLowerCase() ? 'bg-[#3636366b] opacity-100' : 'opacity-60'}`}
+                            className={`tracking-wider w-full imp-btn cursor-pointer ${section === last.replace(' ', '-').toLowerCase() ? 'bg-[#3636366b] opacity-100' : 'opacity-60'}`}
                             onClick={() => setSection(last.replace(' ', '-').toLowerCase())}
                         >
                             {last}
