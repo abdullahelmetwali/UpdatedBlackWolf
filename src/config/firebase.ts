@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAXSwjNbvErgI4xmAuzjHwmE1JysZ_yppY",
-    authDomain: "black-wolf-ecommerce.firebaseapp.com",
+    apiKey: process.env.NEXT_PUBLIC_API_KEY,
+    authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
     projectId: "black-wolf-ecommerce",
-    storageBucket: "black-wolf-ecommerce.firebasestorage.app",
-    messagingSenderId: "853969376673",
-    appId: "1:853969376673:web:ac4c961161d0e47e3927e0",
-    measurementId: "G-W7JX9N3X0J"
+    storageBucket: process.env.NEXT_PUBLIC_BUCKET,
+    messagingSenderId: process.env.NEXT_PUBLIC_SENDER_ID,
+    appId: process.env.NEXT_PUBLIC_APP_ID,
+    measurementId: process.env.NEXT_PUBLIC_MEASURE_ID
 };
 
 const app = initializeApp(firebaseConfig);

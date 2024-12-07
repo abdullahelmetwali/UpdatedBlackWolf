@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
                             </Link>
                         </li>
                     </ul>
-                    <ul className="flex gap-5 items-center">
+                    <ul className="flex gap-5 items-start">
                         <li>
                             <Link href={`/account/login`}>
                                 <Image

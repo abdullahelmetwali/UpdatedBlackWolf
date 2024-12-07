@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Product, RoomObj } from "@/interfaces/Types";
 import ProductBox from "@/components/ProductComponents/ProductBox";
 import TheLatest from "@/components/HomeComponents/TheLatest";
-import GetProducts from "@/hooks/GetProducts";
+import GetProducts from "@/hooks/ProductsHooks/GetProducts";
 
 export default async function Home() {
   const { products } = await GetProducts();

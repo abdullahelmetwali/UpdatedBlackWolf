@@ -3,3 +3,4 @@ const UsrPG = () => {
         <p>user page</p>
     )
 }
+export default UsrPG;

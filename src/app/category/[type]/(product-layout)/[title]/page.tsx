@@ -2,7 +2,7 @@ import ImgLoading from "@/components/CustomComponents/ImgLoading";
 import ProductDetails from "@/components/ProductComponents/ProductDetails";
 import ReviewFAQ from "@/components/ProductComponents/ReviewFAQ";
 import SameProducts from "@/components/ProductComponents/SameProducts";
-import GetFilteredProducts from "@/hooks/GetFilteredProducts";
+import GetFilteredProducts from "@/hooks/ProductsHooks/GetFilteredProducts";
 import { Product } from "@/interfaces/Types";
 
 const GetProduct: ({ title, type }: { title: string, type: string }) =>
