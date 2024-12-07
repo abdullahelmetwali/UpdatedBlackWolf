@@ -1,9 +1,8 @@
+import { Metadata } from "next";
 import Link from "next/link";
 
-export const generateMetadata = () => {
-    return {
-        title: 'LOGIN'
-    }
+export const metadata: Metadata = {
+    title: 'LOGIN',
 };
 const Login = () => {
     return (
