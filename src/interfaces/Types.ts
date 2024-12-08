@@ -44,7 +44,12 @@ export interface CartContextTypes {
     choosedItems: ChoosedItemState,
     setChoosedItems: React.Dispatch<SetStateAction<ChoosedItemState>>,
     AddToCart: (product: Product, color: string) => void,
-    cart: Product[]
+    cart: Product[],
+    AddQuantity: (product: Product) => void,
+    RemoveQuantity: (product: Product) => void,
+    DeleteProduct: (product: Product) => void,
+    seeCart: boolean,
+    setSeeCart: React.Dispatch<SetStateAction<boolean>>
 }
 
 export interface ProductBoxCartProps {
@@ -63,4 +68,11 @@ export interface RoomObj {
 export interface Review {
     customerName: string,
     customerComment: string
+}
+
+export interface CartMsgsType {
+    notifications: string[] | string,
+    show: boolean,
+    setChoosedItems: React.Dispatch<SetStateAction<ChoosedItemState>>,
+    setSeeCart: React.Dispatch<SetStateAction<boolean>>
 }

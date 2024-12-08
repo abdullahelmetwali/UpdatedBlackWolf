@@ -8,7 +8,7 @@ import React from "react";
 
 const ProductDetails: React.FC<{ product: Product }> =
     React.memo(({ product }: { product: Product }) => {
-        const { choosedItems, setChoosedItems, AddToCart } = useContext(CartState);
+        const { choosedItems, setChoosedItems, AddToCart, AddQuantity } = useContext(CartState);
         return (
             <main className="min-h-screen">
                 <main className="grid grid-cols-2 tab:flex tab:flex-col p-5 gap-8" style={{ gridTemplateRows: 'repeat(1, 42rem)' }}>
@@ -64,10 +64,12 @@ const ProductDetails: React.FC<{ product: Product }> =
                         <div className="my-10 flex items-center justify-between">
                             <div className="flex items-center gap-5 text-2xl w-2/5">
                                 <button
+                                    disabled={choosedItems.quantity === 1}
                                     onClick={() => setChoosedItems((prev: ChoosedItemState) => ({
                                         ...prev,
-                                        quantity: (prev.quantity === 1 ? 1 : prev.quantity - 1)
+                                        quantity: prev.quantity - 1
                                     }))}
+                                    className={`${choosedItems.quantity === 1 ? 'cursor-not-allowed' : 'cursor-pointer'}`}
                                 >
                                     <Image
                                         src={`/icons/minus.svg`}
@@ -100,7 +102,7 @@ const ProductDetails: React.FC<{ product: Product }> =
                         </div>
                     </div>
                 </main>
-            </main>
+            </main >
         )
     });
 

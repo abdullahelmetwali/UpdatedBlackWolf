@@ -22,7 +22,6 @@ const Login = () => {
             if (res.user) {
                 const userName = res?.user?.displayName?.replaceAll(' ', '-').toLowerCase();
                 cookies.set('u', JSON.stringify(userName));
-                localStorage.setItem('u', JSON.stringify(res.user));
                 router.push(`/account/u/${userName}`);
             }
         } catch (err) {
@@ -57,7 +56,7 @@ const Login = () => {
                 />
                 <div className="flex justify-between items-center gap-4">
                     <button type="submit" className="box text-muted hover:text-white">
-                        {loading ? 'Signing in ...' : 'Sign in'}
+                        {loading ? 'Please wait...' : 'Sign in'}
                     </button>
                     <Link href={`/account/register`} className="box text-center text-muted hover:text-white">
                         Create Account

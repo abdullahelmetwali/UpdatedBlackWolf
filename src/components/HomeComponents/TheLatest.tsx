@@ -9,7 +9,8 @@ const TheLatest: React.FC<{ products: Product[] }> = ({ products }) => {
 
     const filteredProducts = useMemo(() => {
         return products.filter((product: Product) => product.section === section)
-    }, [products, section])
+    }, [products, section]);
+
     return (
         <main className="my-8">
             <p className="text-2xl tracking-widest text-center my-6">THE LATEST</p>

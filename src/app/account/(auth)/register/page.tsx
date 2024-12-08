@@ -26,7 +26,6 @@ const Register = () => {
                     displayName: `${frName} ${scName}`
                 })
                 cookies.set('u', JSON.stringify(`${frName.toLowerCase()}-${scName.toLowerCase()}`));
-                localStorage.setItem('u', JSON.stringify({ ...res.user, cart: [] }));
                 router.push(`/account/u/${frName.toLowerCase()}-${scName.toLowerCase()}`)
             }
         } catch (err) {

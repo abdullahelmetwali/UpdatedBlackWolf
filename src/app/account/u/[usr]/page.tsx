@@ -3,19 +3,15 @@ import { auth } from "@/config/firebase";
 import { signOut } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import cookies from "js-cookie";
-import { useState } from "react";
-import { Product } from "@/interfaces/Types";
+import Cart from "@/components/AppComponents/Cart";
 
 const UsrPG: React.FC = () => {
-    const [usrCart, setUsrCart] = useState<Product[]>([]);
-    const usrData = localStorage?.getItem('u') || null;
-    const name = usrData ? JSON.parse(usrData)?.displayName : 'Guest';
+    const currUsr = auth.currentUser;
     const router = useRouter();
     const logOut: () => Promise<void> =
         async () => {
             try {
                 await signOut(auth);
-                localStorage.removeItem('u');
                 cookies.remove('u');
                 router.push('/account/login');
             } catch (err) {
@@ -23,21 +19,17 @@ const UsrPG: React.FC = () => {
             }
         }
     return (
-        <section>
-            <p className="text-2xl tracking-wide font-semibold">Welcome back, {name} 👋</p>
+        <main>
+            <div className="flex items-center justify-between p-3 mb-7">
+                <p className="text-2xl tracking-wide font-semibold">Welcome back, {currUsr?.displayName} 👋</p>
+                <button className="py-1 px-5 rounded-xl bg-[#872341]" onClick={logOut} style={{ width: 'fit-content' }}>
+                    Logout
+                </button>
+            </div>
             <section>
-                {
-                    usrCart.map((pro: Product, index: number) => (
-                        <div key={index}>
-                            <p>{pro.title}</p>
-                        </div>
-                    ))
-                }
+                <Cart isUsr />
             </section>
-            <button className="py-1 px-5 rounded-xl bg-[#872341]" onClick={logOut} style={{ width: 'fit-content' }}>
-                Logout
-            </button>
-        </section>
+        </main>
     )
 }
 export default UsrPG;
