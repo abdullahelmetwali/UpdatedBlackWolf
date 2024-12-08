@@ -4,6 +4,7 @@ import { auth } from "@/config/firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import cookies from "js-cookie";
 
 const Register = () => {
     const [frName, setFrName] = useState<string>('');
@@ -24,6 +25,7 @@ const Register = () => {
                 await updateProfile(res.user, {
                     displayName: `${frName} ${scName}`
                 })
+                cookies.set('u', JSON.stringify(`${frName.toLowerCase()}-${scName.toLowerCase()}`));
                 localStorage.setItem('u', JSON.stringify({ ...res.user, cart: [] }));
                 router.push(`/account/u/${frName.toLowerCase()}-${scName.toLowerCase()}`)
             }

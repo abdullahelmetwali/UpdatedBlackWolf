@@ -1,7 +1,8 @@
 "use client";
+import Link from "next/link";
+import cookies from "js-cookie";
 import { auth } from "@/config/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -19,7 +20,10 @@ const Login = () => {
         try {
             const res = await signInWithEmailAndPassword(auth, email, pass);
             if (res.user) {
-                router.push(`/account/u/${res?.user?.displayName?.replaceAll(' ', '-').toLowerCase()}`)
+                const userName = res?.user?.displayName?.replaceAll(' ', '-').toLowerCase();
+                cookies.set('u', JSON.stringify(userName));
+                localStorage.setItem('u', JSON.stringify(res.user));
+                router.push(`/account/u/${userName}`);
             }
         } catch (err) {
             setError(err instanceof Error ? err.message.replaceAll('Firebase: Error ', '') : 'Unknown error');

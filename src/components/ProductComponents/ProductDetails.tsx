@@ -92,8 +92,8 @@ const ProductDetails: React.FC<{ product: Product }> =
                                     />
                                 </button>
                             </div>
-                            <button className={`border border-white/60 py-3 font-semibold w-full ${(choosedItems.color === '' && choosedItems.size === '' ? 'cursor-not-allowed opacity-50' : 'cursor-pointer opacity-100')}`}
-
+                            <button className={`border border-white/60 py-3 font-semibold w-full ${(choosedItems.color && choosedItems.size) === '' ? 'cursor-not-allowed opacity-50' : 'cursor-pointer opacity-100'}`}
+                                disabled={(choosedItems.color && choosedItems.size) === '' ? true : false}
                                 onClick={() => AddToCart(product, choosedItems.color)}>
                                 ADD TO CART
                             </button>

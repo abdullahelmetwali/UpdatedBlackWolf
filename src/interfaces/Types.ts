@@ -43,7 +43,8 @@ export interface ChoosedItemState {
 export interface CartContextTypes {
     choosedItems: ChoosedItemState,
     setChoosedItems: React.Dispatch<SetStateAction<ChoosedItemState>>,
-    AddToCart: (product: Product, color: string) => void;
+    AddToCart: (product: Product, color: string) => void,
+    cart: Product[]
 }
 
 export interface ProductBoxCartProps {
