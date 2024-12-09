@@ -6,11 +6,11 @@ const GetProducts: () => Promise<{ products: Product[] }>
                 method: 'GET',
                 headers: { accept: 'application/json' }
             })
-        const data = await response.json();
-        const products: Product[] = data?.products?.map((pro: Product, index: number) => ({ ...pro, id: index }))
         if (!response.ok) {
             throw new Error('Please , Make sure of your Network!')
         };
+        const data = await response.json();
+        const products: Product[] = data?.products?.map((pro: Product, index: number) => ({ ...pro, id: index }))
         return { products }
     };
 export default GetProducts;
