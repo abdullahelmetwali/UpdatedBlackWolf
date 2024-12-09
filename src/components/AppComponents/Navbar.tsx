@@ -6,6 +6,7 @@ import Image from "next/image";
 import Cart from "../CartComponents/Cart";
 import { CartState } from "@/store/CartProvider";
 import cookies from "js-cookie";
+import Search from "./Search";
 
 const Navbar: React.FC = () => {
     const [menu, setMenu] = useState<boolean>(false);
@@ -55,7 +56,7 @@ const Navbar: React.FC = () => {
                             </Link>
                         </li>
                         <li>
-                            <button>
+                            <button onClick={() => setSearchMenu((prev: boolean) => !prev)}>
                                 <Image
                                     src={'/icons/search.svg'}
                                     alt="Search"
@@ -74,16 +75,18 @@ const Navbar: React.FC = () => {
                                     width={24}
                                     height={24}
                                 />
-                                {/* ({cart.length}) */}
                             </button>
                         </li>
                     </ul>
                 </nav>
             </header>
-            <main className={`fixed top-0 w-5/12 tab:w-10/12 z-30 bg-black ${seeCart ? 'right-0 opacity-100' : '-right-full opacity-0'} transition-all duration-150 ease-in-out h-full overflow-y-scroll`}>
+            <main className={`fixed top-0 w-5/12 tab:w-10/12 bg-black ${seeCart ? 'right-0 opacity-100 z-30' : '-right-full opacity-0 z-0'} transition-all duration-150 ease-in-out h-full overflow-y-scroll`}>
                 <Cart isUsr={false} />
             </main>
             {seeCart && <div className="fixed w-full min-h-screen top-0 bg-[#000] opacity-80 z-20 transition-all duration-300 ease-in-out" onClick={() => setSeeCart((prev: boolean) => !prev)}></div>}
+            <main className={`fixed w-full bg-black ${searchMenu ? 'top-0 opacity-100 z-30' : '-top-full opacity-0 z-0'} transition-all duration-150 ease-in-out p-4`}>
+                <Search setSearchMenu={setSearchMenu} searchMenu={searchMenu} />
+            </main>
         </>
     )
 }

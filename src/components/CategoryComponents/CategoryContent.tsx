@@ -21,7 +21,12 @@ const CategoryContent: React.FC<{ products: Product[], type: string }> =
                     {
                         displayedProducts?.map((pro: Product, index: number) => (
                             <Link href={`/category/${type}/${pro.title.replaceAll(' ', '-').toLowerCase()}`} key={index} className="relative h-[35rem] tab:h-[27rem]">
-                                <ProductBox product={pro} easyAdd={false} boxClass="w-full h-[35rem] tab:h-[23rem]" />
+                                <ProductBox product={pro} easyAdd={false} boxClass="w-full h-[35rem] tab:h-[23rem]">
+                                    <div className="text-center my-1">
+                                        <p>{pro.title}</p>
+                                        <p>{pro.price}$</p>
+                                    </div>
+                                </ProductBox>
                             </Link>
                         ))
                     }

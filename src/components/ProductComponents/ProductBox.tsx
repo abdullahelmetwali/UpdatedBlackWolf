@@ -6,7 +6,7 @@ import { CartState } from "@/store/CartProvider";
 import ImgLoading from "../CustomComponents/ImgLoading";
 import Link from "next/link";
 
-const ProductBox: React.FC<{ product: Product, easyAdd: boolean, boxClass: string | undefined }> = ({ product, easyAdd, boxClass }) => {
+const ProductBox: React.FC<{ product: Product, easyAdd: boolean, boxClass: string | undefined, children: React.ReactNode | undefined }> = ({ product, easyAdd, boxClass, children }) => {
     const { setChoosedItems, AddToCart } = useContext(CartState)
     const [easyAddState, setEasyAddState] = useState<EasyAddState>({
         cartBox: true,
@@ -94,18 +94,7 @@ const ProductBox: React.FC<{ product: Product, easyAdd: boolean, boxClass: strin
                     </>
                 }
             </div>
-            {
-                easyAdd ?
-                    <Link href={`/category/${product.type ? product.type : 'all'}/${product.title.replaceAll(' ', '-').toLowerCase()}`} className="text-center my-1">
-                        <p>{product.title}</p>
-                        <p>{product.price}$</p>
-                    </Link>
-                    :
-                    <div className="text-center my-1">
-                        <p>{product.title}</p>
-                        <p>{product.price}$</p>
-                    </div>
-            }
+            {children}
         </>
     )
 }

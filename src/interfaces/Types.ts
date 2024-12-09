@@ -52,11 +52,6 @@ export interface CartContextTypes {
     setSeeCart: React.Dispatch<SetStateAction<boolean>>
 }
 
-export interface ProductBoxCartProps {
-    easyAddState: EasyAddState,
-    setEasyAddState: React.Dispatch<SetStateAction<EasyAddState>>,
-    product: Product
-}
 
 export interface RoomObj {
     id: number,

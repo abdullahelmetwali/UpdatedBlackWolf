@@ -2,6 +2,7 @@
 import { Product } from "@/interfaces/Types";
 import React, { useMemo, useState } from "react";
 import ProductBox from "../ProductComponents/ProductBox";
+import Link from "next/link";
 
 const TheLatest: React.FC<{ products: Product[] }> = ({ products }) => {
     const latest: string[] = ['NEW ARRIVALS', 'TOP SELLING', 'LIMITED EDITION', 'MOST POPULAR'];
@@ -31,7 +32,12 @@ const TheLatest: React.FC<{ products: Product[] }> = ({ products }) => {
                 {
                     filteredProducts.map((pro: Product) => (
                         <div key={pro.id} className="relative h-full">
-                            <ProductBox product={pro} easyAdd={true} key={pro.id} boxClass={undefined} />
+                            <ProductBox product={pro} easyAdd={true} key={pro.id} boxClass={undefined} >
+                                <Link href={`/category/${pro.type ? pro.type : 'all'}/${pro.title.replaceAll(' ', '-').toLowerCase()}`} className="text-center my-1">
+                                    <p>{pro.title}</p>
+                                    <p>{pro.price}$</p>
+                                </Link>
+                            </ProductBox>
                         </div>
                     ))
                 }

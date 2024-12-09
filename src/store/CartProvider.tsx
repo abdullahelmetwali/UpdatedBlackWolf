@@ -137,10 +137,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
     return (
         <CartState.Provider value={{ choosedItems, cart, seeCart, setSeeCart, setChoosedItems, AddToCart, AddQuantity, DeleteProduct, RemoveQuantity }}>
-            {
-                choosedItems.show &&
-                <CartMessages notifications={addedToCartMsg === '' ? [choosedItems.title, choosedItems.price.toString(), choosedItems.color, choosedItems.size] : [addedToCartMsg]} setChoosedItems={setChoosedItems} show={choosedItems.show} setSeeCart={setSeeCart} />
-            }
+            <CartMessages notifications={addedToCartMsg === '' ? [choosedItems.title, choosedItems.price.toString(), choosedItems.color, choosedItems.size] : [addedToCartMsg]} setChoosedItems={setChoosedItems} show={choosedItems.show} setSeeCart={setSeeCart} />
             {children}
         </CartState.Provider>
     )

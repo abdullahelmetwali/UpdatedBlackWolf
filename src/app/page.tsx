@@ -91,7 +91,12 @@ export default async function Home() {
             {
               ulimate.map((pro: Product) => (
                 <div key={pro.id} className="relative h-full">
-                  <ProductBox product={pro} easyAdd={true} key={pro.id} boxClass={undefined} />
+                  <ProductBox product={pro} easyAdd={true} key={pro.id} boxClass={undefined} >
+                    <Link href={`/category/${pro.type ? pro.type : 'all'}/${pro.title.replaceAll(' ', '-').toLowerCase()}`} className="text-center my-1">
+                      <p>{pro.title}</p>
+                      <p>{pro.price}$</p>
+                    </Link>
+                  </ProductBox>
                 </div>
               ))
             }
