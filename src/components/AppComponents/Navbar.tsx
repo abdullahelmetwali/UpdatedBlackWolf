@@ -1,14 +1,23 @@
 "use client";
 
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Cart from "./Cart";
-import cookies from "js-cookie";
+import Cart from "../CartComponents/Cart";
 import { CartState } from "@/store/CartProvider";
+import cookies from "js-cookie";
+
 const Navbar: React.FC = () => {
     const [menu, setMenu] = useState<boolean>(false);
-    const { cart, seeCart, setSeeCart } = useContext(CartState);
+    const { seeCart, setSeeCart } = useContext(CartState);
+    const [seeUsr, setSeeUsr] = useState('/account/login');
+    const [searchMenu, setSearchMenu] = useState<boolean>(false);
+
+    useEffect(() => {
+        const clientUser = cookies.get('u');
+        setSeeUsr(clientUser ? `/account/u/${clientUser.replaceAll('"', '')}` : '/account/login');
+    }, []);
+
     return (
         <>
             <header className="p-3 px-5 bg-transparent absolute top-0 z-20 w-full">
@@ -35,7 +44,7 @@ const Navbar: React.FC = () => {
                     </ul>
                     <ul className="flex gap-5 items-start">
                         <li>
-                            <Link href={`${cookies.get('u') ? `/account/u/${cookies.get('u')?.replaceAll('"', '')}` : '/account/login'}`}>
+                            <Link href={seeUsr}>
                                 <Image
                                     src={'/icons/user.svg'}
                                     alt="Account"

@@ -2,12 +2,15 @@
 import { Product } from "@/interfaces/Types";
 import ImgLoading from "../CustomComponents/ImgLoading";
 import Image from "next/image";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartState } from "@/store/CartProvider";
 
 const ProductCartBox = ({ product }: { product: Product }) => {
     const { AddQuantity, RemoveQuantity, DeleteProduct } = useContext(CartState);
     const [quantity, setQuantity] = useState<number>(product.quantity);
+    useEffect(() => {
+        setQuantity(product.quantity)
+    }, [product.quantity]);
     return (
         <>
             <div className="flex gap-5 justify-start">
