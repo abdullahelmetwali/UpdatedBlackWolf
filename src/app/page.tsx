@@ -33,7 +33,13 @@ export default async function Home() {
       title: 'UPTOWN REAL FUNK',
       desc: "Arm yourself with the savvy sophistication of urban style as you navigate the labyrinthine maze of fashions concrete jungle."
     },
-  ]
+  ];
+
+  if (!products) {
+    return {
+      notFound: true
+    }
+  };
   return (
     <>
       <main className="grid grid-cols-2 relative tab:grid-cols-1">
