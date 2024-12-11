@@ -9,7 +9,6 @@ import cookies from "js-cookie";
 import Search from "./Search";
 
 const Navbar: React.FC = () => {
-    const [menu, setMenu] = useState<boolean>(false);
     const { seeCart, setSeeCart } = useContext(CartState);
     const [seeUsr, setSeeUsr] = useState('/account/login');
     const [searchMenu, setSearchMenu] = useState<boolean>(false);
@@ -23,10 +22,10 @@ const Navbar: React.FC = () => {
         <>
             <header className="p-3 px-5 bg-transparent absolute top-0 z-20 w-full">
                 <nav className="flex items-center justify-between">
-                    <button onClick={() => setMenu((prev: boolean) => !prev)} className="hidden tab:bloc">
-                        <div className={`bars ${menu ? 'before:rotate-45 before:translate-y-3 after:-rotate-45' : ''} `}></div>
-                    </button>
-                    <ul className="flex gap-10 items-center">
+                    <Link href={`/`} className="text-xl font-semibold hidden tab:block">
+                        <span className="text-muted text-2xl">B</span>LACK <span className="text-muted text-2xl">W</span>OLF
+                    </Link>
+                    <ul className="gap-10 items-center flex tab:hidden">
                         <li>
                             <Link href={`/`}>
                                 HOME
@@ -43,7 +42,7 @@ const Navbar: React.FC = () => {
                             </Link>
                         </li>
                     </ul>
-                    <ul className="flex gap-5 items-start">
+                    <ul className="flex gap-5 items-start tab:gap-3">
                         <li>
                             <Link href={seeUsr}>
                                 <Image
@@ -52,6 +51,7 @@ const Navbar: React.FC = () => {
                                     title="Account"
                                     width={24}
                                     height={24}
+                                    className="tab:w-8"
                                 />
                             </Link>
                         </li>
@@ -63,6 +63,7 @@ const Navbar: React.FC = () => {
                                     title="Search..."
                                     width={24}
                                     height={24}
+                                    className="tab:w-8"
                                 />
                             </button>
                         </li>
@@ -74,6 +75,7 @@ const Navbar: React.FC = () => {
                                     title="Cart"
                                     width={24}
                                     height={24}
+                                    className="tab:w-8"
                                 />
                             </button>
                         </li>
