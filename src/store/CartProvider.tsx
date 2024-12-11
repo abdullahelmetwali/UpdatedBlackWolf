@@ -132,7 +132,6 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         setTimeout(() => {
             setChoosedItems((prev) => ({ ...prev, show: false }));
         }, 3000);
-        console.log(cart)
     };
 
     return (
