@@ -1,5 +1,5 @@
 "use client";
-import React, { createContext, ReactNode, useEffect, useState } from "react";
+import React, { createContext, ReactNode, useCallback, useEffect, useMemo, useState } from "react";
 import { CartContextTypes, ChoosedItemState, Product } from '@/interfaces/Types';
 import CartMessages from "@/components/CustomComponents/CartMessages";
 
@@ -36,30 +36,30 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const [cart, setCart] = useState<Product[]>([]);
     const [seeCart, setSeeCart] = useState<boolean>(false);
 
-    const DeleteProduct = (product: Product) => {
-        const newCart = cart.filter(
-            (pro: Product) =>
-                !(
-                    pro.selectedColor === product.selectedColor &&
-                    pro.selectedSize === product.selectedSize &&
-                    pro.quantity === product.quantity &&
-                    pro.title === product.title
-                )
-        );
-        setCart(newCart);
-        localStorage.setItem('cart', JSON.stringify(newCart));
-    };
+    const DeleteProduct = useCallback((product: Product) => {
+        setCart((prevCart) => {
+            const newCart = prevCart.filter((pro) => !(
+                pro.selectedColor === product.selectedColor &&
+                pro.selectedSize === product.selectedSize &&
+                pro.quantity === product.quantity &&
+                pro.title === product.title
+            ));
+            localStorage.setItem('cart', JSON.stringify(newCart));
+            return newCart;
+        });
+    }, [])
 
-    const AddQuantity = (product: Product) => {
-        const productIndex = cart.indexOf(product);
-        if (productIndex !== -1) {
-            product.quantity++;
-            cart[productIndex] = product;
-            localStorage.setItem('cart', JSON.stringify(cart));
-        }
-    };
+    const AddQuantity = useCallback((product: Product) => {
+        setCart((prevCart) => {
+            const updatedCart = prevCart.map((pro) =>
+                pro === product ? { ...pro, quantity: pro.quantity + 1 } : pro
+            );
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+            return updatedCart;
+        });
+    }, []);
 
-    const RemoveQuantity = (product: Product) => {
+    const RemoveQuantity = useCallback((product: Product) => {
         const productIndex = cart.indexOf(product);
         if (productIndex !== -1) {
             if (product.quantity !== 1) {
@@ -70,7 +70,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
                 DeleteProduct(product)
             }
         }
-    };
+    }, [DeleteProduct, cart]);
 
     useEffect(() => {
         const seeLocalCart = () => {

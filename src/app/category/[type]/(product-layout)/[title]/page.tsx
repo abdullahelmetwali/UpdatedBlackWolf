@@ -1,7 +1,7 @@
 import ProductDetails from "@/components/ProductComponents/ProductDetails";
 import ReviewFAQ from "@/components/ProductComponents/ReviewFAQ";
 import SameProducts from "@/components/ProductComponents/SameProducts";
-import GetFilteredProducts from "@/hooks/ProductsHooks/GetFilteredProducts";
+import GetFilteredProducts from "@/hooks/GetFilteredProducts";
 import { Product } from "@/interfaces/Types";
 
 const GetProduct: ({ title, type }: { title: string, type: string }) =>
@@ -18,7 +18,7 @@ const GetProduct: ({ title, type }: { title: string, type: string }) =>
         }
     }
 
-const ProductPage = async ({ params }: { params: Promise<{ type: string, title: string }> }) => {
+export default async function ProductPage({ params }: { params: Promise<{ type: string, title: string }> }) {
     const type = (await params).type;
     const title = (await params).title;
     const { product } = await GetProduct({ title: title, type: type });
@@ -32,4 +32,3 @@ const ProductPage = async ({ params }: { params: Promise<{ type: string, title: 
         </>
     )
 }
-export default ProductPage;

@@ -3,7 +3,10 @@ import Link from "next/link";
 import { Product, RoomObj } from "@/interfaces/Types";
 import ProductBox from "@/components/ProductComponents/ProductBox";
 import TheLatest from "@/components/HomeComponents/TheLatest";
-import GetProducts from "@/hooks/ProductsHooks/GetProducts";
+import GetProducts from "@/hooks/GetProducts";
+import PosterOne from '../../public/imgs/PosterOne.jpg';
+import PosterTwo from '../../public/imgs/rectangleTwo.jpg';
+import OurShowRoom from '../../public/imgs/ourshowroom4.jpg';
 
 export default async function Home() {
   const { products } = await GetProducts();
@@ -45,7 +48,7 @@ export default async function Home() {
       <main className="grid grid-cols-2 relative tab:grid-cols-1">
         <div>
           <Image
-            src={`/imgs/PosterOne.jpg`}
+            src={PosterOne}
             width={800}
             height={800}
             alt="Poster"
@@ -56,7 +59,7 @@ export default async function Home() {
         </div>
         <div>
           <Image
-            src={`/imgs/rectangleTwo.jpg`}
+            src={PosterTwo}
             width={800}
             height={800}
             alt="Poster"
@@ -111,7 +114,7 @@ export default async function Home() {
         <section>
           <video
             autoPlay
-            style={{ filter: 'brightness(.7) grayscale(1) contrast(.9)' }}
+            className="imgFilter"
             poster="/vids/poster.png">
             <source src="/vids/PosterVideo.mp4" />
           </video>
@@ -129,7 +132,7 @@ export default async function Home() {
         </div>
         <div>
           <Image
-            src={`/imgs/ourshowroom4.jpg`}
+            src={OurShowRoom}
             width={650}
             height={650}
             alt="Our Showroom"
@@ -137,7 +140,7 @@ export default async function Home() {
           />
         </div>
       </section>
-      <section className="scrollbox py-8 px-3 gap-3 justify-center">
+      <section className="scrollbox py-8 px-3 gap-3 justify-center tab:justify-start">
         {
           showroomObj.map(box => (
             <div key={box.id}>
@@ -148,10 +151,7 @@ export default async function Home() {
                   width={360}
                   height={600}
                   title={box.title}
-                  className="w-full h-full object-cover"
-                  style={{
-                    filter: 'brightness(.7) grayscale(1) contrast(.9)',
-                  }}
+                  className="w-full h-full object-cover imgFilter"
                 />
               </div>
               <div className="text-center">

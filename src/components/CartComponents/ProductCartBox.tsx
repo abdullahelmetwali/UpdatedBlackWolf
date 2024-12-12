@@ -1,28 +1,34 @@
 "use client";
 import { Product } from "@/interfaces/Types";
-import ImgLoading from "../CustomComponents/ImgLoading";
 import Image from "next/image";
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import { CartState } from "@/store/CartProvider";
+import { Minus, Plus, Trash2 } from "lucide-react";
 
-const ProductCartBox = ({ product }: { product: Product }) => {
+const ProductCartBox = React.memo(({ product }: { product: Product }) => {
     const { AddQuantity, RemoveQuantity, DeleteProduct } = useContext(CartState);
     const [quantity, setQuantity] = useState<number>(product.quantity);
     useEffect(() => {
         setQuantity(product.quantity)
     }, [product.quantity]);
+
+    const ProductImage = useMemo(() => (
+        <Image
+            src={product.img}
+            width={400}
+            height={200}
+            alt={`${product.title}`}
+            title={`${product.title}`}
+            className="object-cover w-full h-full imgFilter"
+            loading="lazy"
+        />
+    ), [product.img, product.title]);
+
     return (
         <>
             <div className="flex gap-5 justify-start">
                 <div className="w-24 h-32 relative">
-                    <ImgLoading
-                        src={product.img}
-                        width={400}
-                        height={200}
-                        alt={`${product.title}`}
-                        title={`${product.title}`}
-                        style={{ objectFit: 'cover', filter: 'brightness(.7) grayscale(1) contrast(.9)' }}
-                    />
+                    {ProductImage}
                 </div>
                 <div>
                     <p className="text-base font-semibold">{product.title}</p>
@@ -36,14 +42,9 @@ const ProductCartBox = ({ product }: { product: Product }) => {
                                 RemoveQuantity(product);
                                 setQuantity(product.quantity)
                             }}
+                            title="Remove 1 Item"
                         >
-                            <Image
-                                src={`/icons/minus.svg`}
-                                width={24}
-                                height={24}
-                                alt="Remove 1 Item"
-                                title="Remove 1 Item"
-                            />
+                            <Minus width={25} height={25} />
                         </button>
                         <p>{quantity}</p>
                         <button className="w-5"
@@ -51,30 +52,21 @@ const ProductCartBox = ({ product }: { product: Product }) => {
                                 AddQuantity(product);
                                 setQuantity(product.quantity)
                             }}
+                            title="Add 1 Item"
                         >
-                            <Image
-                                src={`/icons/plus.svg`}
-                                width={24}
-                                height={24}
-                                alt="Add 1 Item"
-                                title="Add 1 Item"
-                            />
+                            <Plus width={25} height={25} />
                         </button>
                     </div>
                 </div>
             </div>
             <button
                 onClick={() => DeleteProduct(product)}
+                title="Remove product"
             >
-                <Image
-                    src={`/icons/trash.svg`}
-                    width={24}
-                    height={24}
-                    alt="Remove product"
-                    title="Remove product"
-                />
+                <Trash2 width={25} height={25} color="#a1a1a1" />
             </button>
         </>
     )
-}
+})
+ProductCartBox.displayName = 'ProductCartBox';
 export default ProductCartBox;

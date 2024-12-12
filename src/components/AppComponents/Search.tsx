@@ -1,12 +1,11 @@
 "use client";
 
-import GetProducts from "@/hooks/ProductsHooks/GetProducts";
+import GetProducts from "@/hooks/GetProducts";
 import { Product } from "@/interfaces/Types";
-import { tree } from "next/dist/build/templates/app-page";
-import Image from "next/image";
 import React, { SetStateAction, useEffect, useMemo, useState } from "react";
 import ProductBox from "../ProductComponents/ProductBox";
 import Link from "next/link";
+import { X } from 'lucide-react';
 
 const Search: React.FC<{ setSearchMenu: React.Dispatch<SetStateAction<boolean>>, searchMenu: boolean }> =
     React.memo(({ setSearchMenu, searchMenu }: { setSearchMenu: React.Dispatch<SetStateAction<boolean>>, searchMenu: boolean }) => {
@@ -56,14 +55,10 @@ const Search: React.FC<{ setSearchMenu: React.Dispatch<SetStateAction<boolean>>,
                         setSearchMenu((prev: boolean) => !prev);
                         setDebouncedSearch('');
                         setSearch('');
-                    }}>
-                        <Image
-                            src={`/icons/close.svg`}
-                            alt="Clear"
-                            title="Clear"
-                            width={24}
-                            height={24}
-                        />
+                    }}
+                        title="Clear"
+                    >
+                        <X width={26} height={26} color="#a1a1a1" />
                     </button>
                 </div>
                 <main>

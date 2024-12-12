@@ -1,4 +1,4 @@
-import { FetchToCache } from "@/hooks/ProductsHooks/FetchToCache";
+import { FetchToCache } from "@/hooks/FetchToCache";
 import { Product } from "@/interfaces/Types";
 import { NextRequest, NextResponse } from "next/server";
 

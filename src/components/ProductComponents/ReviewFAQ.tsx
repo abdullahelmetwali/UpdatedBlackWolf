@@ -1,8 +1,8 @@
 "use client";
-import Image from "next/image";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import React, { useState } from "react";
 
-const Reviews = () => {
+const Reviews = React.memo(() => {
     return (
         <div className="scrollbox gap-2">
             {
@@ -17,8 +17,8 @@ const Reviews = () => {
             }
         </div>
     )
-};
-const FAQs = () => {
+});
+const FAQs = React.memo(() => {
     const [seenQues, setSeenQues] = useState<number | null>(null);
     return (
         <div className="grid grid-cols-2 gap-4 tab:grid-cols-1">
@@ -27,16 +27,11 @@ const FAQs = () => {
                     <div key={index}>
                         <button className="flex items-center justify-between w-full"
                             onClick={() => setSeenQues((prev) => prev === index ? null : index)}
+                            title={`${seenQues === index ? 'Hide' : 'See'}`}
                         >
                             <p>Question {index + 1} </p>
-                            <div>
-                                <Image
-                                    src={`${seenQues === index ? '/icons/chevron-up.svg' : '/icons/chevron-down.svg'}`}
-                                    alt="See"
-                                    width={24}
-                                    height={24}
-                                    title={`${seenQues === index ? 'Hide' : 'See'}`}
-                                />
+                            <div title={`${seenQues === index ? 'Hide' : 'See'}`}>
+                                {seenQues === index ? <ChevronUp width={24} height={24} /> : <ChevronDown width={24} height={24} />}
                             </div>
                         </button>
                         <div className={`overflow-hidden my-2 text-muted ${seenQues === index ? "opacity-100 max-h-96" : "opacity-0 max-h-0"
@@ -50,8 +45,8 @@ const FAQs = () => {
             }
         </div>
     )
-};
-const Details = () => {
+});
+const Details = React.memo(() => {
     return (
         <div>
             <p className="text-xl tracking-wider uppercase font-semibold">Here&apos;s some details about product</p>
@@ -60,7 +55,7 @@ const Details = () => {
             </p>
         </div>
     )
-};
+});
 
 const ReviewFAQ: React.FC = React.memo(() => {
     type SeenOptions = 'reviews' | 'faqs' | 'details';
@@ -101,4 +96,7 @@ const ReviewFAQ: React.FC = React.memo(() => {
 });
 
 ReviewFAQ.displayName = 'ReviewFAQ';
+Reviews.displayName = 'Reviews';
+FAQs.displayName = 'FAQs';
+Details.displayName = 'Details';
 export default ReviewFAQ;

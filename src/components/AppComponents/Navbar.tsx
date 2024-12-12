@@ -1,12 +1,13 @@
 "use client";
 
+import cookies from "js-cookie";
 import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import Cart from "../CartComponents/Cart";
 import { CartState } from "@/store/CartProvider";
-import cookies from "js-cookie";
-import Search from "./Search";
+import SearchBox from "./Search";
+import { ShoppingCart, User, Search } from 'lucide-react';
+
 
 const Navbar: React.FC = () => {
     const { seeCart, setSeeCart } = useContext(CartState);
@@ -44,39 +45,18 @@ const Navbar: React.FC = () => {
                     </ul>
                     <ul className="flex gap-5 items-start tab:gap-3">
                         <li>
-                            <Link href={seeUsr}>
-                                <Image
-                                    src={'/icons/user.svg'}
-                                    alt="Account"
-                                    title="Account"
-                                    width={24}
-                                    height={24}
-                                    className="tab:w-8"
-                                />
+                            <Link href={seeUsr} title="Account">
+                                <User color="#a1a1a1" width={30} height={30} />
                             </Link>
                         </li>
                         <li>
-                            <button onClick={() => setSearchMenu((prev: boolean) => !prev)}>
-                                <Image
-                                    src={'/icons/search.svg'}
-                                    alt="Search"
-                                    title="Search..."
-                                    width={24}
-                                    height={24}
-                                    className="tab:w-8"
-                                />
+                            <button onClick={() => setSearchMenu((prev: boolean) => !prev)} title="Search...">
+                                <Search color="#a1a1a1" width={30} height={30} />
                             </button>
                         </li>
                         <li>
-                            <button onClick={() => setSeeCart((prev: boolean) => !prev)}>
-                                <Image
-                                    src={'/icons/cart.svg'}
-                                    alt="Cart"
-                                    title="Cart"
-                                    width={24}
-                                    height={24}
-                                    className="tab:w-8"
-                                />
+                            <button onClick={() => setSeeCart((prev: boolean) => !prev)} title="Cart">
+                                <ShoppingCart color="#a1a1a1" width={30} height={30} />
                             </button>
                         </li>
                     </ul>
@@ -87,7 +67,7 @@ const Navbar: React.FC = () => {
             </main>
             {seeCart && <div className="fixed w-full min-h-screen top-0 bg-[#000] opacity-80 z-20 transition-all duration-300 ease-in-out" onClick={() => setSeeCart((prev: boolean) => !prev)}></div>}
             <main className={`fixed w-full bg-black ${searchMenu ? 'top-0 opacity-100 z-30' : '-top-full opacity-0 z-0'} transition-all duration-150 ease-in-out p-4`}>
-                <Search setSearchMenu={setSearchMenu} searchMenu={searchMenu} />
+                <SearchBox setSearchMenu={setSearchMenu} searchMenu={searchMenu} />
             </main>
         </>
     )

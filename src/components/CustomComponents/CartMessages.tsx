@@ -1,18 +1,13 @@
-import { ChoosedItemState, CartMsgsType } from "@/interfaces/Types";
-import Image from "next/image";
+import { CartMsgsType } from "@/interfaces/Types";
+import { X } from "lucide-react";
+import React from "react";
 
-const CartMessages:
-    React.FC<CartMsgsType> = ({ notifications, setChoosedItems, show, setSeeCart }) => {
+const CartMessages: React.FC<CartMsgsType> =
+    React.memo(({ notifications, setChoosedItems, show, setSeeCart }) => {
         return (
             <div className={`w-full fixed flex items-center justify-between p-3 bg-black ${show ? ' top-0 z-50 opacity-100' : '-top-full z-0 opacity-0'} transition-all duration-300 ease-in-out`}>
-                <button onClick={() => setChoosedItems(prev => ({ ...prev, show: false }))}>
-                    <Image
-                        src={`/icons/close.svg`}
-                        width={24}
-                        height={24}
-                        alt="Close"
-                        title="Close message"
-                    />
+                <button onClick={() => setChoosedItems(prev => ({ ...prev, show: false }))} title="Close message">
+                    <X color="#a1a1a1" width={24} height={24} />
                 </button>
                 <div className="text-center">
                     <div>
@@ -41,5 +36,7 @@ const CartMessages:
                 </button>
             </div>
         )
-    }
+    });
+
+CartMessages.displayName = 'CartMessages';
 export default CartMessages;

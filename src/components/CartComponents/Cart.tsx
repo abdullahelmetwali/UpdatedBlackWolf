@@ -2,13 +2,12 @@
 
 import { Product } from "@/interfaces/Types";
 import { CartState } from "@/store/CartProvider";
-import Image from "next/image";
 import React, { useContext } from "react";
 import ProductCartBox from "./ProductCartBox";
 import EmptyCart from "./EmptyCart";
+import { X } from "lucide-react";
 
-
-const Cart: ({ isUsr }: { isUsr: boolean }) => JSX.Element = ({ isUsr }: { isUsr: boolean }) => {
+const Cart: React.FC<{ isUsr: boolean }> = React.memo(({ isUsr }: { isUsr: boolean }) => {
     const { cart, setSeeCart } = useContext(CartState);
     return (
         <>
@@ -17,13 +16,10 @@ const Cart: ({ isUsr }: { isUsr: boolean }) => JSX.Element = ({ isUsr }: { isUsr
                 {!isUsr &&
                     <button
                         className="transition-all duration-100 ease-in-out hover:rotate-180"
-                        onClick={() => setSeeCart((prev: boolean) => !prev)}>
-                        <Image
-                            src={`/icons/close.svg`}
-                            alt="Close cart"
-                            width={20}
-                            height={20}
-                        />
+                        onClick={() => setSeeCart((prev: boolean) => !prev)}
+                        title="Close cart"
+                    >
+                        <X />
                     </button>}
             </div>
             {
@@ -41,5 +37,7 @@ const Cart: ({ isUsr }: { isUsr: boolean }) => JSX.Element = ({ isUsr }: { isUsr
             }
         </>
     )
-}
+});
+
+Cart.displayName = 'Cart';
 export default Cart;

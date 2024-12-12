@@ -1,5 +1,5 @@
-import Image from "next/image"
 import Link from "next/link"
+import { ShoppingCart } from 'lucide-react';
 
 const EmptyCart: React.FC = () => {
     return (
@@ -8,13 +8,7 @@ const EmptyCart: React.FC = () => {
                 <p className="text-xl">Your cart is empty.</p>
             </div>
             <div className="bg-black absolute top-20 h-28 w-28 p-6 rounded-full flex justify-center items-center">
-                <Image
-                    className="w-16"
-                    src={`/icons/cart.svg`}
-                    alt="Empty Cart"
-                    width={24}
-                    height={24}
-                />
+                <ShoppingCart color="#a1a1a1" width={40} height={40} />
             </div>
             <div className="py-28 tracking-widest text-center">
                 <Link href={`/category/all`} className="opacity-50 hover:opacity-100">CONTINUE BROWSING</Link>

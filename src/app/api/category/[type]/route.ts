@@ -1,4 +1,4 @@
-import { FetchToCache } from "@/hooks/ProductsHooks/FetchToCache";
+import { FetchToCache } from "@/hooks/FetchToCache";
 import { Product } from "@/interfaces/Types";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -20,7 +20,6 @@ export async function GET(req: NextRequest) {
         const filteredProducts = cachedDT?.get(type);
         if (type === 'all') return NextResponse.json(cachedProducts);
         return NextResponse.json(filteredProducts)
-        return NextResponse.json({ 'message': 'hi' })
     } catch (error) {
         throw new Error('Sorry, try again!')
     }

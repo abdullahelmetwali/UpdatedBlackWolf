@@ -1,4 +1,3 @@
-/* eslint-disable prefer-const */
 "use client";
 import { Product } from "@/interfaces/Types";
 import React, { useEffect, useState } from "react";

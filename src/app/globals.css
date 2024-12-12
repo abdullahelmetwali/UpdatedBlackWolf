@@ -12,6 +12,9 @@ img {
   width: auto;
   height: auto;
 }
+.imgFilter {
+  filter: brightness(0.7) grayscale(1) contrast(0.9);
+}
 @keyframes slider {
   0% {
     transform: translateX(0%);
