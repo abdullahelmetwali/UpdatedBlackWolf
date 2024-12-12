@@ -83,7 +83,7 @@
         },
         {
             "section": "ultimate-designs",
-            "img": "/imgs/FadedCultureT-shirt.jfif",
+            "img": "/imgs/FadedCultureT-shirt.jpg",
             "title": "Faded Culture Edition",
             "price": 180,
             "salePercentage": 0,
@@ -125,7 +125,7 @@
         },
         {
             "section": "ultimate-designs",
-            "img": "/imgs/SupremeJacket.jfif",
+            "img": "/imgs/SupremeJacket.jpg",
             "title": "Supreme Faded Jacket",
             "price": 270,
             "salePercentage": 20,
@@ -676,7 +676,7 @@
         },
         {
             "section": "most-popular",
-            "img": "/imgs/WhiteJacket.jfif",
+            "img": "/imgs/WhiteJacket.jpg",
             "title": "AVI-REX Jacket",
             "price": 387,
             "salePercentage": 4,
