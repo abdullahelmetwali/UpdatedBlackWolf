@@ -1,8 +1,29 @@
 "use client";
-import React, { createContext, ReactNode, useCallback, useEffect, useMemo, useState } from "react";
-import { CartContextTypes, ChoosedItemState, Product } from '@/interfaces/Types';
+import React, { createContext, ReactNode, useCallback, useEffect, useReducer, useState } from "react";
+import { CartContextTypes, ChoosedItemState, Product, ChoosedItemsAction } from '@/interfaces/Types';
 import CartMessages from "@/components/CustomComponents/CartMessages";
+import { usePathname } from "next/navigation";
 
+const initialState: ChoosedItemState = {
+    show: false,
+    title: '',
+    price: 0,
+    color: '',
+    size: '',
+    quantity: 1,
+};
+const choosedItemsReducer = (state: ChoosedItemState, action: ChoosedItemsAction) => {
+    switch (action.type) {
+        case 'UPDATE_SINGLE':
+            return { ...state, [action.field]: action.value };
+        case 'UPDATE_MULT':
+            return { ...state, ...action.payload }
+        case 'RESET':
+            return initialState;
+        default:
+            return state;
+    }
+};
 
 export const CartState = createContext<CartContextTypes>({
     choosedItems: {
@@ -13,7 +34,7 @@ export const CartState = createContext<CartContextTypes>({
         color: '',
         quantity: 1,
     },
-    setChoosedItems: () => { },
+    dispatchChoosedItems: () => { },
     AddToCart: () => { },
     AddQuantity: () => { },
     RemoveQuantity: () => { },
@@ -24,18 +45,11 @@ export const CartState = createContext<CartContextTypes>({
 });
 
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-    const [addedToCartMsg, setAddedToCartMsg] = useState('');
-    const [choosedItems, setChoosedItems] = useState({
-        show: false,
-        title: '',
-        price: 0,
-        color: '',
-        size: '',
-        quantity: 1,
-    });
+    const [addedToCartMsg, setAddedToCartMsg] = useState<string>('');
+    const [choosedItems, dispatchChoosedItems] = useReducer(choosedItemsReducer, initialState);
     const [cart, setCart] = useState<Product[]>([]);
     const [seeCart, setSeeCart] = useState<boolean>(false);
-
+    const pathname = usePathname();
     const DeleteProduct = useCallback((product: Product) => {
         setCart((prevCart) => {
             const newCart = prevCart.filter((pro) => !(
@@ -91,15 +105,22 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         };
     }, []);
 
+    useEffect(() => {
+        // RESET WHEN ROUTE CHANGES
+        dispatchChoosedItems({ type: 'RESET' })
+    }, [pathname]);
+
 
     const AddToCart = (product: Product, color: string) => {
         // SET COLOR CAUSE ITS THE LAST CHOICE IN PRODUCT
-        setChoosedItems((prev: ChoosedItemState) => ({
-            ...prev,
-            price: product.price * prev.quantity,
-            title: product.title,
-            color: color
-        }));
+        dispatchChoosedItems({
+            type: 'UPDATE_MULT',
+            payload: {
+                price: product.price * choosedItems.quantity,
+                title: product.title,
+                color: color
+            },
+        })
 
         // ADD TO CART
         product.selectedColor = color;
@@ -128,15 +149,16 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         seeLocalCart();
 
         // NOTIFICATION TIMER
-        setChoosedItems((prev) => ({ ...prev, show: true }));
+        dispatchChoosedItems({ type: 'UPDATE_SINGLE', field: 'show', value: true });
         setTimeout(() => {
-            setChoosedItems((prev) => ({ ...prev, show: false }));
+            dispatchChoosedItems({ type: 'UPDATE_SINGLE', field: 'show', value: false });
         }, 3000);
     };
 
     return (
-        <CartState.Provider value={{ choosedItems, cart, seeCart, setSeeCart, setChoosedItems, AddToCart, AddQuantity, DeleteProduct, RemoveQuantity }}>
-            <CartMessages notifications={addedToCartMsg === '' ? [choosedItems.title, choosedItems.price.toString(), choosedItems.color, choosedItems.size] : [addedToCartMsg]} setChoosedItems={setChoosedItems} show={choosedItems.show} setSeeCart={setSeeCart} />
+        <CartState.Provider value={{ choosedItems, cart, seeCart, setSeeCart, dispatchChoosedItems, AddToCart, AddQuantity, DeleteProduct, RemoveQuantity }}>
+            <CartMessages
+                notifications={addedToCartMsg === '' ? [choosedItems.title, choosedItems.price.toString(), choosedItems.color, choosedItems.size] : [addedToCartMsg]} dispatchChoosedItems={dispatchChoosedItems} show={choosedItems.show} setSeeCart={setSeeCart} />
             {children}
         </CartState.Provider>
     )

@@ -1,6 +1,6 @@
 "use client";
-import { Product, ChoosedItemState } from "@/interfaces/Types";
-import { useContext } from "react";
+import { Product } from "@/interfaces/Types";
+import { useContext, useMemo } from "react";
 import { CartState } from "@/store/CartProvider";
 import Image from "next/image";
 import React from "react";
@@ -9,20 +9,23 @@ import { Plus, Minus } from 'lucide-react';
 
 const ProductDetails: React.FC<{ product: Product }> =
     React.memo(({ product }: { product: Product }) => {
-        const { choosedItems, setChoosedItems, AddToCart, AddQuantity } = useContext(CartState);
+        const { choosedItems, dispatchChoosedItems, AddToCart } = useContext(CartState);
+        const memoImg = useMemo(() => (
+            <Image
+                src={product.img}
+                width={800}
+                height={800}
+                className="imgFilter object-cover w-full h-full object-bottom"
+                alt={product.title}
+                title={product.title}
+                priority
+            />
+        ), [product.img, product.title])
         return (
             <main className="min-h-screen">
                 <main className="grid grid-cols-2 tab:flex tab:flex-col p-5 gap-8" style={{ gridTemplateRows: 'repeat(1, 42rem)' }}>
                     <div className="w-full h-full relative">
-                        <Image
-                            src={product.img}
-                            width={800}
-                            height={800}
-                            className="imgFilter object-cover w-full h-full object-bottom"
-                            alt={product.title}
-                            title={product.title}
-                            priority
-                        />
+                        {memoImg}
                     </div>
                     <div className="py-2 tracking-wider">
                         <p className="text-3xl font-black uppercase mb-3">{product.title}</p>
@@ -32,10 +35,7 @@ const ProductDetails: React.FC<{ product: Product }> =
                             {
                                 product.sizes.map((size: string, szIndx: number) => (
                                     <button key={szIndx} className={`px-8 py-1 border-white/40 border text-center font-semibold ${choosedItems.size === size ? 'bg-[#2f2e2e]' : ''}`}
-                                        onClick={() => setChoosedItems((prev: ChoosedItemState) => ({
-                                            ...prev,
-                                            size: size
-                                        }))}
+                                        onClick={() => dispatchChoosedItems({ type: 'UPDATE_SINGLE', field: 'size', value: size })}
                                     >
                                         {size}
                                     </button>
@@ -47,10 +47,7 @@ const ProductDetails: React.FC<{ product: Product }> =
                             {
                                 product.colors.map((color: string, colIndx: number) => (
                                     <button key={colIndx} className={`px-8 py-1 border-white/40 border text-center font-semibold ${choosedItems.color === color ? 'bg-[#2f2e2e]' : ''}`}
-                                        onClick={() => setChoosedItems((prev: ChoosedItemState) => ({
-                                            ...prev,
-                                            color: color
-                                        }))}
+                                        onClick={() => dispatchChoosedItems({ type: 'UPDATE_SINGLE', field: 'color', value: color })}
                                     >
                                         {color}
                                     </button>
@@ -67,10 +64,7 @@ const ProductDetails: React.FC<{ product: Product }> =
                             <div className="flex items-center gap-5 text-2xl w-2/5 tab:w-full tab:justify-around tab:border-white/25 tab:py-2 tab:border">
                                 <button
                                     disabled={choosedItems.quantity === 1}
-                                    onClick={() => setChoosedItems((prev: ChoosedItemState) => ({
-                                        ...prev,
-                                        quantity: prev.quantity - 1
-                                    }))}
+                                    onClick={() => dispatchChoosedItems({ type: 'UPDATE_SINGLE', field: 'quantity', value: choosedItems.quantity - 1 })}
                                     className={`${choosedItems.quantity === 1 ? 'cursor-not-allowed' : 'cursor-pointer'}`}
                                     title="Remove product"
                                 >
@@ -78,10 +72,7 @@ const ProductDetails: React.FC<{ product: Product }> =
                                 </button>
                                 <p>{choosedItems.quantity}</p>
                                 <button
-                                    onClick={() => setChoosedItems((prev: ChoosedItemState) => ({
-                                        ...prev,
-                                        quantity: prev.quantity + 1
-                                    }))}
+                                    onClick={() => dispatchChoosedItems({ type: 'UPDATE_SINGLE', field: 'quantity', value: choosedItems.quantity + 1 })}
                                     title="Add product"
                                 >
                                     <Plus />

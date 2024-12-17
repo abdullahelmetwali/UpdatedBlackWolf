@@ -1,41 +1,47 @@
 "use client";
 import Image from "next/image";
-import { Product, ChoosedItemState, EasyAddState } from "@/interfaces/Types";
-import React, { useContext, useState } from "react";
+import { Product, EasyAddState } from "@/interfaces/Types";
+import React, { useContext, useMemo, useState } from "react";
 import { CartState } from "@/store/CartProvider";
 import { ShoppingBag } from 'lucide-react';
 
 const ProductBox: React.FC<{ product: Product, easyAdd: boolean, boxClass: string | undefined, children: React.ReactNode | undefined }>
     = React.memo(({ product, easyAdd, boxClass, children }) => {
-        const { setChoosedItems, AddToCart } = useContext(CartState)
+        const { dispatchChoosedItems, AddToCart } = useContext(CartState)
         const [easyAddState, setEasyAddState] = useState<EasyAddState>({
             cartBox: true,
             nextContent: ''
         });
 
+        const memoImg = useMemo(() => (
+            <Image
+                decoding="auto"
+                src={product.img}
+                width={1000}
+                height={750}
+                alt={`${product.title}`}
+                title={`${product.title}`}
+                className="object-cover imgFilter w-full h-full"
+            />
+        ), [product.img, product.title]);
+
         return (
             <>
                 <div className={`${boxClass ? boxClass : 'w-[22rem] h-[40rem]'} relative`}>
-                    <Image
-                        decoding="auto"
-                        src={product.img}
-                        width={1000}
-                        height={750}
-                        alt={`${product.title}`}
-                        title={`${product.title}`}
-                        className="object-cover imgFilter w-full h-full"
-                    />
+                    {memoImg}
                     {
                         easyAdd &&
                         <>
                             <button className={`absolute right-3 w-fit rounded-md p-2 bg-[#080808e8] cursor-pointer ${easyAddState.cartBox ? 'bottom-5 opacity-100 z-10' : 'bottom-6 opacity-0 z-0'} transition-all duration-100 ease-out`}
                                 onClick={() => {
                                     setEasyAddState((prev: EasyAddState) => ({ ...prev, nextContent: 'sizes', cartBox: false }));
-                                    setChoosedItems((prev: ChoosedItemState) => ({
-                                        ...prev,
-                                        title: product.title,
-                                        price: product.price
-                                    }))
+                                    dispatchChoosedItems({
+                                        type: 'UPDATE_MULT',
+                                        payload: {
+                                            title: product.title,
+                                            price: product.price
+                                        }
+                                    })
                                 }
                                 }
                                 title="Add to cart"
@@ -54,10 +60,7 @@ const ProductBox: React.FC<{ product: Product, easyAdd: boolean, boxClass: strin
                                                     ...prev,
                                                     nextContent: 'colors',
                                                 }));
-                                                setChoosedItems((prev: ChoosedItemState) => ({
-                                                    ...prev,
-                                                    size: size
-                                                }))
+                                                dispatchChoosedItems({ type: 'UPDATE_SINGLE', field: 'size', value: size })
                                             }
                                             }
                                         >

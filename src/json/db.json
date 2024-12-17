@@ -589,7 +589,7 @@
         {
             "section": "most-popular",
             "img": "/imgs/SupremeNike2.jpg",
-            "title": "Supreme & Nike Second Edition",
+            "title": "Supreme-Nike Second Edition",
             "price": 511,
             "salePercentage": 0,
             "type": "winter",
@@ -609,7 +609,7 @@
         {
             "section": "most-popular",
             "img": "/imgs/SupremeNike.jpg",
-            "title": "Supreme & Nike Edition",
+            "title": "Supreme-Nike Edition",
             "price": 287,
             "salePercentage": 5,
             "type": "fall",
@@ -643,28 +643,6 @@
                 "White",
                 "Grey",
                 "Pink"
-            ],
-            "sizes": [
-                "M",
-                "L",
-                "XL",
-                "XXL"
-            ]
-            
-        },
-        {
-            "section": "limited-edition",
-            "img": "/imgs/WHYAT.jpg",
-            "title": "Basic WHYAT Edition",
-            "price": 400,
-            "salePercentage": 0,
-            "type": "summer",
-            "style": "Party",
-            "desc": "CaFeaturing a dynamic graphic print inspired by black wolf landscapes and street art, each detail tells a story of modern expression. Made from premium cotton, this tee offers a soft, breathable feel that's perfect for all-day wear.",
-            "colors": [
-                "Black",
-                "White",
-                "Grey"
             ],
             "sizes": [
                 "M",

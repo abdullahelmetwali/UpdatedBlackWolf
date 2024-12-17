@@ -40,9 +40,14 @@ export interface ChoosedItemState {
     quantity: number
 }
 
+export type ChoosedItemsAction =
+    | { type: 'UPDATE_SINGLE', field: keyof ChoosedItemState, value: string | number | boolean }
+    | { type: 'UPDATE_MULT', payload: Partial<ChoosedItemState> }
+    | { type: 'RESET' }
+
 export interface CartContextTypes {
     choosedItems: ChoosedItemState,
-    setChoosedItems: React.Dispatch<SetStateAction<ChoosedItemState>>,
+    dispatchChoosedItems: React.Dispatch<ChoosedItemsAction>,
     AddToCart: (product: Product, color: string) => void,
     cart: Product[],
     AddQuantity: (product: Product) => void,
@@ -68,6 +73,6 @@ export interface Review {
 export interface CartMsgsType {
     notifications: string[] | string,
     show: boolean,
-    setChoosedItems: React.Dispatch<SetStateAction<ChoosedItemState>>,
+    dispatchChoosedItems: React.Dispatch<ChoosedItemsAction>,
     setSeeCart: React.Dispatch<SetStateAction<boolean>>
 }
