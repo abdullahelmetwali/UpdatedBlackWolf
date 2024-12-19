@@ -39,7 +39,8 @@ const ProductBox: React.FC<{ product: Product, easyAdd: boolean, boxClass: strin
                                         type: 'UPDATE_MULT',
                                         payload: {
                                             title: product.title,
-                                            price: product.price
+                                            price: product.price,
+                                            quantity: 1
                                         }
                                     })
                                 }
