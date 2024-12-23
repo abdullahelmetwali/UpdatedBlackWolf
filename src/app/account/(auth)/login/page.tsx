@@ -4,7 +4,7 @@ import cookies from "js-cookie";
 import { auth } from "@/config/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Login = () => {
     const [email, setEmail] = useState<string>('');
@@ -12,6 +12,12 @@ const Login = () => {
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
     const router = useRouter();
+
+    useEffect(() => {
+        if (cookies.get('u')) {
+            router.push(`/account/u/${cookies.get('u')}`);
+        }
+    }, [router]);
 
     const signIn = async (e: React.FormEvent) => {
         e.preventDefault();
