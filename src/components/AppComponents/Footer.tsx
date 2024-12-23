@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link href={`/category`} className="opacity-70 hover:opacity-100">
+                        <Link href={`/category/all`} className="opacity-70 hover:opacity-100">
                             Category
                         </Link>
                     </li>
