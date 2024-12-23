@@ -34,7 +34,7 @@ const Login = () => {
     return (
         <section className="grid justify-center">
             <p className="text-center text-2xl tracking-widest font-semibold">NICE TO SEE YOU 😁</p>
-            {error && <p className="text-red-500 mt-2 text-xl font-semibold text-center">{error}</p>}
+            {error && <p className="text-red-500 mt-2 text-xl font-semibold text-center">{error.includes('auth') ? 'Invalid email or password' : 'Check your network!'}</p>}
             <form action="#" className="my-7" onSubmit={signIn}>
                 <input
                     type="email"
