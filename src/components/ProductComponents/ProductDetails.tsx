@@ -19,6 +19,7 @@ const ProductDetails: React.FC<{ product: Product }> =
                 alt={product.title}
                 title={product.title}
                 priority
+                unoptimized
             />
         ), [product.img, product.title])
         return (

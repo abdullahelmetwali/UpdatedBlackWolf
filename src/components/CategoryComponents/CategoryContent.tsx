@@ -16,10 +16,10 @@ const CategoryContent: React.FC<{ products: Product[], type: string }> =
 
         return (
             <>
-                <main className="grid grid-cols-3 gap-5 my-6 tab:grid-cols-2 h-[117rem] tab:h-full">
+                <main className={`grid grid-cols-3 gap-5 my-6 tab:grid-cols-2 tab:h-full ${displayedProducts.length < 6 ? 'h-full' : 'h-[119rem]'}`}>
                     {
                         displayedProducts?.map((pro: Product, index: number) => (
-                            <Link href={`/category/${type}/${pro.title.replaceAll(' ', '-').toLowerCase()}`} key={index} className="relative h-[35rem] tab:h-[27rem]">
+                            <Link href={`/category/${type}/${pro.title.replaceAll(' ', '-').toLowerCase()}`} key={index} className="relative h-[38rem] tab:h-[27rem]">
                                 <ProductBox product={pro} easyAdd={false} boxClass="w-full h-[35rem] tab:h-[23rem]">
                                     <div className="text-center my-1">
                                         <p>{pro.title}</p>
@@ -33,7 +33,7 @@ const CategoryContent: React.FC<{ products: Product[], type: string }> =
                 <div className="flex items-center justify-center gap-6 w-full">
                     <button
                         onClick={() => {
-                            setCurrPG(currPG - 1);
+                            setCurrPG(prev => prev - 1);
                             window.scroll({
                                 top: 0,
                                 behavior: 'smooth'
@@ -68,7 +68,7 @@ const CategoryContent: React.FC<{ products: Product[], type: string }> =
                                 top: 0,
                                 behavior: 'smooth'
                             });
-                            setCurrPG(currPG + 1);
+                            setCurrPG(prev => prev + 1);
                         }}
                         disabled={currPG === totalPages}
                         className={`bg-[#3636366b] imp-btn ${currPG === totalPages ? 'cursor-not-allowed opacity-20 hover:opacity-20' : 'cursor-pointer opacity-100'}`}
