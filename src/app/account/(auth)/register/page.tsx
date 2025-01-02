@@ -7,10 +7,12 @@ import { useState } from "react";
 import cookies from "js-cookie";
 
 const Register = () => {
-    const [frName, setFrName] = useState<string>('');
-    const [scName, setScName] = useState<string>('');
-    const [email, setEmail] = useState<string>('');
-    const [pass, setPass] = useState<string>('');
+    const [usrDT, setUsrDT] = useState({
+        frName: '',
+        scName: '',
+        email: '',
+        pass: ''
+    });
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
     const router = useRouter();
@@ -20,13 +22,13 @@ const Register = () => {
         setError(null);
         setLoading(true);
         try {
-            const res = await createUserWithEmailAndPassword(auth, email, pass);
+            const res = await createUserWithEmailAndPassword(auth, usrDT.email, usrDT.pass);
             if (res.user) {
                 await updateProfile(res.user, {
-                    displayName: `${frName} ${scName}`
+                    displayName: `${usrDT.frName} ${usrDT.scName}`
                 })
-                cookies.set('u', JSON.stringify(`${frName.toLowerCase()}-${scName.toLowerCase()}`));
-                router.push(`/account/u/${frName.toLowerCase()}-${scName.toLowerCase()}`)
+                cookies.set('u', JSON.stringify(`${usrDT.frName.toLowerCase()}-${usrDT.scName.toLowerCase()}`));
+                router.push(`/account/u/${usrDT.frName.toLowerCase()}-${usrDT.scName.toLowerCase()}`)
             }
         } catch (err) {
             setError(err instanceof Error ? err.message.replaceAll('Firebase: Error ', '') : 'Unknown error');
@@ -45,16 +47,16 @@ const Register = () => {
                         type="text"
                         placeholder="First Name"
                         className={`box`}
-                        value={frName}
-                        onChange={(e) => setFrName(e.target.value)}
+                        value={usrDT.frName}
+                        onChange={(e) => setUsrDT({ ...usrDT, frName: e.target.value })}
 
                     />
                     <input
                         type="text"
                         placeholder="Second Name"
                         className="box"
-                        value={scName}
-                        onChange={(e) => setScName(e.target.value)}
+                        value={usrDT.scName}
+                        onChange={(e) => setUsrDT({ ...usrDT, scName: e.target.value })}
 
                     />
                 </div>
@@ -63,8 +65,8 @@ const Register = () => {
                     placeholder="Email Address"
                     className="box"
                     style={{ border: `${error && '1px solid #bb2e2e'}` }}
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={usrDT.email}
+                    onChange={(e) => setUsrDT({ ...usrDT, email: e.target.value })}
                     required
                 />
                 <input
@@ -72,8 +74,8 @@ const Register = () => {
                     placeholder="Password"
                     className="box"
                     style={{ border: `${error && '1px solid #bb2e2e'}` }}
-                    value={pass}
-                    onChange={(e) => setPass(e.target.value)}
+                    value={usrDT.pass}
+                    onChange={(e) => setUsrDT({ ...usrDT, pass: e.target.value })}
                     required
                 />
                 <div className="flex justify-between items-center gap-4">

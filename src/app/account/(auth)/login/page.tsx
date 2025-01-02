@@ -7,8 +7,10 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Login = () => {
-    const [email, setEmail] = useState<string>('');
-    const [pass, setPass] = useState<string>('');
+    const [usrDT, setUsrDT] = useState({
+        email: '',
+        pass: ''
+    });
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
     const router = useRouter();
@@ -24,7 +26,7 @@ const Login = () => {
         setError(null);
         setLoading(true);
         try {
-            const res = await signInWithEmailAndPassword(auth, email, pass);
+            const res = await signInWithEmailAndPassword(auth, usrDT.email, usrDT.pass);
             if (res.user) {
                 const userName = res?.user?.displayName?.replaceAll(' ', '-').toLowerCase();
                 cookies.set('u', JSON.stringify(userName));
@@ -47,8 +49,8 @@ const Login = () => {
                     placeholder="Email Address"
                     className="box"
                     style={{ border: `${error && '1px solid #bb2e2e'}` }}
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={usrDT.email}
+                    onChange={(e) => setUsrDT({ ...usrDT, email: e.target.value })}
                     required
                 />
                 <input
@@ -56,8 +58,8 @@ const Login = () => {
                     placeholder="Password"
                     className="box"
                     style={{ border: `${error && '1px solid #bb2e2e'}` }}
-                    value={pass}
-                    onChange={(e) => setPass(e.target.value)}
+                    value={usrDT.pass}
+                    onChange={(e) => setUsrDT({ ...usrDT, pass: e.target.value })}
                     required
                 />
                 <div className="flex justify-between items-center gap-4">
