@@ -1,4 +1,4 @@
-# Project Name
+# Black Wolf Store
 
 This project showcases a modern web application built using a robust tech stack for high performance, accessibility, and user experience. Below is an overview of its features and development journey.
 
