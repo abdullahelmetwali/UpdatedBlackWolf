@@ -13,7 +13,7 @@ This project showcases a modern web application built using a robust tech stack 
 
 ## Development Highlights
 
-### ([Last Version](https://github.com/abdullahelmetwali/BlackWolfECommerce))
+### [Last Version](https://github.com/abdullahelmetwali/BlackWolfECommerce)
 - Developed using **Vue.js** and **Vuex**.
 - Achieved the following scores:
   - **Performance:** 52%
