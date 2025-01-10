@@ -3,7 +3,7 @@
 import GetProducts from "@/hooks/GetProducts";
 import { Product } from "@/interfaces/Types";
 import React, { SetStateAction, useEffect, useMemo, useState } from "react";
-import ProductBox from "../ProductComponents/ProductBox";
+import ProductBox from "../product/ProductBox";
 import Link from "next/link";
 import { X } from 'lucide-react';
 

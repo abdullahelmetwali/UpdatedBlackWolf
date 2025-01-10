@@ -18,6 +18,7 @@ export interface Product {
 }
 
 export interface ImgLoadingProps {
+    decoding: string | null
     src: string,
     width: number,
     height: number,

@@ -3,7 +3,7 @@
 import { Product } from "@/interfaces/Types";
 import { CartState } from "@/store/CartProvider";
 import React, { useContext } from "react";
-import ProductCartBox from "./ProductCartBox";
+import ProductCartBox from "@/components/cart/ProductCartBox";
 import EmptyCart from "./EmptyCart";
 import { X } from "lucide-react";
 

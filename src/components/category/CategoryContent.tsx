@@ -1,7 +1,7 @@
 "use client";
 import { Product } from "@/interfaces/Types";
 import React, { useEffect, useState } from "react";
-import ProductBox from "../ProductComponents/ProductBox";
+import ProductBox from "../product/ProductBox";
 import Link from "next/link";
 
 const CategoryContent: React.FC<{ products: Product[], type: string }> =

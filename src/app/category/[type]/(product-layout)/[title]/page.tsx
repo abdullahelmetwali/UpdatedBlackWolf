@@ -1,6 +1,6 @@
-import ProductDetails from "@/components/ProductComponents/ProductDetails";
-import ReviewFAQ from "@/components/ProductComponents/ReviewFAQ";
-import SameProducts from "@/components/ProductComponents/SameProducts";
+import ProductDetails from "@/components/product/ProductDetails";
+import ReviewFAQ from "@/components/product/ReviewFAQ";
+import SameProducts from "@/components/product/SameProducts";
 import GetFilteredProducts from "@/hooks/GetFilteredProducts";
 import { Product } from "@/interfaces/Types";
 
@@ -16,14 +16,15 @@ const GetProduct: ({ title, type }: { title: string, type: string }) =>
         } catch (error) {
             throw new Error('Failed to get product data!')
         }
-    }
+    };
 
-export default async function ProductPage({ params }: { params: Promise<{ type: string, title: string }> }) {
+const ProductPage = async ({ params }: { params: Promise<{ type: string, title: string }> }) => {
     const type = (await params).type;
     const title = (await params).title;
     const { product } = await GetProduct({ title: title, type: type });
+    if (!product) throw new Error('No product founded');
     const { products } = await GetFilteredProducts({ sec: product.type ? product.type : 'all' });
-    const sameProducts = products.filter((pro: Product) => pro.title !== product.title).slice(0, 11);
+    const sameProducts = products?.filter((pro: Product) => pro.title !== product.title).slice(0, 11) || [];
     return (
         <>
             <ProductDetails product={product} />
@@ -31,4 +32,6 @@ export default async function ProductPage({ params }: { params: Promise<{ type: 
             <SameProducts products={sameProducts} />
         </>
     )
-}
+};
+
+export default ProductPage;

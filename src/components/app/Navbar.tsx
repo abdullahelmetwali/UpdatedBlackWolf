@@ -3,7 +3,7 @@
 import cookies from "js-cookie";
 import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
-import Cart from "../CartComponents/Cart";
+import Cart from "../cart/Cart";
 import { CartState } from "@/store/CartProvider";
 import SearchBox from "./Search";
 import { ShoppingCart, User, Search } from 'lucide-react';

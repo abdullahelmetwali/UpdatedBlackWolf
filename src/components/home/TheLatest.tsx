@@ -1,7 +1,7 @@
 "use client";
 import { Product } from "@/interfaces/Types";
 import React, { useMemo, useState } from "react";
-import ProductBox from "../ProductComponents/ProductBox";
+import ProductBox from "../product/ProductBox";
 import Link from "next/link";
 
 const TheLatest: React.FC<{ products: Product[] }> = ({ products }) => {

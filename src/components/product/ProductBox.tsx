@@ -4,6 +4,7 @@ import { Product, EasyAddState } from "@/interfaces/Types";
 import React, { useContext, useMemo, useState } from "react";
 import { CartState } from "@/store/CartProvider";
 import { ShoppingBag } from 'lucide-react';
+import ImgLoading from "../ui/ImgLoading";
 
 const ProductBox: React.FC<{ product: Product, easyAdd: boolean, boxClass: string | undefined, children: React.ReactNode | undefined }>
     = React.memo(({ product, easyAdd, boxClass, children }) => {
@@ -14,14 +15,14 @@ const ProductBox: React.FC<{ product: Product, easyAdd: boolean, boxClass: strin
         });
 
         const memoImg = useMemo(() => (
-            <Image
+            <ImgLoading
                 decoding="auto"
                 src={product.img}
                 width={1000}
                 height={750}
                 alt={`${product.title}`}
                 title={`${product.title}`}
-                className="object-cover imgFilter w-full h-full"
+                style={undefined}
             />
         ), [product.img, product.title]);
 

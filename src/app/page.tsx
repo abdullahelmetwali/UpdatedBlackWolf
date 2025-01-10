@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Product, RoomObj } from "@/interfaces/Types";
-import ProductBox from "@/components/ProductComponents/ProductBox";
-import TheLatest from "@/components/HomeComponents/TheLatest";
+import ProductBox from "@/components/product/ProductBox";
+import TheLatest from "@/components/home/TheLatest";
 import GetProducts from "@/hooks/GetProducts";
 import PosterOne from '../../public/imgs/PosterOne.jpg';
 import PosterTwo from '../../public/imgs/rectangleTwo.jpg';

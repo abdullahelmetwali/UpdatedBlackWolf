@@ -1,6 +1,6 @@
 "use server";
 import NotFoundCategory from "../not-found";
-import CategoryContent from "@/components/CategoryComponents/CategoryContent";
+import CategoryContent from "@/components/category/CategoryContent";
 
 export async function generateMetadata({ params }: { params: Promise<{ type: string }> }) {
     const resolved = await params;

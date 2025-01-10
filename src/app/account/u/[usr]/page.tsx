@@ -3,7 +3,7 @@ import { auth } from "@/config/firebase";
 import { signOut } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import cookies from "js-cookie";
-import Cart from "@/components/CartComponents/Cart";
+import Cart from "@/components/cart/Cart";
 
 const UsrPG: React.FC = () => {
     const currUsr = auth.currentUser;

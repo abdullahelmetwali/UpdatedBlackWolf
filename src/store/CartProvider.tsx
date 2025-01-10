@@ -1,7 +1,7 @@
 "use client";
 import React, { createContext, ReactNode, useCallback, useEffect, useReducer, useState } from "react";
 import { CartContextTypes, ChoosedItemState, Product, ChoosedItemsAction } from '@/interfaces/Types';
-import CartMessages from "@/components/CustomComponents/CartMessages";
+import CartMessages from "@/components/ui/CartMessages";
 import { usePathname } from "next/navigation";
 
 const initialState: ChoosedItemState = {
