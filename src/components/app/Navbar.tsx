@@ -1,15 +1,18 @@
 "use client";
 
 import cookies from "js-cookie";
-import React, { useContext, useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
-import Cart from "../cart/Cart";
+
+import Cart from "@/components/cart/Cart";
 import { CartState } from "@/store/CartProvider";
 import SearchBox from "./Search";
 import { ShoppingCart, User, Search } from 'lucide-react';
 
 
-const Navbar: React.FC = () => {
+export function AppNavbar() {
+    const pathname = usePathname();
     const { seeCart, setSeeCart } = useContext(CartState);
     const [seeUsr, setSeeUsr] = useState('/account/login');
     const [searchMenu, setSearchMenu] = useState<boolean>(false);
@@ -19,9 +22,10 @@ const Navbar: React.FC = () => {
         setSeeUsr(clientUser ? `/account/u/${clientUser.replaceAll('"', '')}` : '/account/login');
     }, []);
 
+    if (pathname.includes("login") || pathname.includes("signup")) return null;
     return (
         <>
-            <header className="p-3 px-5 bg-transparent absolute top-0 z-20 w-full">
+            <header className="p-3 px-5 w-full">
                 <nav className="flex items-center justify-between">
                     <Link href={`/`} className="text-xl font-semibold hidden tab:block">
                         <span className="text-muted text-2xl">B</span>LACK <span className="text-muted text-2xl">W</span>OLF
@@ -33,8 +37,8 @@ const Navbar: React.FC = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link href={`/category/all`}>
-                                CATEGORY
+                            <Link href={`/products`}>
+                                PRODUCTS
                             </Link>
                         </li>
                         <li>
@@ -72,4 +76,3 @@ const Navbar: React.FC = () => {
         </>
     )
 }
-export default Navbar;

@@ -1,8 +1,11 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { usePathname } from "next/navigation";
 
-const Footer: React.FC = () => {
+export function AppFooter() {
+    const pathname = usePathname();
+    if (pathname.includes("login") || pathname.includes("signup")) return null;
     return (
         <footer className="flex justify-between items-start gap-10 tab:flex-col py-8 px-4">
             <div>
@@ -74,5 +77,4 @@ const Footer: React.FC = () => {
             </div>
         </footer>
     )
-}
-export default Footer;
+};
