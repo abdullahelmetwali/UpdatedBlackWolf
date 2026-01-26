@@ -44,7 +44,7 @@ export const TablePDF = ({
                     <TableHeader>
                         <TableRow className="border-border border-2 rounded">
                             {headers.map((header, index) => (
-                                <TableHead key={index} className="font-black text-center text-black">
+                                <TableHead key={index} className="font-black text-center text-black capitalize">
                                     {header}
                                 </TableHead>
                             ))}

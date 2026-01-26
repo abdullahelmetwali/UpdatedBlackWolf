@@ -17,6 +17,7 @@ import {
     DropdownMenuCheckboxItem,
     DropdownMenuLabel
 } from "@/components/ui/dropdown-menu";
+import { set } from "react-hook-form";
 
 export function MultiPicker({
     label,
@@ -41,7 +42,7 @@ export function MultiPicker({
     searchMode = false,
     ...props
 }: PickerTypo) {
-    const hasError = errors?.[typeof setValueFor === "string" ? setValueFor : setValueFor?.join(".")];
+    const hasError = errors?.[setValueFor];
 
     const [openDropwDown, setOpenDropDown] = useState(false);
 

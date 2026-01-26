@@ -26,7 +26,7 @@ export function TableDownload({ children }: { children?: React.ReactNode }) {
                                 disabled={disabled?.download || !dataState.length}
                             >
                                 <Button type="button" title={"dowload"} variant={'outline'}>
-                                    <DownloadIcon />
+                                    <DownloadIcon className="!size-3.5" />
                                 </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">

@@ -19,6 +19,14 @@ export function proxy(request: NextRequest) {
     if (token && request.nextUrl.pathname.startsWith('/login') && !accessTodashboard) {
         return NextResponse.redirect(new URL(`/profile`, request.url));
     }
+
+    if (token && request.nextUrl.pathname.startsWith('/profile') && accessTodashboard) {
+        return NextResponse.redirect(new URL(`/dashboard`, request.url));
+    }
+
+    if (token && request.nextUrl.pathname.startsWith('/dashboard') && !accessTodashboard) {
+        return NextResponse.redirect(new URL(`/profile`, request.url));
+    }
     return NextResponse.next();
 }
 

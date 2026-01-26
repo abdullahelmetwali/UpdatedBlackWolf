@@ -9,10 +9,10 @@ export async function GET({
     searchParams,
     revalidate = 3600, // 1hr
 }: GETFUNC) {
-    const token = context !== "website" && await TOKEN_SR();
+    const token = await TOKEN_SR();
 
     const URL_TO_FETCH = context === "special" ? url : `${BASE_URL}${url}`;
-    const HEADERS: HeadersInit = context !== "website" ? { "Authorization": `Bearer ${token}`, } : {};
+    const HEADERS: HeadersInit = token ? { "Authorization": `Bearer ${token}`, } : {};
 
     const REVALIDATION_TIME = searchParams ? 0 : revalidate;
 
@@ -27,15 +27,19 @@ export async function GET({
                 tags: [URL_TO_FETCH],
                 revalidate: REVALIDATION_TIME
             }
-        })
+        });
+
+        const result = await response.json();
 
         if (!response.ok) {
-            throw new Error(`Failed to get data from : ${FULL_URL}, with status : ${response.status}`);
+            throw {
+                status: response.status,
+                statusText: response.statusText,
+                ...result,
+            }
         };
-
-        const data = await response.json();
-        return data;
+        return result?.data;
     } catch (error: Error | any) {
-        throw new Error(error?.message || `Failed to get data from : ${FULL_URL}, with status : ${error?.message}`);
+        throw new Error(error?.message || error?.error);
     }
 };

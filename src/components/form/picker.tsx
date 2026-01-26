@@ -41,7 +41,7 @@ export function Picker({
     searchMode = false, // if true , it means that it will popover (have search)
     ...props
 }: PickerTypo) {
-    const hasError = errors?.setValueFor;
+    const hasError = errors?.[setValueFor];
 
     const [search, setSearch] = useState("");
     const filteredItems = items?.filter((item) =>

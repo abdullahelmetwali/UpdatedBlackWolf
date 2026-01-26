@@ -51,7 +51,7 @@ export const TextField = ({
                         {required && '*'} {label}
                     </Label>
                     {(hasError || errorMessage) && (
-                        <span className="text-xs text-destructive max-w-64 truncate text-nowrap"
+                        <span className="text-xs text-destructive max-w-96 truncate text-nowrap"
                             title={hasError?.message || errorMessage}
                         >
                             {hasError?.message || errorMessage}

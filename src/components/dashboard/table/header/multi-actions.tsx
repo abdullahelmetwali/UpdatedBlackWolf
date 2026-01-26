@@ -18,7 +18,7 @@ export function TableMultiAction() {
         <DropdownMenu>
             <DropdownMenuTrigger asChild
                 disabled={
-                    Object.keys(rowSelection).length === 0 ||
+                    Object.keys(rowSelection)?.length === 0 ||
                     disabled?.multiAction
                 }
             >

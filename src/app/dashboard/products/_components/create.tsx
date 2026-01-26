@@ -1,5 +1,6 @@
 "use client";
 import { useForm } from "react-hook-form";
+import { revalidate } from "@/utils/revalidate";
 import { useFormSubmission } from "@/hooks/use-form-submission";
 import { useGet } from "@/hooks/use-get";
 import { toast } from "@/hooks/use-toast";
@@ -26,6 +27,7 @@ export const CreateProduct = () => {
     const {
         setValue,
         setError,
+        clearErrors,
         formState: { errors },
         register,
         watch,
@@ -40,44 +42,39 @@ export const CreateProduct = () => {
         endPoint: "/products",
         method: "POST",
         setError,
-        onError: (err) => {
-            if (err) {
-                toast({
-                    variant: "destructive",
-                    title: err?.message
-                });
-                console.log(err?.message)
-            }
-            return { handled: true }
-        },
-        onSuccess: (res) => {
-            console.log(res)
+        clearErrors,
+        onSuccess: async (res) => {
+            await revalidate({ url: "/products" });
+            toast({
+                variant: "success",
+                title: `${res.name} added to system successfully`
+            })
         },
     });
 
     const onSubmit = (data: any) => {
-        const product = {
-            name: "ssss",
-            price: "112",
-            discount: "1111",
-            inStock: "1111",
-            categories: ["6970c519ce7756889a545b4c"],
-            colors: ["696f5fd20a1a990996149316"],
-            sizes: ["69708df680d5c9e15ba323a2"],
-        };
+        // const product = {
+        //     name: "ssss",
+        //     price: "112",
+        //     discount: "1111",
+        //     inStock: "1111",
+        //     categories: ["6970c519ce7756889a545b4c"],
+        //     colors: ["696f5fd20a1a990996149316"],
+        //     sizes: ["69708df680d5c9e15ba323a2"],
+        // };
 
-        // const body = {
-        //     name: data.name,
-        //     price: data.price,
-        //     discount: data.discount,
-        //     inStock: data.inStock,
-        //     categories: data.categories.map(c => c._id),
-        //     sizes: data.sizes.map(s => s._id),
-        //     colors: data.colors.map(c => c._id),
-        //     status: data.status
-        // }
+        const body = {
+            name: data.name,
+            price: data.price,
+            discount: data.discount,
+            inStock: data.inStock,
+            categories: data.categories.map(c => c._id),
+            sizes: data.sizes.map(s => s._id),
+            colors: data.colors.map(c => c._id),
+            status: data.status
+        }
 
-        createProduct.mutate(product);
+        createProduct.mutate(body);
     };
 
     return (

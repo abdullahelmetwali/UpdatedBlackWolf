@@ -15,18 +15,18 @@ export const metadata = {
 export default function Dashboard({ children }) {
     const { data, isLoading, error } = useGet({ url: "/users/dashboard", context: "dashboard" });
 
-    if (data) {
-        return (
-            <div className="fixed h-dvh w-dvw top-0 end-0 bg-background flex justify-center items-center gap-2 z-50 *:animate-pulse">
-                <span>
-                    <PersonStanding />
-                </span>
-                <span>
-                    Waiting...
-                </span>
-            </div>
-        )
-    };
+    // if (data) {
+    //     return (
+    //         <div className="fixed h-dvh w-dvw top-0 end-0 bg-background flex justify-center items-center gap-2 z-50 *:animate-pulse">
+    //             <span>
+    //                 <PersonStanding />
+    //             </span>
+    //             <span>
+    //                 Waiting...
+    //             </span>
+    //         </div>
+    //     )
+    // };
 
     return (
         <SidebarProvider>

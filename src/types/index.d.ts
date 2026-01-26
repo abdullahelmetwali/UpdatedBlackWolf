@@ -185,10 +185,17 @@ export type MultiAction = {
     role: string,
 };
 
+export type ManualErr = {
+    errors?: Record<string, string>,
+    status?: number,
+    statusText?: string
+};
+
 export interface UseFromSubmissionType {
     endPoint?: string,
     method: "POST" | "PUT" | "PATCH" | "DELETE",
     context?: "website" | "dashboard",
+    headers?: HeadersInit,
 
     beforeRun?: () => void,
     beforeSuccess?: (
@@ -203,7 +210,7 @@ export interface UseFromSubmissionType {
         context?: unknown
     ) => void | Promise<void>,
 
-    onError?: (err: any | Error) => void | { handled?: boolean },
+    onError?: (err: ManualErr) => void | { handled?: boolean },
     setError?: (field: string, { type, message }: Record<string, string>) => void | any,
     clearErrors?: () => void,
 
@@ -235,7 +242,7 @@ export interface PickerTypo extends React.ComponentProps<"button"> {
 
     value: string | any[],
     setValue?: UseFormSetValue | Dispatch<SetStateAction<any>>,
-    setValueFor?: string | string[],
+    setValueFor?: string,
     errors?: FieldErrors<FieldValues>,
 
     onReset?: () => void,

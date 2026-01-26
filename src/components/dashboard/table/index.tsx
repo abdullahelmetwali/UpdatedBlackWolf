@@ -94,7 +94,7 @@ export function DataTable({
         ...tableOptions,
     });
 
-    const filteredLength = table.getFilteredRowModel().rows.length;
+    const filteredLength = table?.getFilteredRowModel()?.rows?.length;
     const totalPages = Math.ceil(filteredLength / pagination.pageSize || 1);
 
     const headers: string[] = table.getAllColumns()

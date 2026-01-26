@@ -1,18 +1,24 @@
 "use client";
 
 import Link from "next/link";
+import Cookies from "js-cookie";
 import { useForm } from "react-hook-form";
 import { useFormSubmission } from "@/hooks/use-form-submission";
+import { toast } from "@/hooks/use-toast";
 
 import { Button } from "@/components/ui/button";
 import { TextField } from "@/components/form/text-field";
-import { Regex } from "lucide-react";
+import { Picker } from "@/components/form/picker";
+import { genders } from "@/constants";
 
 export function SignUpForm() {
     const {
         register,
         setError,
+        setValue,
+        clearErrors,
         getValues,
+        watch,
         formState: { errors }
     } = useForm();
 
@@ -20,8 +26,16 @@ export function SignUpForm() {
         endPoint: "/auth/sign-up",
         method: "POST",
         setError,
+        clearErrors,
         onSuccess: (res) => {
-            console.log(res);
+            Cookies.set("BW_TOKEN", res.token);
+
+            toast({
+                variant: "success",
+                title: "Your account created successfully"
+            });
+
+            window.history.back();
         }
     });
 
@@ -31,6 +45,7 @@ export function SignUpForm() {
             password: data.password,
             name: data.name,
             phone: data.phone,
+            gender: data.gender
         }
 
         signUp.mutate(body);
@@ -38,7 +53,7 @@ export function SignUpForm() {
 
     return (
         <div className="w-full">
-            <h2 className="text-center text-2xl font-semibold">
+            <h2 className="text-center text-3xl font-semibold">
                 Hello, New Wolf.
             </h2>
             <p className="text-center text-muted-foreground text-sm">
@@ -49,7 +64,7 @@ export function SignUpForm() {
                 onSubmit={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    onSubmit(getValues())
+                    onSubmit(getValues());
                 }}
                 className="grid gap-2 my-8"
                 aria-disabled={signUp.isPending}
@@ -65,27 +80,23 @@ export function SignUpForm() {
                 />
 
                 <TextField
-                    type="tel"
-                    label="Phone Number"
-                    placeholder="Enter your phone number here..."
-
-                    onChange={(e) => {
-                        e.target.value = e.target.value.replace(/\D/g, "");
-                    }}
-
-                    register={register}
-                    registerFor="phone"
-                    errors={errors}
-                    required
-                />
-
-                <TextField
                     type="email"
                     label="Email Address"
                     placeholder="Enter your email address here..."
 
                     register={register}
                     registerFor="email"
+                    errors={errors}
+                    required
+                />
+
+                <TextField
+                    type="number"
+                    label="Phone Number"
+                    placeholder="Enter your phone number here..."
+
+                    register={register}
+                    registerFor="phone"
                     errors={errors}
                     required
                 />
@@ -103,16 +114,35 @@ export function SignUpForm() {
                     required
                 />
 
-                <Button variant={"default"} type="submit" form="signUp" className="mt-4" disabled={signUp.isPending}>
+                <Picker
+                    items={genders}
+
+                    label="Gender"
+                    placeHolder="Select your gender"
+
+                    value={watch("gender")}
+                    setValue={setValue}
+                    setValueFor={"gender"}
+
+                    errors={errors}
+                    required
+                />
+                <Button
+                    type="submit"
+                    form="signUp"
+                    variant={"default"}
+                    className="mt-4"
+                    disabled={signUp.isPending}
+                >
                     {signUp.isPending ? "Submitting..." : "Submit"}
                 </Button>
 
                 <div className="text-center text-sm text-muted-foreground space-x-1">
                     <span>
-                        Don't have an account?
+                        Have an account?
                     </span>
-                    <Link href={'/signup'} className="underline">
-                        Signup
+                    <Link href={'/login'} className="underline">
+                        Login
                     </Link>
                 </div>
             </form>

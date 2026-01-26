@@ -1,4 +1,4 @@
-import { UseFromSubmissionType } from "@/types";
+import { ManualErr, UseFromSubmissionType } from "@/types";
 
 import { useMutation } from "@tanstack/react-query"
 import { BASE_URL } from "@/utils/url";
@@ -10,7 +10,6 @@ import { Ghost } from "lucide-react";
 export const useFormSubmission = ({
     endPoint,
     method,
-    context = "website",
 
     beforeRun,
     beforeSuccess,
@@ -29,7 +28,10 @@ export const useFormSubmission = ({
         const response = await fetch(`${BASE_URL}${endPoint}`, {
             method: method,
             body: JSON.stringify(body),
-            headers: context === "dashboard" ? { 'Authorization': `Bearer ${token}` } : {},
+            headers: {
+                ...(token ? { "Authorization": `Bearer ${token}` } : {}),
+                "Content-Type": "application/json"
+            },
         });
 
         const result = await response.json();
@@ -51,15 +53,15 @@ export const useFormSubmission = ({
             await beforeSuccess?.(response);
             await onSuccess?.(response);
         },
-        onError: (error: Error | any) => {
+        onError: (error: ManualErr) => {
             const errHandled = onError?.(error);
             if (errHandled && errHandled.handled) {
                 return;
             }
-            console.log(error)
+
             const errors: Record<string, string> = error?.errors || {};
-            const errStatus: number = error.status;
-            const errorStatusText: string = error.statusText;
+            const errStatus: number = error.status || 404;
+            const errorStatusText: string = error.statusText || "Action failed";
 
             if (errStatus === 403) {
                 toast({

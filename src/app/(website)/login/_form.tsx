@@ -1,25 +1,58 @@
 "use client";
 
 import Link from "next/link";
+import Cookies from "js-cookie";
 import { useForm } from "react-hook-form";
 import { useFormSubmission } from "@/hooks/use-form-submission";
 
 import { Button } from "@/components/ui/button";
 import { TextField } from "@/components/form/text-field";
+import { toast } from "@/hooks/use-toast";
+import { useRouter } from "next/navigation";
 
 export function LogInForm() {
     const {
         register,
         setError,
+        clearErrors,
         getValues,
         formState: { errors }
     } = useForm();
 
+    const router = useRouter();
+
     const login = useFormSubmission({
         endPoint: "/auth/sign-in",
         method: "POST",
+        clearErrors,
         setError,
+        onError: (err) => {
+            const message = err?.errors?.message;
+            if (message) {
+                toast({
+                    variant: "destructive",
+                    title: `404 | ${message}`
+                });
+                return { handled: true };
+            }
+        },
         onSuccess: (res) => {
+            const user = res.user;
+            const gender = user.gender === "male";
+            const message = "Welcome back," + " " + (gender ? "Mr. " : "Mrs. ") + user.name;
+            const role = user.role;
+
+            Cookies.set("BW_TOKEN", res.token);
+            toast({
+                variant: "success",
+                title: message
+            });
+
+            if (role === "admin") {
+                router.push("/dashboard");
+            };
+
+            window.history.back();
         }
     });
 
@@ -34,7 +67,7 @@ export function LogInForm() {
 
     return (
         <div className="w-full">
-            <h2 className="text-center text-2xl font-semibold">
+            <h2 className="text-center text-3xl font-semibold">
                 Welcome back!
             </h2>
             <p className="text-center text-muted-foreground text-sm">
@@ -57,7 +90,7 @@ export function LogInForm() {
 
                     register={register}
                     registerFor="email"
-                    errors={errors}
+                    aria-invalid={Object.keys(errors).length > 0}
                     required
                 />
 
@@ -68,7 +101,7 @@ export function LogInForm() {
 
                     register={register}
                     registerFor="password"
-                    errors={errors}
+                    aria-invalid={Object.keys(errors).length > 0}
 
                     toggleSeePassword
                     required

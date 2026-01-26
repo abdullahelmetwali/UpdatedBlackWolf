@@ -24,7 +24,7 @@ export function TableRefresh({ children }: { children?: React.ReactNode }) {
                                 <Button
                                     type="button"
                                     title="Refresh Table"
-                                    className="group"
+                                    className="group *:!size-3.5"
                                     variant={'outline'}
                                     disabled={refreshTable.isPending || disabled?.refresh}
                                     onClick={() => refreshTable.mutate({})}

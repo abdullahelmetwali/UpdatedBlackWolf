@@ -15,11 +15,12 @@ import {
 import { ActionsBox } from "@/components/dashboard/table/actions-box";
 import { Status } from "@/components/states/status";
 import { DataTable } from "@/components/dashboard/table";
+
 import { CreateProduct } from "./create";
 
 export function ProductsTable({ type, data }: SpecificTable) {
     const role = "products";
-
+    console.log(data)
     const allowedTo = {
         index: true,
         show: true,
@@ -34,7 +35,7 @@ export function ProductsTable({ type, data }: SpecificTable) {
     const columns = useMemo(() => {
         return [
             {
-                id: "id",
+                accessorKey: "id",
                 header: "ID",
                 cell: ({ row }: { row: Row<any> }) => (row?.index + 1),
                 enableHiding: true,
@@ -97,7 +98,7 @@ export function ProductsTable({ type, data }: SpecificTable) {
     }, [allowedTo]);
 
     const isAll = type === "all";
-    const PRODUCTS_DATA = data?.data;
+    const PRODUCTS_DATA = data || [];
 
     return (
         <DataTable
