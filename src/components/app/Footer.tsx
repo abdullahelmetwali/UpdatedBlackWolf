@@ -7,7 +7,7 @@ export function AppFooter() {
     const pathname = usePathname();
     if (pathname.includes("login") || pathname.includes("signup")) return null;
     return (
-        <footer className="flex justify-between items-start gap-10 tab:flex-col py-8 px-4">
+        <footer className="flex justify-between items-start gap-10 max-md:flex-col py-8 px-4">
             <div>
                 <p className="text-2xl font-black tracking-wider my-3 text-nowrap whitespace-nowrap">BLACK WOLF</p>
                 <p className="text-xl mb-4">QUICK LINKS</p>

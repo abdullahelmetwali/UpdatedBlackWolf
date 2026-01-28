@@ -1,4 +1,5 @@
 "use client";
+import Cookies from "js-cookie";
 
 import type { Config, DataTableTypo, States } from "@/types";
 import { useCallback, useEffect, useState } from "react";
@@ -58,7 +59,7 @@ export function DataTable({
 
     const [pagination, setPagination] = useState({
         pageIndex: 0,
-        pageSize: 10,
+        pageSize: Number(Cookies.get("page-size")) || 10,
     });
 
     const table = useReactTable({
@@ -96,6 +97,11 @@ export function DataTable({
 
     const filteredLength = table?.getFilteredRowModel()?.rows?.length;
     const totalPages = Math.ceil(filteredLength / pagination.pageSize || 1);
+
+    const updatePageSize = useCallback((pageSize: number) => {
+        setPagination({ pageIndex: 0, pageSize: Number(pageSize) });
+        Cookies.set("page-size", pageSize.toString());
+    }, [pagination.pageSize]);
 
     const headers: string[] = table.getAllColumns()
         .reduce((acc, col) => {
@@ -169,10 +175,6 @@ export function DataTable({
             router.replace(`/dashboard/${role}`);
         }
     }, [searchParams]);
-
-    const updatePageSize = useCallback((pageSize: number) => {
-        setPagination({ pageIndex: 0, pageSize: Number(pageSize) });
-    }, [pagination.pageSize]);
 
     const onReset = useCallback(() => {
         router.replace('?');

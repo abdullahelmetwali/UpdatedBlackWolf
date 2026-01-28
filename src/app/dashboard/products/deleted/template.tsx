@@ -1,32 +1,34 @@
 "use client";
-import React from "react";
+import Link from "next/link";
+
+import { Box } from "lucide-react";
 import { Card, CardDescription, CardHeader, CardTitle, } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { Trash2 } from "lucide-react";
 
 export default function Template({ children }: { children: React.ReactNode }) {
     return (
         <main>
             <Card className="max-lg:!gap-0 max-md:*:!px-1">
 
-                <div className="flex flex-wrap items-end lg:items-center justify-between gap-4 mb-4">
+                <div className="flex lg:items-center justify-between gap-4 mb-2 max-lg:flex-col">
                     <CardHeader className="max-md:px-1">
                         <CardTitle className="text-4xl capitalize">
-                            All Products.
+                            Recently Deleted Products.
                         </CardTitle>
                         <CardDescription>
-                            Here you can see all products in the system.
+                            Here you can see all recently deleted products in the system.
                         </CardDescription>
                     </CardHeader>
+
                     <div className="lg:me-6">
                         <Button variant="outline" asChild>
-                            <Link href="/dashboard/products/deleted">
-                                <Trash2 />
-                                Recently Deleted Products
+                            <Link href="/dashboard/products">
+                                <Box />
+                                All Products
                             </Link>
                         </Button>
                     </div>
+
                 </div>
                 {children}
             </Card>

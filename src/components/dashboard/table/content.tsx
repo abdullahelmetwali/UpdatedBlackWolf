@@ -19,9 +19,9 @@ export const TableContent = ({ columnsLength }) => {
     const toggleRowSelection = (row: Row<any>) => {
         if (allowedTo.multiActions) {
             if (row.getIsSelected()) {
-                row.toggleSelected(!row.original?.id)
+                row.toggleSelected(!row.original?._id)
             } else {
-                row.toggleSelected(!!row.original?.id)
+                row.toggleSelected(!!row.original?._id)
             }
         }
     };
@@ -37,7 +37,7 @@ export const TableContent = ({ columnsLength }) => {
     //             action: () => {
     //                 createButton && openModal(`update-${role}`, row.original)
     //             },
-    //             link: (createButton ? "" : `/dashboard/${role}/${row.original?.id}`)
+    //             link: (createButton ? "" : `/dashboard/${role}/${row.original?._id}`)
     //         },
     //         show: {
     //             action: () => openModal(`show-${role}`, row.original)
@@ -124,7 +124,7 @@ export const TableContent = ({ columnsLength }) => {
                 <TableBody>
                     {(table?.getRowModel().rows?.length) ? (
                         table?.getRowModel()?.rows?.map((row: Row<any>, index: number) => (
-                            // <FeaturedContextMenu key={row?.id}
+                            // <FeaturedContextMenu key={row?._id}
                             //     title={row.original?.name || row.original?.title || row.original?.group_name}
                             //     {...contextMenuConfig(row)}
                             // >
@@ -136,9 +136,9 @@ export const TableContent = ({ columnsLength }) => {
                             >
                                 {
                                     (allowedTo.multiActions) && (row.getCanSelect()) ? (
-                                        <TableCell className="grid place-items-center h-10 w-20">
+                                        <TableCell className="grid place-items-center h-full min-h-12 w-20">
                                             <Checkbox
-                                                value={row.original.id}
+                                                value={row.original._id}
                                                 checked={row.getIsSelected()}
                                                 onCheckedChange={(value) => row.toggleSelected(!!value)}
                                                 aria-label={`Select ${row?.original.name}`}

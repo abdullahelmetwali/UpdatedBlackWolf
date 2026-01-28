@@ -30,7 +30,7 @@ export function ForceDelete({ role, }: { role: string }) {
 
     const forceDeleteMutation = useMutation({
         mutationFn: async () => {
-            const response = await fetch(`${BASE_URL}/${role}/hard/${itemToDelete?.id}`, {
+            const response = await fetch(`${BASE_URL}/${role}/hard/${itemToDelete?._id}`, {
                 method: "DELETE",
                 headers: { 'Authorization': `Bearer ${token}`, },
             });

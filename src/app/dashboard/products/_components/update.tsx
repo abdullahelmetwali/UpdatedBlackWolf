@@ -1,11 +1,13 @@
 "use client";
+import { Product } from "@/types/models";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { revalidate } from "@/utils/revalidate";
+import { useModals } from "@/contexts/modals";
 import { useFormSubmission } from "@/hooks/use-form-submission";
 import { useGet } from "@/hooks/use-get";
 import { toast } from "@/hooks/use-toast";
 
-import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import {
@@ -16,7 +18,6 @@ import {
     DrawerFooter,
     DrawerHeader,
     DrawerTitle,
-    DrawerTrigger,
 } from "@/components/ui/drawer";
 
 import { statuses } from "@/constants";
@@ -25,7 +26,12 @@ import { TextField } from "@/components/form/text-field";
 import { FileUpload } from "@/components/form/file-upload";
 import { Picker } from "@/components/form/picker";
 
-export const CreateProduct = () => {
+export const UpdateProduct = () => {
+    const { getItemInModal, isModalOpen, closeModal } = useModals();
+
+    const thisProduct: Product = getItemInModal("update-products") || {};
+    const isOpen = isModalOpen("update-products");
+
     const {
         setValue,
         setError,
@@ -34,23 +40,56 @@ export const CreateProduct = () => {
         register,
         watch,
         getValues,
-    } = useForm();
+    } = useForm<Product>({
+        defaultValues: {
+            name: thisProduct.name,
+            slug: thisProduct.slug,
+            description: thisProduct.description,
+            price: thisProduct.price,
+            discount: thisProduct.discount,
+            inStock: thisProduct.inStock,
+            status: thisProduct.status,
+            categories: thisProduct.categories,
+            colors: thisProduct.colors,
+            sizes: thisProduct.sizes,
+        },
+    });
+
+    useEffect(() => {
+        if (thisProduct && isOpen) {
+            setValue("name", thisProduct.name || "");
+            setValue("slug", thisProduct.slug || "");
+            setValue("description", thisProduct.description || "");
+
+            setValue("price", thisProduct.price || "");
+            setValue("discount", thisProduct.discount || "");
+            setValue("inStock", thisProduct.inStock || "");
+
+            setValue("image", thisProduct.image);
+            setValue("status", thisProduct.status);
+
+            setValue("categories", thisProduct.categories);
+            setValue("colors", thisProduct.colors);
+            setValue("sizes", thisProduct.sizes);
+        }
+    }, [thisProduct, isOpen]);
 
     const { data: categories, isLoading: catLoading, error: catErr } = useGet({ url: "/categories" });
     const { data: sizes, isLoading: sLoading, error: sErr } = useGet({ url: "/sizes" });
     const { data: colors, isLoading: colLoading, error: colErr } = useGet({ url: "/colors" });
 
-    const createProduct = useFormSubmission({
-        endPoint: "/products",
-        method: "POST",
+    const updateProduct = useFormSubmission({
+        endPoint: `/products/${thisProduct._id}`,
+        method: "PUT",
         setError,
         clearErrors,
-        onSuccess: async (res) => {
+        onSuccess: async () => {
             await revalidate({ url: "/products" });
             toast({
                 variant: "success",
-                title: `${res.name} added to system successfully`
+                title: `${thisProduct.name} updated successfully`
             })
+            closeModal("update-products");
         },
     });
 
@@ -72,26 +111,21 @@ export const CreateProduct = () => {
             fd.append("image", data.image);
         };
 
-        createProduct.mutate(fd);
+        updateProduct.mutate(fd);
     };
 
     return (
-        <Drawer>
-            <DrawerTrigger asChild>
-                <Button variant={"outline"}>
-                    <Plus />
-                </Button>
-            </DrawerTrigger>
+        <Drawer open={isOpen} onOpenChange={(open) => { if (!open) closeModal("update-products") }}>
             <DrawerContent className="max-h-[90dvh]">
                 <DrawerHeader>
-                    <DrawerTitle>Create new product</DrawerTitle>
-                    <DrawerDescription>Here you can add new product to the system</DrawerDescription>
+                    <DrawerTitle>Update {thisProduct.name}</DrawerTitle>
+                    <DrawerDescription>Here you can update {thisProduct.name} to the system</DrawerDescription>
                 </DrawerHeader>
                 <div className="w-full grid place-items-center pb-4 *:w-11/12 *:md:w-8/12 max-md:overflow-y-scroll"
-                    aria-disabled={createProduct.isPending}>
+                    aria-disabled={updateProduct.isPending}>
                     <form
-                        id="products"
-                        className=" grid gap-2 md:grid-cols-2 place-items-center"
+                        id="update-products"
+                        className="grid gap-2 md:grid-cols-2 place-items-center"
                         onSubmit={(e) => {
                             e.preventDefault();
                             e.stopPropagation();
@@ -101,7 +135,7 @@ export const CreateProduct = () => {
                         {/* name */}
                         <TextField
                             label="Name"
-                            placeholder="Enter product name here..."
+                            placeholder={`Product's old name is ${thisProduct.name}`}
 
                             register={register}
                             registerFor="name"
@@ -113,7 +147,7 @@ export const CreateProduct = () => {
                         <TextField
                             type="number"
                             label="Price"
-                            placeholder="Enter product price here..."
+                            placeholder={`Product's old price is ${thisProduct.price}`}
 
                             register={register}
                             registerFor="price"
@@ -125,7 +159,7 @@ export const CreateProduct = () => {
                         <TextField
                             type="number"
                             label="Discount ( % )"
-                            placeholder="Enter product discount here..."
+                            placeholder={`Product's old discount is ${thisProduct.discount}`}
 
                             register={register}
                             registerFor="discount"
@@ -136,7 +170,7 @@ export const CreateProduct = () => {
                         <TextField
                             type="number"
                             label="In Stock"
-                            placeholder="Enter product stocks number here..."
+                            placeholder={`Product's old stock is ${thisProduct.inStock}`}
 
                             register={register}
                             registerFor="inStock"
@@ -211,7 +245,7 @@ export const CreateProduct = () => {
                         <Picker
                             items={statuses}
                             label="Status"
-                            placeHolder="Choose product status from here..."
+                            placeHolder={`Product's old status is ${thisProduct.status}`}
                             className="w-full"
 
                             value={watch("status") || "1"}
@@ -226,7 +260,7 @@ export const CreateProduct = () => {
                         <div className="grid md:grid-cols-2 md:col-span-2 w-full gap-2 mt-0.5">
                             <TextField
                                 label="Description"
-                                placeholder="Enter product description here..."
+                                placeholder={`Product's old description is ${thisProduct.description || "N/A"}`}
                                 className="min-h-32"
 
                                 register={register}
@@ -254,15 +288,15 @@ export const CreateProduct = () => {
                         </DrawerClose>
                         <Button
                             type="submit"
-                            form="products"
+                            form="update-products"
                             variant={"secondary"}
-                            disabled={createProduct.isPending}
+                            disabled={updateProduct.isPending}
                         >
-                            {createProduct.isPending ? "Submitting..." : "Submit"}
+                            {updateProduct.isPending ? "Updatting..." : "Update"}
                         </Button>
                     </DrawerFooter>
                 </div>
             </DrawerContent>
         </Drawer>
     )
-}
+};

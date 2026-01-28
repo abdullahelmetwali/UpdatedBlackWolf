@@ -20,7 +20,7 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog";
 
-export function Delete({ role, }: { role: string }) {
+export function Delete({ role }: { role: string }) {
     const { isModalOpen, closeModal, getItemInModal } = useModals();
     const { allowedTo } = useTableConfig();
 
@@ -32,7 +32,7 @@ export function Delete({ role, }: { role: string }) {
 
     const deleteMutation = useMutation({
         mutationFn: async () => {
-            const response = await fetch(`${BASE_URL}/${role}/hard/${itemToDelete?.id}`, {
+            const response = await fetch(`${BASE_URL}/${role}/hard/${itemToDelete?._id}`, {
                 method: "DELETE",
                 headers: { 'Authorization': `Bearer ${token}`, },
             });
@@ -132,4 +132,4 @@ export function Delete({ role, }: { role: string }) {
             </DialogContent>
         </Dialog>
     );
-}
+};

@@ -30,7 +30,6 @@ export type CartTypo = {
 };
 
 export interface SpecificTable {
-    type: "all" | "deleted",
     data: any,
 };
 
@@ -194,8 +193,6 @@ export type ManualErr = {
 export interface UseFromSubmissionType {
     endPoint?: string,
     method: "POST" | "PUT" | "PATCH" | "DELETE",
-    context?: "website" | "dashboard",
-    headers?: HeadersInit,
 
     beforeRun?: () => void,
     beforeSuccess?: (
@@ -213,8 +210,6 @@ export interface UseFromSubmissionType {
     onError?: (err: ManualErr) => void | { handled?: boolean },
     setError?: (field: string, { type, message }: Record<string, string>) => void | any,
     clearErrors?: () => void,
-
-    errorFields?: string[] | (() => string[]),
 };
 
 export interface TextField extends React.ComponentProps<"input"> {
@@ -257,4 +252,20 @@ export interface PickerTypo extends React.ComponentProps<"button"> {
 
     maxChoosed?: number,
     variant?: "dropdown" | "container",
+};
+
+export interface FileUploadTypo extends React.ComponentProps<"input"> {
+    onChange: (file: File | null) => void
+    className?: string
+
+    name?: string,
+    value: File | string | null,
+
+    label?: string
+    icon?: any
+    errors?: FieldErrors<FieldValues>,
+    errorMessage?: string
+    type?: string,
+
+    props?: any
 };

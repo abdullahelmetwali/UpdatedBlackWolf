@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useTableConfig } from "../context";
 
 import { cn } from "@/lib/cn";
@@ -11,7 +12,6 @@ import { TableDownload } from "./download";
 import { TableMultiAction } from "./multi-actions";
 import { TableColumns } from "./columns";
 import { TableRows } from "./rows";
-import Link from "next/link";
 
 export function TableHeader() {
     const { role, allowedTo, refreshTable, isDeletedRoute, createButton, filter, } = useTableConfig();

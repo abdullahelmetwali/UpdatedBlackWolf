@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Row } from "@tanstack/react-table";
 import type { DataTableTypo } from "@/types";
 import { useModals } from "@/contexts/modals";
+import { usePathname } from "next/navigation";
 
 import {
     DropdownMenu,
@@ -20,24 +21,28 @@ import {
     Ellipsis,
 } from "lucide-react";
 
-export function ActionsBox(
-    { allowedTo, type, row, role, updateIsLink = false, hidden }:
-        {
-            allowedTo: DataTableTypo["allowedTo"],
-            type: "all" | "deleted",
-            row: Row<any>,
-            role: string,
-            updateIsLink?: boolean,
-            hidden?: {
-                show?: boolean,
-                add?: boolean,
-                update?: boolean,
-                restore?: boolean,
-                delete?: boolean,
-                forceDelete?: boolean,
-            }
-        }
-) {
+type ActionBoxTypo = {
+    allowedTo: DataTableTypo["allowedTo"],
+    row: Row<any>,
+    role: string,
+    links?: {
+        show?: string,
+        update?: string
+    }
+    updateIsLink?: boolean,
+    hidden?: {
+        show?: boolean,
+        add?: boolean,
+        update?: boolean,
+        restore?: boolean,
+        delete?: boolean,
+        forceDelete?: boolean,
+    }
+};
+
+export function ActionsBox({ allowedTo, row, role, links, updateIsLink = false, hidden }: ActionBoxTypo) {
+    const pathname = usePathname();
+    const type = pathname.includes("deleted") ? "deleted" : "all";
     const { openModal } = useModals();
     return (
         <DropdownMenu>
@@ -56,12 +61,23 @@ export function ActionsBox(
                 <DropdownMenuLabel className="text-xs text-muted-foreground px-1">Actions</DropdownMenuLabel>
                 {
                     (type === "all") && (allowedTo.show) && (!hidden?.show) &&
-                    <DropdownMenuItem onClick={() => openModal(`show-${role}`, row.original)}>
-                        <span>Show</span>
-                        <span>
-                            <Eye className="size-3.5" />
-                        </span>
-                    </DropdownMenuItem>
+                        links?.show
+                        ?
+                        <DropdownMenuItem asChild>
+                            <Link href={links.show} target="_blank">
+                                <span>Show</span>
+                                <span>
+                                    <Eye className="size-3.5" />
+                                </span>
+                            </Link>
+                        </DropdownMenuItem>
+                        :
+                        <DropdownMenuItem onClick={() => openModal(`update-${role}`, row.original)}>
+                            <span>Show</span>
+                            <span>
+                                <Eye className="size-3.5" />
+                            </span>
+                        </DropdownMenuItem>
                 }
                 {
                     type === "deleted" ?
@@ -75,10 +91,10 @@ export function ActionsBox(
                         )
                         :
                         (allowedTo.update) && (!hidden?.update) && (
-                            updateIsLink
+                            links?.update
                                 ?
                                 <DropdownMenuItem asChild>
-                                    <Link href={`/dashboard/${role}/${row?.original?.id}`}>
+                                    <Link href={links.update} target="_blank">
                                         <span>Update</span>
                                         <span>
                                             <ClipboardPen className="size-3.5" />

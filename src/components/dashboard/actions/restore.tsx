@@ -30,7 +30,7 @@ export function Restore({ role, }: { role: string }) {
 
     const restoreMutation = useMutation({
         mutationFn: async () => {
-            const response = await fetch(`${BASE_URL}/${role}/restore/${itemToDelete?.id}`, {
+            const response = await fetch(`${BASE_URL}/${role}/restore/${itemToDelete?._id}`, {
                 method: "PATCH",
                 headers: { 'Authorization': `Bearer ${token}`, },
             });

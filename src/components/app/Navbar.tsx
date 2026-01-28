@@ -1,26 +1,25 @@
 "use client";
 
-import cookies from "js-cookie";
-import { usePathname } from "next/navigation";
-import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
+import { isAdmin } from "@/lib/auth";
+import { TOKEN_CL } from "@/utils/token/client";
+
+import { usePathname } from "next/navigation";
+import { useContext, useState } from "react";
 
 import Cart from "@/components/cart/Cart";
 import { CartState } from "@/store/CartProvider";
-import SearchBox from "./Search";
 import { ShoppingCart, User, Search } from 'lucide-react';
+import SearchBox from "./Search";
 
 
 export function AppNavbar() {
+    const token = TOKEN_CL();
+    const roleIsAdmin = isAdmin(token);
+
     const pathname = usePathname();
     const { seeCart, setSeeCart } = useContext(CartState);
-    const [seeUsr, setSeeUsr] = useState('/account/login');
     const [searchMenu, setSearchMenu] = useState<boolean>(false);
-
-    useEffect(() => {
-        const clientUser = cookies.get('u');
-        setSeeUsr(clientUser ? `/account/u/${clientUser.replaceAll('"', '')}` : '/account/login');
-    }, []);
 
     if (pathname.includes("login") || pathname.includes("signup")) return null;
     return (
@@ -49,7 +48,11 @@ export function AppNavbar() {
                     </ul>
                     <ul className="flex gap-5 items-start tab:gap-3">
                         <li>
-                            <Link href={seeUsr} title="Account">
+                            <Link
+                                title="Account"
+                                href={!token ? '/login' :
+                                    (roleIsAdmin) ? '/dashboard' : '/profile'}
+                            >
                                 <User color="#a1a1a1" width={30} height={30} />
                             </Link>
                         </li>

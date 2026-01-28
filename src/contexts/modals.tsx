@@ -15,7 +15,7 @@ export const useModals = create<UseModals>((set, get) => ({
 
     getItemInModal: (name) => {
         const latestModals = get().modals;
-        return latestModals[name];
+        return latestModals.get(name);
     },
     openModal: (name, valueOfName) => {
         const latestModals = get().modals;

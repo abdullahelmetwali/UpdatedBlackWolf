@@ -8,10 +8,9 @@ interface DecodedToken {
     exp?: number
 };
 
-export const isAdmin = (token?: string | null) => {
+export const isAdmin = (token: string | undefined) => {
     if (!token) return null;
 
     const decode = jwtDecode<DecodedToken>(token);
-
     return decode.role === "admin"
 };

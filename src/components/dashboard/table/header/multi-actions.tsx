@@ -1,13 +1,15 @@
+import { useTableConfig, useTableState } from "@/components/dashboard/table/context";
+import { MinimalMultiAction } from "@/components/dashboard/actions/multi-actions";
+
+import { ChevronDown, RefreshCcw, TrashIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useTableConfig, useTableState } from "../context";
-import { Button } from "@/components/ui/button";
-import { ChevronDown, RefreshCcw, TrashIcon } from "lucide-react";
-import { MinimalMultiAction } from "../../actions/multi-actions";
+
 
 export function TableMultiAction() {
     const { rowSelection, } = useTableState();
@@ -38,8 +40,8 @@ export function TableMultiAction() {
                                 ids={Object.keys(rowSelection)}
                                 message={`These ${role.toLowerCase()} deleted successfully`}
                             >
-                                <Button variant={'ghost'} className="w-full justify-start h-7">
-                                    <TrashIcon />
+                                <Button variant={'ghost'} className="w-full justify-start h-7 ps-3.5">
+                                    <TrashIcon className="size-3.5" />
                                     Force Delete
                                 </Button>
                             </MinimalMultiAction>
@@ -53,8 +55,8 @@ export function TableMultiAction() {
                                 ids={Object.keys(rowSelection)}
                                 message={`These ${role.toLowerCase()} deleted successfully`}
                             >
-                                <Button variant={'ghost'} className="w-full justify-start h-7">
-                                    <TrashIcon />
+                                <Button variant={'ghost'} className="w-full justify-start h-7 ps-3.5">
+                                    <TrashIcon className="!size-3" />
                                     Delete
                                 </Button>
                             </MinimalMultiAction>

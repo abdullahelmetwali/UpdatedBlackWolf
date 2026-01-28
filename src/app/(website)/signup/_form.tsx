@@ -1,15 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import Cookies from "js-cookie";
 import { useForm } from "react-hook-form";
 import { useFormSubmission } from "@/hooks/use-form-submission";
+import { controlUserToken } from "@/utils/token/control";
 import { toast } from "@/hooks/use-toast";
 
+import { genders } from "@/constants";
 import { Button } from "@/components/ui/button";
 import { TextField } from "@/components/form/text-field";
 import { Picker } from "@/components/form/picker";
-import { genders } from "@/constants";
 
 export function SignUpForm() {
     const {
@@ -23,12 +23,12 @@ export function SignUpForm() {
     } = useForm();
 
     const signUp = useFormSubmission({
-        endPoint: "/auth/sign-up",
+        endPoint: "/auth/register",
         method: "POST",
         setError,
         clearErrors,
         onSuccess: (res) => {
-            Cookies.set("BW_TOKEN", res.token);
+            controlUserToken({ action: "save", token: res.token });
 
             toast({
                 variant: "success",
@@ -127,6 +127,7 @@ export function SignUpForm() {
                     errors={errors}
                     required
                 />
+
                 <Button
                     type="submit"
                     form="signUp"
@@ -147,5 +148,5 @@ export function SignUpForm() {
                 </div>
             </form>
         </div>
-    )
-}
+    );
+};

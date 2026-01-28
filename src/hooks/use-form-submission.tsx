@@ -21,16 +21,17 @@ export const useFormSubmission = ({
 }: UseFromSubmissionType) => {
     const token = TOKEN_CL();
 
-    const submitForm = async (body: any) => {
+    const submitForm = async (body: Record<string, string> | FormData) => {
         beforeRun?.();
         clearErrors?.();
 
+        const isFormData = body instanceof FormData;
         const response = await fetch(`${BASE_URL}${endPoint}`, {
             method: method,
-            body: JSON.stringify(body),
+            body: isFormData ? body : JSON.stringify(body),
             headers: {
                 ...(token ? { "Authorization": `Bearer ${token}` } : {}),
-                "Content-Type": "application/json"
+                ...(isFormData ? {} : { "Content-Type": "application/json" })
             },
         });
 

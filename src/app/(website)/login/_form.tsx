@@ -1,14 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import Cookies from "js-cookie";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
 import { useFormSubmission } from "@/hooks/use-form-submission";
+import { controlUserToken } from "@/utils/token/control";
+import { toast } from "@/hooks/use-toast";
 
 import { Button } from "@/components/ui/button";
 import { TextField } from "@/components/form/text-field";
-import { toast } from "@/hooks/use-toast";
-import { useRouter } from "next/navigation";
 
 export function LogInForm() {
     const {
@@ -22,7 +22,7 @@ export function LogInForm() {
     const router = useRouter();
 
     const login = useFormSubmission({
-        endPoint: "/auth/sign-in",
+        endPoint: "/auth/login",
         method: "POST",
         clearErrors,
         setError,
@@ -42,7 +42,7 @@ export function LogInForm() {
             const message = "Welcome back," + " " + (gender ? "Mr. " : "Mrs. ") + user.name;
             const role = user.role;
 
-            Cookies.set("BW_TOKEN", res.token);
+            controlUserToken({ action: "save", token: res.token });
             toast({
                 variant: "success",
                 title: message

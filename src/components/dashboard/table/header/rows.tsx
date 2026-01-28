@@ -49,9 +49,14 @@ export function TableRows({ children }: { children?: React.ReactNode }) {
                                 type="number"
                                 maxLength={2}
                                 minLength={0}
-                                className="max-w-32 text-xs h-7"
+                                className="max-w-full md:max-w-32 text-xs h-7 placeholder:text-xs"
                                 placeholder={`Rows number is ${pagination.pageSize}`}
                                 onChange={(e) => {
+                                    if (Number(e.target.value) < 2) {
+                                        e.target.value = "2"
+                                        updatePageSize(2);
+                                    };
+
                                     if (e.target.value.length <= 2 && e.target.value) {
                                         setTimeout(() => {
                                             updatePageSize(Number(e.target.value));
@@ -59,7 +64,9 @@ export function TableRows({ children }: { children?: React.ReactNode }) {
                                         e.target.setAttribute('aria-invalid', 'false');
                                     } else {
                                         e.target.setAttribute('aria-invalid', 'true');
+                                        e.target.value = e.target.value.slice(0, 2);
                                     }
+
                                 }}
                             />
                         </DropdownMenuContent>

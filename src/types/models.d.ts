@@ -1,14 +1,34 @@
-export interface ProductTypo {
-    id: string,
-    slug: string;
+export interface BaseEntity {
+    _id: string;
+    createdAt: string;
+    updatedAt: string;
+    createdBy: string;
+    updatedBy: string | null;
+    deletedAt: string | null;
+    deletedBy: string | null;
+    isDeleted: boolean;
+};
+
+export interface IdAndName {
+    _id: string;
     name: string;
-    description: string,
-    image: string,
-    colors: string[];
-    categories: string[];
-    sizes: string[];
-    price: number;
-    oldPrice?: number,
-    discount?: number,
-    status: "0" | "1"
+};
+
+export interface Product extends BaseEntity {
+    name: string;
+    slug: string;
+    description: string;
+
+    price: number | string;
+    oldPrice: number | string;
+    discount: number | string;
+    inStock: number | string;
+
+    image: string | File | null;
+    status: "0" | "1";
+
+    categories: IdAndName[];
+    colors: IdAndName[];
+    sizes: IdAndName[];
+    reviews: any[];
 };

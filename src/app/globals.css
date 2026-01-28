@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  color: #ededed;
-  background: #0a0a0a;
-  overflow-x: hidden;
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted);
 }
 
 img {
@@ -114,7 +113,6 @@ input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
-
 
 @layer base {
   :root {
