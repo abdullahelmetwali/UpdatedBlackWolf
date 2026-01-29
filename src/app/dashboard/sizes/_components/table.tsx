@@ -18,11 +18,11 @@ import { ActionsBox } from "@/components/dashboard/table/actions-box";
 import { FormattedDate } from "@/components/states/formatted-date";
 import { Status } from "@/components/states/status";
 
-import { CreateCategory } from "./create";
-import { UpdateCategory } from "./update";
+import { CreateSize } from "./create";
+import { UpdateSize } from "./update";
 
-export function CategoriesTable({ data, type }: SpecificTable) {
-    const role = "categories";
+export function SizesTable({ data, type }: SpecificTable) {
+    const role = "sizes";
 
     const allowedTo = {
         index: true,
@@ -111,13 +111,13 @@ export function CategoriesTable({ data, type }: SpecificTable) {
 
     return (
         <>
-            <UpdateCategory />
+            <UpdateSize />
             <DataTable
                 data={data || []}
                 columns={columns}
                 role={role}
                 allowedTo={allowedTo}
-                createButton={<CreateCategory disabled={{ add: type === "deleted" }} />}
+                createButton={<CreateSize disabled={{ add: type === "deleted" }} />}
             />
         </>
     );

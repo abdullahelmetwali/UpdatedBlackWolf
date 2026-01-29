@@ -13,7 +13,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
                 <div className="flex lg:items-center justify-between gap-4 mb-2 max-lg:flex-col">
                     <CardHeader className="max-md:px-1">
                         <CardTitle className="text-4xl capitalize">
-                            Recently Deleted Products.
+                            Recently Deleted Products Table.
                         </CardTitle>
                         <CardDescription>
                             Here you can see all recently deleted products in the system.

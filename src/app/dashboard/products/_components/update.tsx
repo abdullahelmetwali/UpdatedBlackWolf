@@ -1,5 +1,7 @@
 "use client";
+import { CreateOrUpdate } from "@/types";
 import { Product } from "@/types/models";
+
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { revalidate } from "@/utils/revalidate";
@@ -26,7 +28,15 @@ import { TextField } from "@/components/form/text-field";
 import { FileUpload } from "@/components/form/file-upload";
 import { Picker } from "@/components/form/picker";
 
-export const UpdateProduct = () => {
+import { CreateColor } from "../../colors/_components/create";
+import { CreateSize } from "../../sizes/_components/create";
+import { CreateCategory } from "../../categories/_components/create";
+
+export function UpdateProduct({
+    disabled,
+    onError,
+    onSuccess,
+}: CreateOrUpdate) {
     const { getItemInModal, isModalOpen, closeModal } = useModals();
 
     const thisProduct: Product = getItemInModal("update-products") || {};
@@ -83,8 +93,11 @@ export const UpdateProduct = () => {
         method: "PUT",
         setError,
         clearErrors,
-        onSuccess: async () => {
+        onError: onError,
+        onSuccess: async (response) => {
             await revalidate({ url: "/products" });
+            onSuccess?.(response);
+
             toast({
                 variant: "success",
                 title: `${thisProduct.name} updated successfully`
@@ -140,6 +153,8 @@ export const UpdateProduct = () => {
                             register={register}
                             registerFor="name"
                             errors={errors}
+
+                            disabled={disabled?.name}
                             required
                         />
 
@@ -152,6 +167,8 @@ export const UpdateProduct = () => {
                             register={register}
                             registerFor="price"
                             errors={errors}
+
+                            disabled={disabled?.price}
                             required
                         />
 
@@ -164,6 +181,8 @@ export const UpdateProduct = () => {
                             register={register}
                             registerFor="discount"
                             errors={errors}
+
+                            disabled={disabled?.discount}
                         />
 
                         {/* in stock */}
@@ -175,70 +194,107 @@ export const UpdateProduct = () => {
                             register={register}
                             registerFor="inStock"
                             errors={errors}
-                            required
+
+                            disabled={disabled?.inStock}
                         />
 
                         {/* categroies */}
-                        <div className="w-full">
-                            <MultiPicker
-                                items={categories}
-                                isLoading={catLoading}
-                                error={catErr}
+                        <div className="flex items-end gap-1 w-full">
+                            <div className="w-full">
+                                <MultiPicker
+                                    items={categories}
+                                    isLoading={catLoading}
+                                    error={catErr}
 
-                                label="Categories"
-                                placeHolder="Choose product categories from here..."
-                                className="w-full"
+                                    label="Categories"
+                                    placeHolder="Choose product categories from here..."
+                                    className="w-full"
 
-                                value={watch("categories")}
-                                setValue={setValue}
-                                setValueFor={"categories"}
-                                errors={errors}
+                                    value={watch("categories")}
+                                    setValue={setValue}
+                                    setValueFor={"categories"}
+                                    errors={errors}
 
-                                variant={"dropdown"}
-                                required
-                            />
+                                    variant={"dropdown"}
+                                    disabled={disabled?.categories}
+                                    required
+                                />
+                            </div>
+                            <div className="w-fit">
+                                <CreateCategory
+                                    disabled={{ status: true }}
+                                    onSuccess={(response) => {
+                                        const oldCategories = watch("categories") || [];
+                                        setValue("categories", [...oldCategories, response]);
+                                    }}
+                                />
+                            </div>
                         </div>
 
                         {/* sizes */}
-                        <div className="w-full">
-                            <MultiPicker
-                                items={sizes}
-                                isLoading={sLoading}
-                                error={sErr}
+                        <div className="flex items-end gap-1 w-full">
+                            <div className="w-full">
+                                <MultiPicker
+                                    items={sizes}
+                                    isLoading={sLoading}
+                                    error={sErr}
 
-                                label="Sizes"
-                                placeHolder="Choose product sizes from here..."
-                                className="w-full"
+                                    label="Sizes"
+                                    placeHolder="Choose product sizes from here..."
+                                    className="w-full"
 
-                                value={watch("sizes")}
-                                setValue={setValue}
-                                setValueFor={"sizes"}
-                                errors={errors}
+                                    value={watch("sizes")}
+                                    setValue={setValue}
+                                    setValueFor={"sizes"}
+                                    errors={errors}
 
-                                variant={"dropdown"}
-                                required
-                            />
+                                    variant={"dropdown"}
+                                    disabled={disabled?.sizes}
+                                    required
+                                />
+                            </div>
+                            <div className="w-fit">
+                                <CreateSize
+                                    disabled={{ status: true }}
+                                    onSuccess={(response) => {
+                                        const oldSizes = watch("sizes") || [];
+                                        setValue("sizes", [...oldSizes, response]);
+                                    }}
+                                />
+                            </div>
                         </div>
 
                         {/* colors */}
-                        <div className="w-full">
-                            <MultiPicker
-                                items={colors}
-                                isLoading={colLoading}
-                                error={colErr}
+                        <div className="flex items-end gap-1 w-full">
+                            <div className="w-full">
+                                <MultiPicker
+                                    items={colors}
+                                    isLoading={colLoading}
+                                    error={colErr}
 
-                                label="colors"
-                                placeHolder="Choose product colors from here..."
-                                className="w-full"
+                                    label="colors"
+                                    placeHolder="Choose product colors from here..."
+                                    className="w-full"
 
-                                value={watch("colors")}
-                                setValue={setValue}
-                                setValueFor={"colors"}
-                                errors={errors}
+                                    value={watch("colors")}
+                                    setValue={setValue}
+                                    setValueFor={"colors"}
+                                    errors={errors}
 
-                                variant="dropdown"
-                                required
-                            />
+                                    variant="dropdown"
+                                    disabled={disabled?.colors}
+                                    required
+                                />
+                            </div>
+                            <div className="w-fit">
+                                <CreateColor
+                                    disabled={{ status: true }}
+                                    onSuccess={(response) => {
+                                        const oldColors = watch("colors") || [];
+                                        setValue("colors", [...oldColors, response]);
+                                    }}
+                                />
+                            </div>
                         </div>
 
                         {/* status */}
@@ -253,7 +309,7 @@ export const UpdateProduct = () => {
                             setValueFor={"status"}
                             errors={errors}
 
-                            required
+                            disabled={disabled?.status}
                         />
 
                         {/* description - image */}
@@ -268,6 +324,7 @@ export const UpdateProduct = () => {
                                 errors={errors}
 
                                 textarea
+                                disabled={disabled?.description}
                             />
                             <div className="w-full *:!space-y-1">
                                 <Label>* Image</Label>
@@ -275,6 +332,8 @@ export const UpdateProduct = () => {
                                     name="image"
                                     value={watch("image")}
                                     onChange={(img) => setValue("image", img)}
+
+                                    disabled={disabled?.image}
                                     required
                                 />
                             </div>

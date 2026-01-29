@@ -1,6 +1,6 @@
 import { ManualErr, UseFromSubmissionType } from "@/types";
 
-import { useMutation } from "@tanstack/react-query"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { BASE_URL } from "@/utils/url";
 import { TOKEN_CL } from "@/utils/token/client";
 
@@ -20,6 +20,7 @@ export const useFormSubmission = ({
     setError,
 }: UseFromSubmissionType) => {
     const token = TOKEN_CL();
+    const queryClient = useQueryClient();
 
     const submitForm = async (body: Record<string, string> | FormData) => {
         beforeRun?.();
@@ -53,6 +54,7 @@ export const useFormSubmission = ({
         onSuccess: async (response) => {
             await beforeSuccess?.(response);
             await onSuccess?.(response);
+            queryClient.invalidateQueries({ queryKey: [endPoint] });
         },
         onError: (error: ManualErr) => {
             const errHandled = onError?.(error);

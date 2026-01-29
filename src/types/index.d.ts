@@ -1,4 +1,4 @@
-import { UseMutationResult } from "@tanstack/react-query";
+import { UseMutationResult, UseQueryOptions } from "@tanstack/react-query";
 
 export type GETFUNC = {
     url: string;
@@ -30,6 +30,7 @@ export type CartTypo = {
 };
 
 export interface SpecificTable {
+    type?: "all" | "deleted"
     data: any,
 };
 
@@ -268,4 +269,10 @@ export interface FileUploadTypo extends React.ComponentProps<"input"> {
     type?: string,
 
     props?: any
+};
+
+export interface CreateOrUpdate {
+    disabled?: Record<string, boolean>,
+    onSuccess?: (response?: any) => void,
+    onError?: (error?: any) => void | { handled?: boolean },
 };

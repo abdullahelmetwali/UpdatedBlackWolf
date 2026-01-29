@@ -21,7 +21,7 @@ import { statuses } from "@/constants";
 import { Picker } from "@/components/form/picker";
 import { TextField } from "@/components/form/text-field";
 
-export function CreateCategory({
+export function CreateColor({
     disabled,
     onError,
     onSuccess,
@@ -30,38 +30,38 @@ export function CreateCategory({
         setValue,
         setError,
         clearErrors,
-        reset,
         formState: { errors },
         register,
         watch,
         getValues,
     } = useForm();
 
-    const createCategory = useFormSubmission({
-        endPoint: "/categories",
+    const createColor = useFormSubmission({
+        endPoint: "/colors",
         method: "POST",
         setError,
         clearErrors,
         onError: onError,
         onSuccess: async (response) => {
-            await revalidate({ url: "/categories" });
+            await revalidate({ url: "/colors" });
             onSuccess?.(response);
 
             toast({
                 variant: "success",
                 title: `${response.name} added to system successfully`
-            })
-            reset();
+            });
+
         },
     });
 
     const onSubmit = (data: any) => {
         const body = {
             name: data.name,
+            value: data.value,
             status: data.status || "1"
         };
 
-        createCategory.mutate(body);
+        createColor.mutate(body);
     };
 
     return (
@@ -73,14 +73,14 @@ export function CreateCategory({
             </DrawerTrigger>
             <DrawerContent>
                 <DrawerHeader>
-                    <DrawerTitle>Create new Category</DrawerTitle>
-                    <DrawerDescription>Here you can add new category to the system</DrawerDescription>
+                    <DrawerTitle>Create new color</DrawerTitle>
+                    <DrawerDescription>Here you can add new color to the system</DrawerDescription>
                 </DrawerHeader>
 
                 <div className="w-full grid place-items-center pb-4 *:w-11/12 *:md:w-8/12"
-                    aria-disabled={createCategory.isPending}>
+                    aria-disabled={createColor.isPending}>
                     <form
-                        id="categories"
+                        id="colors"
                         className=" grid gap-2 md:grid-cols-2 place-items-center"
                         onSubmit={(e) => {
                             e.preventDefault();
@@ -91,7 +91,7 @@ export function CreateCategory({
                         {/* name */}
                         <TextField
                             label="Name"
-                            placeholder="Enter category name here..."
+                            placeholder="Enter color name here..."
 
                             register={register}
                             registerFor="name"
@@ -101,12 +101,26 @@ export function CreateCategory({
                             required
                         />
 
+                        {/* value */}
+                        <TextField
+                            type="color"
+                            label="Color"
+                            placeholder="Choose color value here..."
+
+                            register={register}
+                            registerFor="value"
+                            errors={errors}
+
+                            disabled={disabled?.value}
+                            required
+                        />
+
                         {/* status */}
                         <Picker
                             items={statuses}
                             label="Status"
-                            placeHolder="Choose category status from here..."
-                            className="w-full"
+                            placeHolder="Choose color status from here..."
+                            className="w-full md:col-span-2"
 
                             value={watch("status") || "1"}
                             setValue={setValue}
@@ -127,11 +141,11 @@ export function CreateCategory({
                         </DrawerClose>
                         <Button
                             type="submit"
-                            form="categories"
+                            form="colors"
                             variant={"secondary"}
-                            disabled={createCategory.isPending}
+                            disabled={createColor.isPending}
                         >
-                            {createCategory.isPending ? "Submitting..." : "Submit"}
+                            {createColor.isPending ? "Submitting..." : "Submit"}
                         </Button>
                     </DrawerFooter>
                 </div>

@@ -32,3 +32,16 @@ export interface Product extends BaseEntity {
     sizes: IdAndName[];
     reviews: any[];
 };
+
+export interface Category extends BaseEntity {
+    name: string;
+    slug: string;
+    status: "0" | "1";
+};
+
+export interface Color extends BaseEntity {
+    name: string;
+    value: string
+    slug: string;
+    status: "0" | "1";
+};

@@ -61,23 +61,25 @@ export function ActionsBox({ allowedTo, row, role, links, updateIsLink = false, 
                 <DropdownMenuLabel className="text-xs text-muted-foreground px-1">Actions</DropdownMenuLabel>
                 {
                     (type === "all") && (allowedTo.show) && (!hidden?.show) &&
+                    (
                         links?.show
-                        ?
-                        <DropdownMenuItem asChild>
-                            <Link href={links.show} target="_blank">
+                            ?
+                            <DropdownMenuItem asChild>
+                                <Link href={links.show} target="_blank">
+                                    <span>Show</span>
+                                    <span>
+                                        <Eye className="size-3.5" />
+                                    </span>
+                                </Link>
+                            </DropdownMenuItem>
+                            :
+                            <DropdownMenuItem onClick={() => openModal(`show-${role}`, row.original)}>
                                 <span>Show</span>
                                 <span>
                                     <Eye className="size-3.5" />
                                 </span>
-                            </Link>
-                        </DropdownMenuItem>
-                        :
-                        <DropdownMenuItem onClick={() => openModal(`update-${role}`, row.original)}>
-                            <span>Show</span>
-                            <span>
-                                <Eye className="size-3.5" />
-                            </span>
-                        </DropdownMenuItem>
+                            </DropdownMenuItem>
+                    )
                 }
                 {
                     type === "deleted" ?

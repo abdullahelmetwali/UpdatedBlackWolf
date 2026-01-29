@@ -32,7 +32,7 @@ export function Delete({ role }: { role: string }) {
 
     const deleteMutation = useMutation({
         mutationFn: async () => {
-            const response = await fetch(`${BASE_URL}/${role}/hard/${itemToDelete?._id}`, {
+            const response = await fetch(`${BASE_URL}/${role}/soft/${itemToDelete?._id}`, {
                 method: "DELETE",
                 headers: { 'Authorization': `Bearer ${token}`, },
             });
@@ -53,8 +53,9 @@ export function Delete({ role }: { role: string }) {
             router.refresh();
 
             toast({
+                variant: "success",
                 title: "Done, operation success",
-                description: `The item deleted from system successfully`,
+                description: `The item deleted temporarily from system successfully`,
             });
 
         },

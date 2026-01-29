@@ -11,6 +11,10 @@ export async function GET({
 }: GETFUNC) {
     const token = await TOKEN_SR();
 
+    if (!token && context === "dashboard") {
+        throw new Error("Unauthorized");
+    };
+
     const URL_TO_FETCH = context === "special" ? url : `${BASE_URL}${url}`;
     const HEADERS: HeadersInit = token ? { "Authorization": `Bearer ${token}`, } : {};
 
@@ -24,7 +28,7 @@ export async function GET({
             method: "GET",
             headers: HEADERS,
             next: {
-                tags: [URL_TO_FETCH],
+                tags: [url],
                 revalidate: REVALIDATION_TIME
             }
         });

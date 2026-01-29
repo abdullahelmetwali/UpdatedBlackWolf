@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { Card, CardDescription, CardHeader, CardTitle, } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Trash2 } from "lucide-react";
+import { Layers } from "lucide-react";
 
 export default function Template({ children }: { children: React.ReactNode }) {
     return (
@@ -12,17 +12,17 @@ export default function Template({ children }: { children: React.ReactNode }) {
                 <div className="flex flex-wrap items-end lg:items-center justify-between gap-4 mb-4">
                     <CardHeader className="max-md:px-1">
                         <CardTitle className="text-4xl capitalize">
-                            All Categories Table.
+                            Recently Deleted Categories Table.
                         </CardTitle>
                         <CardDescription>
-                            Here you can see all categories in the system.
+                            Here you can see recently deleted categories in the system.
                         </CardDescription>
                     </CardHeader>
                     <div className="lg:me-6">
                         <Button variant="outline" asChild>
-                            <Link href="/dashboard/categories/deleted">
-                                <Trash2 />
-                                Recently Deleted Categories
+                            <Link href="/dashboard/categories">
+                                <Layers />
+                                All Categories
                             </Link>
                         </Button>
                     </div>

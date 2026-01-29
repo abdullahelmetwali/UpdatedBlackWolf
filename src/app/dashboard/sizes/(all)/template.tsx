@@ -12,17 +12,17 @@ export default function Template({ children }: { children: React.ReactNode }) {
                 <div className="flex flex-wrap items-end lg:items-center justify-between gap-4 mb-4">
                     <CardHeader className="max-md:px-1">
                         <CardTitle className="text-4xl capitalize">
-                            All Categories Table.
+                            All Sizes Table.
                         </CardTitle>
                         <CardDescription>
-                            Here you can see all categories in the system.
+                            Here you can see all sizes in the system.
                         </CardDescription>
                     </CardHeader>
                     <div className="lg:me-6">
                         <Button variant="outline" asChild>
-                            <Link href="/dashboard/categories/deleted">
+                            <Link href="/dashboard/sizes/deleted">
                                 <Trash2 />
-                                Recently Deleted Categories
+                                Recently Deleted Sizes
                             </Link>
                         </Button>
                     </div>

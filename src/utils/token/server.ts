@@ -7,6 +7,6 @@ export async function TOKEN_SR() {
         const token = cookieStore.get("BW_TOKEN")?.value;
         return token;
     } catch (error) {
-        return null;
+        return false;
     }
 };

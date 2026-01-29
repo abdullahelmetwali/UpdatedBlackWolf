@@ -25,7 +25,7 @@ import { UpdateProduct } from "./update";
 import { ProductsFilter } from "./filter";
 import { Description } from "./description";
 
-export function ProductsTable({ data }: SpecificTable) {
+export function ProductsTable({ data, type }: SpecificTable) {
     const role = "products";
     const { openModal } = useModals();
 
@@ -265,7 +265,7 @@ export function ProductsTable({ data }: SpecificTable) {
                 columns={columns}
                 role={role}
                 allowedTo={allowedTo}
-                createButton={<CreateProduct />}
+                createButton={<CreateProduct disabled={{ add: type === "deleted" }} />}
                 filter={<ProductsFilter />}
             />
         </>

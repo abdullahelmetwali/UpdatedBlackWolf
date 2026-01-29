@@ -4,6 +4,7 @@ import { SpecificTable } from "@/types";
 import { Column, Row } from "@tanstack/react-table";
 import { useMemo } from "react";
 import { format } from "date-fns";
+import { useModals } from "@/contexts/modals";
 
 import { ArrowUpDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,11 +19,11 @@ import { ActionsBox } from "@/components/dashboard/table/actions-box";
 import { FormattedDate } from "@/components/states/formatted-date";
 import { Status } from "@/components/states/status";
 
-import { CreateCategory } from "./create";
-import { UpdateCategory } from "./update";
+import { CreateColor } from "./create";
+import { UpdateColor } from "./update";
 
-export function CategoriesTable({ data, type }: SpecificTable) {
-    const role = "categories";
+export function ColorsTable({ data, type }: SpecificTable) {
+    const role = "colors";
 
     const allowedTo = {
         index: true,
@@ -65,6 +66,18 @@ export function CategoriesTable({ data, type }: SpecificTable) {
                     </Tooltip>
                 ),
                 enableHiding: true,
+            },
+            {
+                id: "value",
+                accessorFn: (row: any) => (row?.value || "N/A"),
+                header: "Color",
+                cell: ({ row }: { row: Row<any> }) => (
+                    <div
+                        className="w-14 h-8 rounded-md"
+                        style={{ backgroundColor: row.original?.value }}
+                        title={row.original?.value}
+                    />
+                )
             },
             {
                 id: "created-by",
@@ -111,13 +124,13 @@ export function CategoriesTable({ data, type }: SpecificTable) {
 
     return (
         <>
-            <UpdateCategory />
+            <UpdateColor />
             <DataTable
                 data={data || []}
                 columns={columns}
                 role={role}
                 allowedTo={allowedTo}
-                createButton={<CreateCategory disabled={{ add: type === "deleted" }} />}
+                createButton={<CreateColor disabled={{ add: type === "deleted" }} />}
             />
         </>
     );

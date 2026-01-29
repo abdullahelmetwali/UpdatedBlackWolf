@@ -1,6 +1,6 @@
 import ProductDetails from "@/components/product/ProductDetails";
 import ReviewFAQ from "@/components/product/ReviewFAQ";
-import SameProducts from "@/components/product/SameProducts";
+// import SameProducts from "@/components/product/SameProducts";
 import GetFilteredProducts from "@/hooks/GetFilteredProducts";
 import { Product } from "@/interfaces/Types";
 
@@ -24,12 +24,12 @@ const ProductPage = async ({ params }: { params: Promise<{ type: string, title: 
     const { product } = await GetProduct({ title: title, type: type });
     if (!product) throw new Error('No product founded');
     const { products } = await GetFilteredProducts({ sec: product.type ? product.type : 'all' });
-    const sameProducts = products?.filter((pro: Product) => pro.title !== product.title).slice(0, 11) || [];
+    // const sameProducts = products?.filter((pro: Product) => pro.title !== product.title).slice(0, 11) || [];
     return (
         <>
             <ProductDetails product={product} />
             <ReviewFAQ />
-            <SameProducts products={sameProducts} />
+            {/* <SameProducts products={sameProducts} /> */}
         </>
     )
 };

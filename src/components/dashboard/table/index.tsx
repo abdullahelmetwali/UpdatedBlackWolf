@@ -195,7 +195,7 @@ export function DataTable({
                 ? `/${role}/deleted`
                 : `/${role}`;
 
-            await fetch(`/api/revalidate/${role}`, { method: "POST" });
+            await fetch(`/api/revalidate${path}`, { method: "POST" });
             await queryClient.refetchQueries({ queryKey: [path] });
             return { path };
         },

@@ -17,7 +17,7 @@ export const useGet = ({ url, headers, context = "website", props, }: UseGet) =>
         : {};
 
     const query = useQuery({
-        queryKey: [TAG_NAME, context],
+        queryKey: [TAG_NAME],
         queryFn: async () => {
             try {
                 const response = await fetch(URL_TO_FETCH, {

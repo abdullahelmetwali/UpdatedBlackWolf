@@ -21,7 +21,7 @@ import { statuses } from "@/constants";
 import { Picker } from "@/components/form/picker";
 import { TextField } from "@/components/form/text-field";
 
-export function CreateCategory({
+export function CreateSize({
     disabled,
     onError,
     onSuccess,
@@ -37,20 +37,21 @@ export function CreateCategory({
         getValues,
     } = useForm();
 
-    const createCategory = useFormSubmission({
-        endPoint: "/categories",
+    const createSize = useFormSubmission({
+        endPoint: "/sizes",
         method: "POST",
         setError,
         clearErrors,
         onError: onError,
         onSuccess: async (response) => {
-            await revalidate({ url: "/categories" });
+            await revalidate({ url: "/sizes" });
             onSuccess?.(response);
 
             toast({
                 variant: "success",
                 title: `${response.name} added to system successfully`
-            })
+            });
+
             reset();
         },
     });
@@ -61,7 +62,7 @@ export function CreateCategory({
             status: data.status || "1"
         };
 
-        createCategory.mutate(body);
+        createSize.mutate(body);
     };
 
     return (
@@ -73,14 +74,14 @@ export function CreateCategory({
             </DrawerTrigger>
             <DrawerContent>
                 <DrawerHeader>
-                    <DrawerTitle>Create new Category</DrawerTitle>
-                    <DrawerDescription>Here you can add new category to the system</DrawerDescription>
+                    <DrawerTitle>Create new Size</DrawerTitle>
+                    <DrawerDescription>Here you can add new size to the system</DrawerDescription>
                 </DrawerHeader>
 
                 <div className="w-full grid place-items-center pb-4 *:w-11/12 *:md:w-8/12"
-                    aria-disabled={createCategory.isPending}>
+                    aria-disabled={createSize.isPending}>
                     <form
-                        id="categories"
+                        id="sizes"
                         className=" grid gap-2 md:grid-cols-2 place-items-center"
                         onSubmit={(e) => {
                             e.preventDefault();
@@ -91,7 +92,7 @@ export function CreateCategory({
                         {/* name */}
                         <TextField
                             label="Name"
-                            placeholder="Enter category name here..."
+                            placeholder="Enter size name here..."
 
                             register={register}
                             registerFor="name"
@@ -105,7 +106,7 @@ export function CreateCategory({
                         <Picker
                             items={statuses}
                             label="Status"
-                            placeHolder="Choose category status from here..."
+                            placeHolder="Choose size status from here..."
                             className="w-full"
 
                             value={watch("status") || "1"}
@@ -127,11 +128,11 @@ export function CreateCategory({
                         </DrawerClose>
                         <Button
                             type="submit"
-                            form="categories"
+                            form="sizes"
                             variant={"secondary"}
-                            disabled={createCategory.isPending}
+                            disabled={createSize.isPending}
                         >
-                            {createCategory.isPending ? "Submitting..." : "Submit"}
+                            {createSize.isPending ? "Submitting..." : "Submit"}
                         </Button>
                     </DrawerFooter>
                 </div>

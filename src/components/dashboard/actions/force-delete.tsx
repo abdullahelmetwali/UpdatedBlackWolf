@@ -47,8 +47,9 @@ export function ForceDelete({ role, }: { role: string }) {
             router.refresh();
 
             toast({
+                variant: "success",
                 title: "Done, operation success",
-                description: `The item deleted from system successfully`,
+                description: `The item deleted forever from system successfully`,
             });
 
         },

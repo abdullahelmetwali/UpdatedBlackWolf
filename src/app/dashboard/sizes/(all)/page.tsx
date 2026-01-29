@@ -1,20 +1,20 @@
 import { GET } from "@/utils/get"
 import { PageTypo } from "@/types";
-import { CategoriesTable } from "../_components/table";
+import { SizesTable } from "../_components/table";
 
 export const metadata = {
-    title: "Categories"
+    title: "Sizes"
 };
 
-export default async function AllCategories({ searchParams }: PageTypo) {
+export default async function AllSizes({ searchParams }: PageTypo) {
     const params = await searchParams;
     const data = await GET({
-        url: "/categories",
+        url: "/sizes",
         context: "dashboard",
         searchParams: params
     });
 
     return (
-        <CategoriesTable type="all" data={data} />
+        <SizesTable type="all" data={data} />
     )
 }

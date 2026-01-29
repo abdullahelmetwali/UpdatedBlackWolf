@@ -12,6 +12,6 @@ export default async function DeletedProducts() {
     });
 
     return (
-        <ProductsTable data={data} />
+        <ProductsTable data={data} type="deleted" />
     )
 }

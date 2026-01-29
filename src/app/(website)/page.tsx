@@ -4,6 +4,7 @@ import { Product, RoomObj } from "@/interfaces/Types";
 import ProductBox from "@/components/product/ProductBox";
 import TheLatest from "@/components/home/TheLatest";
 import GetProducts from "@/hooks/GetProducts";
+import { notFound } from "next/navigation";
 
 export default async function Home() {
   const { products } = await GetProducts();
@@ -36,9 +37,7 @@ export default async function Home() {
   ];
 
   if (!products) {
-    return {
-      notFound: true
-    }
+    return notFound();
   };
   return (
     <>

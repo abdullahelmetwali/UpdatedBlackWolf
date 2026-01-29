@@ -1,10 +1,14 @@
+"use client";
 import { CreateOrUpdate } from "@/types";
-import { useFormSubmission } from "@/hooks/use-form-submission";
+import { Category } from "@/types/models";
+
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { revalidate } from "@/utils/revalidate";
+import { useModals } from "@/contexts/modals";
+import { useFormSubmission } from "@/hooks/use-form-submission";
 import { toast } from "@/hooks/use-toast";
 
-import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
     Drawer,
@@ -14,44 +18,64 @@ import {
     DrawerFooter,
     DrawerHeader,
     DrawerTitle,
-    DrawerTrigger,
 } from "@/components/ui/drawer";
 
 import { statuses } from "@/constants";
-import { Picker } from "@/components/form/picker";
 import { TextField } from "@/components/form/text-field";
+import { Picker } from "@/components/form/picker";
 
-export function CreateCategory({
+export function UpdateSize({
     disabled,
     onError,
     onSuccess,
 }: CreateOrUpdate) {
+    const { getItemInModal, isModalOpen, closeModal } = useModals();
+
+    const thisCategory: Category = getItemInModal("update-categories") || {};
+    const isOpen = isModalOpen("update-categories");
+
     const {
         setValue,
         setError,
         clearErrors,
-        reset,
         formState: { errors },
         register,
         watch,
         getValues,
-    } = useForm();
+    } = useForm<Category>({
+        defaultValues: {
+            name: thisCategory.name,
+            slug: thisCategory.slug,
+            status: thisCategory.status,
+        },
+    });
 
-    const createCategory = useFormSubmission({
-        endPoint: "/categories",
-        method: "POST",
+    useEffect(() => {
+        if (thisCategory && isOpen) {
+            setValue("name", thisCategory.name || "");
+            setValue("slug", thisCategory.slug || "");
+            setValue("status", thisCategory.status || "");
+        }
+    }, [thisCategory, isOpen]);
+
+    const updateCategory = useFormSubmission({
+        endPoint: `/categories/${thisCategory._id}`,
+        method: "PUT",
         setError,
         clearErrors,
-        onError: onError,
+        onError: (error) => {
+            onError?.(error);
+        },
         onSuccess: async (response) => {
             await revalidate({ url: "/categories" });
             onSuccess?.(response);
 
             toast({
                 variant: "success",
-                title: `${response.name} added to system successfully`
-            })
-            reset();
+                title: `${response.name} updated successfully`
+            });
+
+            closeModal("update-categories");
         },
     });
 
@@ -61,27 +85,21 @@ export function CreateCategory({
             status: data.status || "1"
         };
 
-        createCategory.mutate(body);
+        updateCategory.mutate(body);
     };
 
     return (
-        <Drawer>
-            <DrawerTrigger disabled={disabled?.add} asChild>
-                <Button variant="outline">
-                    <Plus />
-                </Button>
-            </DrawerTrigger>
-            <DrawerContent>
+        <Drawer open={isOpen} onOpenChange={(open) => { if (!open) closeModal("update-categories") }}>
+            <DrawerContent className="max-h-[90dvh]">
                 <DrawerHeader>
-                    <DrawerTitle>Create new Category</DrawerTitle>
-                    <DrawerDescription>Here you can add new category to the system</DrawerDescription>
+                    <DrawerTitle>Update {thisCategory.name}</DrawerTitle>
+                    <DrawerDescription>Here you can update {thisCategory.name} to the system</DrawerDescription>
                 </DrawerHeader>
-
-                <div className="w-full grid place-items-center pb-4 *:w-11/12 *:md:w-8/12"
-                    aria-disabled={createCategory.isPending}>
+                <div className="w-full grid place-items-center pb-4 *:w-11/12 *:md:w-8/12 max-md:overflow-y-scroll"
+                    aria-disabled={updateCategory.isPending}>
                     <form
-                        id="categories"
-                        className=" grid gap-2 md:grid-cols-2 place-items-center"
+                        id="update-categories"
+                        className="grid gap-2 md:grid-cols-2 place-items-center"
                         onSubmit={(e) => {
                             e.preventDefault();
                             e.stopPropagation();
@@ -91,7 +109,7 @@ export function CreateCategory({
                         {/* name */}
                         <TextField
                             label="Name"
-                            placeholder="Enter category name here..."
+                            placeholder={`Product's old name is ${thisCategory.name}`}
 
                             register={register}
                             registerFor="name"
@@ -105,7 +123,7 @@ export function CreateCategory({
                         <Picker
                             items={statuses}
                             label="Status"
-                            placeHolder="Choose category status from here..."
+                            placeHolder={`Product's old status is ${thisCategory.status}`}
                             className="w-full"
 
                             value={watch("status") || "1"}
@@ -116,9 +134,7 @@ export function CreateCategory({
                             disabled={disabled?.status}
                             required
                         />
-
                     </form>
-
                     <DrawerFooter className="w-full px-0 grid md:grid-cols-2">
                         <DrawerClose asChild>
                             <Button variant={"destructive"}>
@@ -127,11 +143,11 @@ export function CreateCategory({
                         </DrawerClose>
                         <Button
                             type="submit"
-                            form="categories"
+                            form="update-categories"
                             variant={"secondary"}
-                            disabled={createCategory.isPending}
+                            disabled={updateCategory.isPending}
                         >
-                            {createCategory.isPending ? "Submitting..." : "Submit"}
+                            {updateCategory.isPending ? "Updatting..." : "Update"}
                         </Button>
                     </DrawerFooter>
                 </div>

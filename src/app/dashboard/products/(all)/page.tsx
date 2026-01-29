@@ -15,6 +15,6 @@ export default async function AllProducts({ searchParams }: PageTypo) {
     });
 
     return (
-        <ProductsTable data={data} />
+        <ProductsTable data={data} type="all" />
     )
 }
