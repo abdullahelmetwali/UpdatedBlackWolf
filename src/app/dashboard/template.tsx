@@ -1,8 +1,6 @@
 "use client"
 import { useGet } from "@/hooks/use-get";
 
-import { PersonStanding } from "lucide-react";
-
 import { SidebarFooter, SidebarInset, SidebarProvider, } from "@/components/ui/sidebar";
 import { Sidebar } from "@/components/dashboard/sidebar";
 import { Header } from "@/components/dashboard/header"
