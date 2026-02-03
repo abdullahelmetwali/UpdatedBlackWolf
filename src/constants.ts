@@ -19,3 +19,14 @@ export const genders = [
         name: "Female",
     },
 ];
+
+export const roles = [
+    {
+        _id: "admin",
+        name: "Admin",
+    },
+    {
+        _id: "customer",
+        name: "Customer",
+    },
+];

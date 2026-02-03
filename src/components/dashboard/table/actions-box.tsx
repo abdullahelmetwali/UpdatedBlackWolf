@@ -29,7 +29,6 @@ type ActionBoxTypo = {
         show?: string,
         update?: string
     }
-    updateIsLink?: boolean,
     hidden?: {
         show?: boolean,
         add?: boolean,
@@ -40,7 +39,7 @@ type ActionBoxTypo = {
     }
 };
 
-export function ActionsBox({ allowedTo, row, role, links, updateIsLink = false, hidden }: ActionBoxTypo) {
+export function ActionsBox({ allowedTo, row, role, links, hidden }: ActionBoxTypo) {
     const pathname = usePathname();
     const type = pathname.includes("deleted") ? "deleted" : "all";
     const { openModal } = useModals();

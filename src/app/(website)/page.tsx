@@ -87,7 +87,7 @@ export default async function Home() {
           }
         </div>
       </div>
-      <main className="grid grid-cols-2 tab:flex tab:flex-col-reverse">
+      <main className="grid grid-cols-2 max-md:flex max-md:flex-col-reverse">
         <section className="p-3 h-full">
           <div>
             <p className="text-2xl tracking-widest text-center">Ultimate Designs</p>

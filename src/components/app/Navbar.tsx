@@ -29,7 +29,7 @@ export function AppNavbar() {
                     <Link href={`/`} className="text-xl font-semibold hidden tab:block">
                         <span className="text-muted text-2xl">B</span>LACK <span className="text-muted text-2xl">W</span>OLF
                     </Link>
-                    <ul className="gap-10 items-center flex tab:hidden">
+                    <ul className="gap-10 items-center flex">
                         <li>
                             <Link href={`/`}>
                                 HOME
@@ -46,24 +46,24 @@ export function AppNavbar() {
                             </Link>
                         </li>
                     </ul>
-                    <ul className="flex gap-5 items-start tab:gap-3">
+                    <ul className="flex gap-5 items-start">
                         <li>
                             <Link
                                 title="Account"
                                 href={!token ? '/login' :
                                     (roleIsAdmin) ? '/dashboard' : '/profile'}
                             >
-                                <User color="#a1a1a1" width={30} height={30} />
+                                <User color="#a1a1a1" className="size-6" />
                             </Link>
                         </li>
                         <li>
                             <button onClick={() => setSearchMenu((prev: boolean) => !prev)} title="Search...">
-                                <Search color="#a1a1a1" width={30} height={30} />
+                                <Search color="#a1a1a1" className="size-6" />
                             </button>
                         </li>
                         <li>
                             <button onClick={() => setSeeCart((prev: boolean) => !prev)} title="Cart">
-                                <ShoppingCart color="#a1a1a1" width={30} height={30} />
+                                <ShoppingCart color="#a1a1a1" className="size-6" />
                             </button>
                         </li>
                     </ul>
