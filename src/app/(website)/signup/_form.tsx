@@ -45,7 +45,7 @@ export function SignUpForm() {
             password: data.password,
             name: data.name,
             phone: data.phone,
-            gender: data.gender
+            gender: data.gender,
         }
 
         signUp.mutate(body);

@@ -41,7 +41,7 @@ export function Picker({
     searchMode = false, // if true , it means that it will popover (have search)
     ...props
 }: PickerTypo) {
-    const hasError = errors?.[setValueFor];
+    const hasError = errors?.[setValueFor as string];
 
     const [search, setSearch] = useState("");
     const filteredItems = items?.filter((item) =>
@@ -123,7 +123,9 @@ export function Picker({
                         {isLoading ? (
                             <p className="text-center text-sm p-4 animate-pulse">Loading...</p>
                         ) : error ? (
-                            <p className="text-center text-sm text-destructive p-4">{error?.message}</p>
+                            <p className="text-center text-sm text-destructive p-4">
+                                {error?.message || hasError?.message}
+                            </p>
                         ) : filteredItems?.length === 0 ? (
                             <p className="text-center text-sm text-muted-foreground p-4">No results</p>
                         ) : (

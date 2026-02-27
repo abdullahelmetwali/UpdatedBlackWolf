@@ -1,6 +1,6 @@
 import { CreateOrUpdate } from "@/types";
-import { useFormSubmission } from "@/hooks/use-form-submission";
 import { useForm } from "react-hook-form";
+import { useFormSubmission } from "@/hooks/use-form-submission";
 import { revalidate } from "@/utils/revalidate";
 import { toast } from "@/hooks/use-toast";
 
@@ -17,7 +17,7 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer";
 
-import { statuses } from "@/constants";
+import { genders, roles } from "@/constants";
 import { Picker } from "@/components/form/picker";
 import { TextField } from "@/components/form/text-field";
 
@@ -37,19 +37,19 @@ export function CreateUser({
         getValues,
     } = useForm();
 
-    const createSize = useFormSubmission({
-        endPoint: "/sizes",
+    const createUser = useFormSubmission({
+        endPoint: "/users",
         method: "POST",
         setError,
         clearErrors,
         onError: onError,
         onSuccess: async (response) => {
-            await revalidate({ url: "/sizes" });
+            await revalidate({ url: "/users" });
             onSuccess?.(response);
 
             toast({
                 variant: "success",
-                title: `${response.name} added to system successfully`
+                title: `${response?.user?.name} added to system successfully`
             });
 
             reset();
@@ -58,11 +58,15 @@ export function CreateUser({
 
     const onSubmit = (data: any) => {
         const body = {
+            email: data.email,
+            password: data.password,
             name: data.name,
-            status: data.status || "1"
+            phone: data.phone,
+            gender: data.gender,
+            role: data.role
         };
 
-        createSize.mutate(body);
+        createUser.mutate(body);
     };
 
     return (
@@ -74,52 +78,98 @@ export function CreateUser({
             </DrawerTrigger>
             <DrawerContent>
                 <DrawerHeader>
-                    <DrawerTitle>Create new Size</DrawerTitle>
-                    <DrawerDescription>Here you can add new size to the system</DrawerDescription>
+                    <DrawerTitle>Create new user</DrawerTitle>
+                    <DrawerDescription>Here you can add new user to the system</DrawerDescription>
                 </DrawerHeader>
 
                 <div className="w-full grid place-items-center pb-4 *:w-11/12 *:md:w-8/12"
-                    aria-disabled={createSize.isPending}>
+                    aria-disabled={createUser.isPending}>
                     <form
-                        id="sizes"
-                        className=" grid gap-2 md:grid-cols-2 place-items-center"
+                        id="users"
                         onSubmit={(e) => {
                             e.preventDefault();
                             e.stopPropagation();
-                            onSubmit(getValues())
+                            onSubmit(getValues());
                         }}
+                        className=" grid gap-3 md:grid-cols-2 place-items-center"
+                        aria-disabled={createUser.isPending}
                     >
-                        {/* name */}
                         <TextField
                             label="Name"
-                            placeholder="Enter size name here..."
+                            placeholder="Enter your name here..."
 
                             register={register}
                             registerFor="name"
                             errors={errors}
-
-                            disabled={disabled?.name}
                             required
                         />
 
-                        {/* status */}
-                        <Picker
-                            items={statuses}
-                            label="Status"
-                            placeHolder="Choose size status from here..."
-                            className="w-full"
+                        <TextField
+                            type="email"
+                            label="Email Address"
+                            placeholder="Enter your email address here..."
 
-                            value={watch("status") || "1"}
-                            setValue={setValue}
-                            setValueFor={"status"}
+                            register={register}
+                            registerFor="email"
+                            errors={errors}
+                            required
+                        />
+
+                        <TextField
+                            type="number"
+                            label="Phone Number"
+                            placeholder="Enter your phone number here..."
+
+                            register={register}
+                            registerFor="phone"
+                            errors={errors}
+                            required
+                        />
+
+                        <TextField
+                            type="password"
+                            label="Password"
+                            placeholder="Enter your password here..."
+
+                            register={register}
+                            registerFor="password"
                             errors={errors}
 
-                            disabled={disabled?.status}
+                            toggleSeePassword
+                            required
+                        />
+
+                        <Picker
+                            items={genders}
+
+                            label="Gender"
+                            placeHolder="Select your gender"
+                            className="w-full"
+
+                            value={watch("gender")}
+                            setValue={setValue}
+                            setValueFor={"gender"}
+
+                            errors={errors}
+                            required
+                        />
+
+                        <Picker
+                            items={roles}
+
+                            label="Role"
+                            placeHolder="Select your role"
+                            className="w-full"
+
+                            value={watch("role")}
+                            setValue={setValue}
+                            setValueFor={"role"}
+
+                            errors={errors}
                             required
                         />
 
                     </form>
-
                     <DrawerFooter className="w-full px-0 grid md:grid-cols-2">
                         <DrawerClose asChild>
                             <Button variant={"destructive"}>
@@ -128,11 +178,11 @@ export function CreateUser({
                         </DrawerClose>
                         <Button
                             type="submit"
-                            form="sizes"
+                            form="users"
                             variant={"secondary"}
-                            disabled={createSize.isPending}
+                            disabled={createUser.isPending}
                         >
-                            {createSize.isPending ? "Submitting..." : "Submit"}
+                            {createUser.isPending ? "Submitting..." : "Submit"}
                         </Button>
                     </DrawerFooter>
                 </div>

@@ -1,14 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Product, RoomObj } from "@/interfaces/Types";
-import ProductBox from "@/components/product/ProductBox";
+import { RoomObj } from "@/interfaces/Types";
 import TheLatest from "@/components/home/TheLatest";
 import GetProducts from "@/hooks/GetProducts";
 import { notFound } from "next/navigation";
+import { ProductBox } from "./products/(all)/_components/product-box";
+import { GET } from "@/utils/get";
+import { Product } from "@/types/models";
 
 export default async function Home() {
   const { products } = await GetProducts();
-  const ulimate: Product[] = products.filter((pro: Product) => pro.section === 'ultimate-designs');
+  const data = await GET({ url: "/products" });
+  // const ulimate: Product[] = products.filter((pro: Product) => pro.section === 'ultimate-designs');
   const showroomObj: RoomObj[] = [
     {
       id: 0,
@@ -94,14 +97,9 @@ export default async function Home() {
           </div>
           <div className="scrollbox justify-start my-8 gap-4 h-full">
             {
-              ulimate.map((pro: Product) => (
-                <div key={pro.id} className="relative h-full">
-                  <ProductBox product={pro} easyAdd={true} key={pro.id} boxClass={undefined} >
-                    <Link href={`/category/${pro.type ? pro.type : 'all'}/${pro.title.replaceAll(' ', '-').toLowerCase()}`} className="text-center my-1">
-                      <p>{pro.title}</p>
-                      <p>{pro.price}$</p>
-                    </Link>
-                  </ProductBox>
+              data?.map((pro: Product) => (
+                <div key={pro._id} className="relative h-full">
+                  <ProductBox product={pro} easyAdd={true} key={pro._id} />
                 </div>
               ))
             }

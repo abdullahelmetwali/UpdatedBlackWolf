@@ -16,7 +16,7 @@ export default async function ProductsPG({ searchParams }: { searchParams: Promi
     const allSizes = sizes.status === "fulfilled" ? sizes?.value : [];
 
     return (
-        <main className="p-5 grid gap-1 md:grid-cols-6">
+        <main className="grid gap-1 md:grid-cols-6">
             <section className="md:columns-2">
                 <Filter categories={allCategories} colors={allColors} sizes={allSizes} />
             </section>

@@ -10,6 +10,7 @@ import { Ghost } from "lucide-react";
 export const useFormSubmission = ({
     endPoint,
     method,
+    context = "dashboard",
 
     beforeRun,
     beforeSuccess,
@@ -21,13 +22,14 @@ export const useFormSubmission = ({
 }: UseFromSubmissionType) => {
     const token = TOKEN_CL();
     const queryClient = useQueryClient();
+    const END_POINT = context === "special" ? endPoint : `${BASE_URL}${endPoint}`;
 
     const submitForm = async (body: Record<string, string> | FormData) => {
         beforeRun?.();
         clearErrors?.();
 
         const isFormData = body instanceof FormData;
-        const response = await fetch(`${BASE_URL}${endPoint}`, {
+        const response = await fetch(END_POINT, {
             method: method,
             body: isFormData ? body : JSON.stringify(body),
             headers: {

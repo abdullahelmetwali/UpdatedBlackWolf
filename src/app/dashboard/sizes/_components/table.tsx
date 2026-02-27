@@ -68,11 +68,11 @@ export function SizesTable({ data, type }: SpecificTable) {
             },
             {
                 id: "created-by",
-                accessorFn: (row: any) => (row?.createdBy || "0"),
+                accessorFn: (row: any) => (row?.createdBy?.name || "0"),
                 header: "Created By",
                 cell: ({ row }: { row: Row<any> }) => (
                     <p>
-                        {row.original?.createdBy || "N/A"}
+                        {row.original?.createdBy?.name || "N/A"}
                     </p>
                 )
             },

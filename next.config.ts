@@ -6,6 +6,12 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "blackwolf-backend.vercel.app",
+        pathname: "/**"
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        pathname: "/**"
       },
     ],
   },

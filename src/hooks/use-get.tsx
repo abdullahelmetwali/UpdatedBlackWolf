@@ -6,15 +6,15 @@ import { TOKEN_CL } from "@/utils/token/client";
 import { BASE_URL } from "@/utils/url";
 import { useQuery } from "@tanstack/react-query";
 
-export const useGet = ({ url, headers, context = "website", props, }: UseGet) => {
+export const useGet = ({ url, headers, body, context = "website", ...props }: UseGet) => {
     const token = TOKEN_CL();
 
     const TAG_NAME = url?.split('?')[0] ?? ""; // /grades?status=1 => /grades
-    const URL_TO_FETCH = `${BASE_URL}${url}`;
+    const URL_TO_FETCH = context === "special" ? url : `${BASE_URL}${url}`;
 
     const HEADERS = context === "dashboard"
         ? { Authorization: `Bearer ${token}`, ...headers }
-        : {};
+        : { ...headers };
 
     const query = useQuery({
         queryKey: [TAG_NAME],
@@ -23,11 +23,12 @@ export const useGet = ({ url, headers, context = "website", props, }: UseGet) =>
                 const response = await fetch(URL_TO_FETCH, {
                     method: "GET",
                     headers: HEADERS,
+                    body: JSON.stringify(body),
                     next: { tags: [TAG_NAME] }
                 });
                 if (!response.ok) throw new Error(response.statusText);
                 const data = await response.json();
-                return data?.data;
+                return data;
             } catch (error) {
                 if (error instanceof Error) {
                     throw new Error(error.message);

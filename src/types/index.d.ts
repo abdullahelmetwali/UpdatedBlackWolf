@@ -7,11 +7,11 @@ export type GETFUNC = {
     revalidate?: number,
 };
 
-export type UseGet = {
+export interface UseGet extends Omit<UseQueryOptions<any, Error>, "queryKey" | "queryFn"> {
     url: string,
-    context?: "website" | "dashboard",
+    context?: "website" | "dashboard" | "special",
     headers?: HeadersInit,
-    props?: Omit<UseQueryOptions<any, Error>, 'queryKey' | 'queryFn'>
+    body?: Record<string, string>
 };
 
 export type CartTypo = {
@@ -192,8 +192,9 @@ export type ManualErr = {
 };
 
 export interface UseFromSubmissionType {
-    endPoint?: string,
+    endPoint: string,
     method: "POST" | "PUT" | "PATCH" | "DELETE",
+    context?: "website" | "dashboard" | "special",
 
     beforeRun?: () => void,
     beforeSuccess?: (

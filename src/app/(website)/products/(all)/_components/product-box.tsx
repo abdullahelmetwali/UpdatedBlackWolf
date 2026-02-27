@@ -1,94 +1,117 @@
 "use client";
+import Link from "next/link";
 import { Product } from "@/types/models";
+import { useForm } from "react-hook-form";
 import { useCart } from "@/store/cart";
 
-import { ShoppingBag } from "lucide-react";
+import { cn } from "@/lib/cn";
+import { Loader2, ShoppingBag } from "lucide-react";
 import { ImageWithLoading } from "@/components/ui/image-with-loading";
-import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 interface ProductBoxTypo extends React.HTMLAttributes<HTMLDivElement> {
     product: Product,
-    easyAdd?: boolean
+    easyAdd?: boolean,
+    children?: React.ReactNode
 };
 
-export function ProductBox({ product, easyAdd, ...props }: ProductBoxTypo) {
+export function ProductBox({ product, easyAdd, children, ...props }: ProductBoxTypo) {
     const { addToCart, addingId } = useCart();
 
-    const [active, setActive] = useState("");
+    const {
+        watch,
+        setValue,
+    } = useForm();
 
+    const nextContent = watch("next-content") || "";
+    const selectedSize = watch("size");
     return (
-        <div className="w-[22rem] h-[40rem] relative" {...props}>
-            <ImageWithLoading
-                src={product.image as string || ""}
-                alt={product.name}
-                title={product.name}
-                width={750}
-                height={1000}
-                className="w-full h-full object-cover"
-            />
-            {/* {
-                easyAdd &&
-                <>
-                    <button className={`absolute right-3 w-fit rounded-md p-2 bg-[#080808e8] cursor-pointer ${easyAddState.cartBox ? 'bottom-5 opacity-100 z-10' : 'bottom-6 opacity-0 z-0'} transition-all duration-100 ease-out`}
-                        onClick={() => {
-                            setEasyAddState((prev: EasyAddState) => ({ ...prev, nextContent: 'sizes', cartBox: false }));
-                            dispatchChoosedItems({
-                                type: 'UPDATE_MULT',
-                                payload: {
-                                    title: product.title,
-                                    price: product.price,
-                                    quantity: 1
-                                }
-                            })
-                        }
-                        }
-                        title="Add to cart"
-                    >
-                        <ShoppingBag width={24} height={24} />
-                    </button>
-                    <ul className={`productBoxItems ${easyAddState.nextContent === 'sizes' ? 'bottom-6 opacity-100 z-10' : 'bottom-5 opacity-0 z-0'}`}
-                    >
-                        {
-                            product?.sizes?.map((size: string, sizeIndex: number) => (
+        <>
+            <div className="w-[22rem] h-[40rem] relative" {...props}>
+                <div className="bg-muted w-full h-full rounded absolute inset-0 animate-pulse" />
+                <ImageWithLoading
+                    src={product.image as string || ""}
+                    alt={product.name}
+                    title={product.name}
+                    width={750}
+                    height={1000}
+                    className="w-full h-full object-cover"
+                />
+                {
+                    easyAdd &&
+                    <>
+                        <Button
+                            disabled={!!addingId}
+                            variant={"outline"}
+                            size={"sm"}
+                            onClick={() => setValue("next-content", "sizes")}
+                            className={cn("absolute right-3 bg-[#080808e8] transition-all",
+                                nextContent === "" ? "bottom-6 opacity-100 z-10" : "bottom-5 opacity-0 z-0"
+                            )}
+                        >
+                            {
+                                addingId === product._id ?
+                                    <Loader2 className="animate-spin" />
+                                    :
+                                    <ShoppingBag />
+                            }
+                        </Button>
+
+                        {/* sizes */}
+                        <ul
+                            className={cn("absolute w-full end-0 flex items-center justify-center gap-4 bg-black/80 transition-all",
+                                nextContent === "sizes" ? "bottom-6 opacity-100 z-10" : "bottom-5 opacity-0 z-0"
+                            )}
+                        >
+                            {product?.sizes?.map((size) => (
                                 <li
-                                    key={sizeIndex}
-                                    className="cursor-pointer hover:bg-[#a1a1a1] p-1"
+                                    key={size?._id}
+                                    className="cursor-pointer hover:bg-muted p-1"
                                     onClick={() => {
-                                        setEasyAddState((prev: EasyAddState) => ({
-                                            ...prev,
-                                            nextContent: 'colors',
-                                        }));
-                                        dispatchChoosedItems({ type: 'UPDATE_SINGLE', field: 'size', value: size })
-                                    }
-                                    }
+                                        setValue("size", size._id);
+                                        setValue("next-content", "colors");
+                                    }}
                                 >
-                                    {size}
+                                    {size.name}
                                 </li>
-                            ))
-                        }
-                    </ul>
-                    <ul
-                        className={`productBoxItems ${(easyAddState.nextContent === 'colors' && !easyAddState.cartBox) ? 'bottom-6 opacity-100 z-10' : 'bottom-5 opacity-0 z-0'}`}
-                    >
-                        {product?.colors?.map((color: string, clrIndex: number) => (
-                            <li
-                                key={clrIndex}
-                                className="cursor-pointer hover:bg-[#a1a1a1] p-1"
-                                onClick={() => {
-                                    setEasyAddState((prev: EasyAddState) => ({
-                                        ...prev,
-                                        cartBox: true,
-                                    }));
-                                    AddToCart(product, color);
-                                }
-                                }
-                            >
-                                {color}
-                            </li>
-                        ))}
-                    </ul>
-                </>
-            } */}
-        </div>
+                            ))}
+                        </ul>
+
+                        {/* colors */}
+                        <ul
+                            className={cn("absolute w-full end-0 flex items-center justify-center gap-4 bg-black/80 transition-all",
+                                nextContent === "colors" ? "bottom-6 opacity-100 z-10" : "bottom-5 opacity-0 z-0"
+                            )}
+                        >
+                            {product?.colors?.map((color) => (
+                                <li
+                                    key={color?._id}
+                                    className="cursor-pointer hover:bg-muted p-1"
+                                    onClick={() => {
+                                        setValue("color", color._id);
+                                        setValue("next-content", "");
+                                        addToCart({
+                                            product: product._id,
+                                            size: selectedSize,
+                                            color: color._id,
+                                            quantity: 1
+                                        })
+                                    }}
+                                >
+                                    {color.name}
+                                </li>
+                            ))}
+                        </ul>
+                    </>
+                }
+            </div>
+            <Link href={`/products/${product.slug}`} className="text-center my-1">
+                <p>{product.name}</p>
+                <div className="flex items-center gap-2 justify-center">
+                    <p>{product.price}$</p>
+                    {Number(product.oldPrice) > 0 && <del>{product.oldPrice}$</del>}
+                </div>
+            </Link>
+        </>
     );
 };

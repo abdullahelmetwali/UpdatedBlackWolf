@@ -23,7 +23,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return (
         <>
             <AppNavbar />
-            {children}
+            <main>
+                {children}
+            </main>
             <AppFooter />
         </>
     )

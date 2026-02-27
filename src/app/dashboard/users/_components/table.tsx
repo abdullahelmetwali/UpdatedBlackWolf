@@ -108,12 +108,22 @@ export function UsersTable({ data, type }: SpecificTable) {
                 enableHiding: true,
             },
             {
+                id: "role",
+                accessorFn: (row: any) => (row?.role || "N/A"),
+                header: "Role",
+                cell: ({ row }: { row: Row<any> }) => (
+                    <p className="capitalize">
+                        {row.original?.role || "N/A"}
+                    </p>
+                )
+            },
+            {
                 id: "created-by",
-                accessorFn: (row: any) => (row?.createdBy || "0"),
+                accessorFn: (row: any) => (row?.createdBy?.name || "0"),
                 header: "Created By",
                 cell: ({ row }: { row: Row<any> }) => (
                     <p>
-                        {row.original?.createdBy || "N/A"}
+                        {row.original?.createdBy?.name || "N/A"}
                     </p>
                 )
             },

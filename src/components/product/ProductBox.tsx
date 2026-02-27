@@ -5,6 +5,7 @@ import React, { useContext, useMemo, useState } from "react";
 import { CartState } from "@/store/CartProvider";
 import { ShoppingBag } from 'lucide-react';
 import ImgLoading from "../ui/ImgLoading";
+import { cn } from "@/lib/cn";
 
 const ProductBox: React.FC<{ product: Product, easyAdd: boolean, boxClass: string | undefined, children: React.ReactNode | undefined }>
     = React.memo(({ product, easyAdd, boxClass, children }) => {
@@ -28,7 +29,7 @@ const ProductBox: React.FC<{ product: Product, easyAdd: boolean, boxClass: strin
 
         return (
             <>
-                <div className={`${boxClass ? boxClass : 'w-[22rem] h-[40rem]'} relative`}>
+                <div className={cn("w-[22rem] h-[40rem] relative", boxClass,)}>
                     {memoImg}
                     {
                         easyAdd &&

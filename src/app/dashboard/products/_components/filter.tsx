@@ -56,7 +56,7 @@ export function ProductsFilter() {
                     />
 
                     <Picker
-                        items={categories}
+                        items={categories?.data}
                         error={catErr}
                         isLoading={catLoading}
 
@@ -69,7 +69,7 @@ export function ProductsFilter() {
                     />
 
                     <Picker
-                        items={sizes}
+                        items={sizes?.data}
                         error={sErr}
                         isLoading={sLoading}
 
@@ -82,7 +82,7 @@ export function ProductsFilter() {
                     />
 
                     <Picker
-                        items={colors}
+                        items={colors?.data}
                         error={colErr}
                         isLoading={colLoading}
 

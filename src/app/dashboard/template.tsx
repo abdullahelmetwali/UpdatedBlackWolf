@@ -31,7 +31,7 @@ export default function Dashboard({ children }) {
 
             <Sidebar>
                 <SidebarFooter>
-                    <Admin admin={data} />
+                    <Admin admin={data?.data} />
                 </SidebarFooter>
             </Sidebar>
 

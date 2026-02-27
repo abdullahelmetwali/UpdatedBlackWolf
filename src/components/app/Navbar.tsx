@@ -3,13 +3,12 @@
 import Link from "next/link";
 import { isAdmin } from "@/lib/auth";
 import { TOKEN_CL } from "@/utils/token/client";
+import { Cart } from "./cart";
 
 import { usePathname } from "next/navigation";
-import { useContext, useState } from "react";
+import { useState } from "react";
 
-import Cart from "@/components/cart/Cart";
-import { CartState } from "@/store/CartProvider";
-import { ShoppingCart, User, Search } from 'lucide-react';
+import { User, Search } from 'lucide-react';
 import SearchBox from "./Search";
 
 
@@ -18,7 +17,6 @@ export function AppNavbar() {
     const roleIsAdmin = isAdmin(token);
 
     const pathname = usePathname();
-    const { seeCart, setSeeCart } = useContext(CartState);
     const [searchMenu, setSearchMenu] = useState<boolean>(false);
 
     if (pathname.includes("login") || pathname.includes("signup")) return null;
@@ -62,17 +60,11 @@ export function AppNavbar() {
                             </button>
                         </li>
                         <li>
-                            <button onClick={() => setSeeCart((prev: boolean) => !prev)} title="Cart">
-                                <ShoppingCart color="#a1a1a1" className="size-6" />
-                            </button>
+                            <Cart />
                         </li>
                     </ul>
                 </nav>
             </header>
-            <main className={`fixed top-0 w-5/12 tab:w-10/12 bg-black ${seeCart ? 'right-0 opacity-100 z-30' : '-right-full opacity-0 z-0'} transition-all duration-150 ease-in-out h-full overflow-y-scroll`}>
-                <Cart isUsr={false} />
-            </main>
-            {seeCart && <div className="fixed w-full min-h-screen top-0 bg-[#000] opacity-80 z-20 transition-all duration-300 ease-in-out" onClick={() => setSeeCart((prev: boolean) => !prev)}></div>}
             <main className={`fixed w-full bg-black ${searchMenu ? 'top-0 opacity-100 z-30' : '-top-full opacity-0 z-0'} transition-all duration-150 ease-in-out p-4`}>
                 <SearchBox setSearchMenu={setSearchMenu} searchMenu={searchMenu} />
             </main>

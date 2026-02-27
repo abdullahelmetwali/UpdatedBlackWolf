@@ -50,6 +50,7 @@ export function Restore({ role, }: { role: string }) {
             router.refresh();
 
             toast({
+                variant: "success",
                 title: "Done, operation success",
                 description: `The item restored back to system successfully`,
             });
@@ -109,7 +110,7 @@ export function Restore({ role, }: { role: string }) {
                     </DialogClose>
                     <Button
                         className="w-full"
-                        variant="destructive"
+                        variant="default"
                         onClick={() => {
                             if (!restoreMutation.isPending) {
                                 restoreMutation.mutate();

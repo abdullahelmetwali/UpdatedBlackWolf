@@ -168,7 +168,7 @@ export const CreateProduct = ({
                         <div className="flex items-end gap-1 w-full">
                             <div className="w-full">
                                 <MultiPicker
-                                    items={categories}
+                                    items={categories?.data}
                                     isLoading={catLoading}
                                     error={catErr}
 
@@ -201,7 +201,7 @@ export const CreateProduct = ({
                         <div className="flex items-end gap-1 w-full">
                             <div className="w-full">
                                 <MultiPicker
-                                    items={sizes}
+                                    items={sizes?.data}
                                     isLoading={sLoading}
                                     error={sErr}
 
@@ -234,7 +234,7 @@ export const CreateProduct = ({
                         <div className="flex items-end gap-1 w-full">
                             <div className="w-full">
                                 <MultiPicker
-                                    items={colors}
+                                    items={colors?.data}
                                     isLoading={colLoading}
                                     error={colErr}
 

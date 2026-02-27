@@ -6,7 +6,7 @@ export function ImageWithLoading({ ...props }: ImageProps) {
 
     return (
         <div className="relative w-full h-full">
-            {isLoading && <div className="loader absolute top-0 left-0 w-full h-full" />}
+            {isLoading && <div className="bg-muted w-full h-full rounded absolute inset-0 animate-pulse" />}
             <Image
                 {...props}
                 onLoad={() => setIsLoading(false)}
